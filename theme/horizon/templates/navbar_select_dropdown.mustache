@@ -1,0 +1,89 @@
+<div class="singleselect d-inline-block">
+    <form method="get" action="{{loginasurl}}/course/view.php" class="form-inline" id="single_select_f65ae4d9710b9d5">
+        <select id="single_select" class="custom-select singleselect" name="id" data-init-value="12" data-initial-value="12" onchange="navigateToCourse()" >
+                    <option value="">{{#str}}dashboard, theme_horizon{{/str}}</option>
+                    {{#courses}}
+                        {{#courses.1}}
+                            <optgroup label="{{category}}">
+                                {{# courses}}
+                                    <option value="{{loginasurl}}/course/view.php?id={{courseid}}">{{coursename}}</option>
+                                {{/ courses}}
+                            </optgroup>
+                        {{/courses.1}}
+                        {{^courses.1}}
+                            {{#courses}}
+                                <option value="{{loginasurl}}/course/view.php?id={{courseid}}">{{coursename}}</option>
+                            {{/courses}}
+                        {{/courses.1}}
+                    {{/courses}}
+        </select>
+        <noscript>
+            <input type="submit" class="btn btn-secondary ml-1" value="Go">
+        </noscript>
+    </form>
+</div>
+
+
+{{#js}}
+var reloading = false;
+
+function navigateToCourse() {
+    // Check if the page is reloading, and if so, prevent any action
+    if (reloading) {
+        return false;
+    }
+
+    var select = $("#single_select");
+    var selectedValue = select.val();
+
+    // Check if the selected option is the dashboard
+    if (selectedValue === "") {
+        window.location.href = M.cfg.wwwroot + '/my';
+    } else if (selectedValue) {
+        window.location.href = selectedValue;
+    }
+
+    return true;
+}
+
+function enableSelect() {
+    var select = $("#single_select");
+    select.prop("disabled", false);
+}
+
+$(document).ready(function() {
+ function updateSelectedOption() {
+    var select = $("#single_select");
+    var selectedValue = window.location.href;
+
+    // Update the selected option based on the current URL
+    select.find("option").each(function (i) {
+        if ($(this).val() === selectedValue) {
+            select.val(selectedValue); // Set the selected value
+            return false; // Break the loop
+        }
+    });
+}
+
+
+    // Call the function on window load to set the initial selected option
+    $(window).on("load", function () {
+        updateSelectedOption();
+        enableSelect(); // Enable the select element
+    });
+
+    // Disable select during page reloading
+    $(window).on("beforeunload", function () {
+        reloading = true;
+
+        // Set a timeout to enable the select after a short delay (1 second)
+        setTimeout(function () {
+            reloading = false;
+            enableSelect();
+        }, 2000);
+    });
+
+    // Attach the navigateToCourse function to the onchange event
+    $("#single_select").on("change", navigateToCourse);
+});
+{{/js}}

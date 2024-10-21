@@ -1,0 +1,132 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template block_reportdashboard/studentsdetails
+
+    TODO describe template studentsdetails
+
+    Example context (json):
+    {
+    }
+}}
+		<div class="registered_counts mt-3 pb-3">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="total_count bg-primary p-3 d-flex flex-column">
+						<div class="count"><h4>{{totalstudents}}</h4></div>
+						<div class="status_desc mt-auto">{{#str}} totalstudents, block_reportdashboard {{/str}}</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="active_count bg-primary p-3 d-flex flex-column">
+						<div class="count"><h4>{{activestudents}}</h4></div>
+						<div class="status_desc mt-auto">{{#str}} activestudents, block_reportdashboard {{/str}}
+							<span>
+								<i class="fa fa-question-circle" title="{{#str}}activestudents_help, block_reportdashboard {{/str}}"></i>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="time_spent bg-primary p-3 d-flex flex-column">
+						<div class="count"><h4>{{avgtimespent}}</h4></div>
+						<div class="status_desc mt-auto">{{#str}} avgtimespent, block_reportdashboard {{/str}}
+							<span>
+								<i class="fa fa-question-circle" title="{{#str}} avgtimespent_help, block_reportdashboard {{/str}}"></i>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	<div class="mt-4 status_region pb-4">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="status_desc pb-2"><b>{{#str}}coursecompletion, block_reportdashboard{{/str}}</b></div>
+				<div class="course_completion row">
+					<div class="col-md-6">
+						<div class="p-2 bg-secondary d-flex flex-column">
+							<div class="count"><b>{{completionrate}}</b></div>
+							<div class="status_desc mt-auto">{{#str}}coursecompletionrate, block_reportdashboard{{/str}}
+								<span>
+									<i class="fa fa-question-circle" title="{{#str}}coursecompletionrate_help, block_reportdashboard{{/str}}"></i>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="p-2 bg-secondary d-flex flex-column">
+							<div class="count"><b>{{avgcompletion}}</b></div>
+							<div class="progress">
+							  <div class="progress-bar" style="width:{{avgcompletion}}"></div>
+							</div>
+							<div class="status_desc mt-auto">{{#str}}avgcoursecompletion, block_reportdashboard{{/str}}
+								<span>
+									<i class="fa fa-question-circle" title="{{#str}}avgcompletion_help, block_reportdashboard{{/str}}"></i>
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="status_desc pb-2"><b>{{#str}}attendance, block_reportdashboard{{/str}}</b></div>
+				<div class="attendance row">
+					<div class="col-md-6">
+						<div class="p-2 bg-secondary d-flex flex-column">
+							<div class="count"><b>{{avgattendance}}%</b></div>
+							<div class="status_desc mt-auto">{{#str}}avgattendance, block_reportdashboard{{/str}}
+								<span>
+									<i class="fa fa-question-circle" title="{{#str}}avgattendance_help, block_reportdashboard{{/str}}"></i>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="p-2 bg-secondary d-flex flex-column">
+							<div class="count"><b>{{lastliveclasscount}}</b></div>
+							<div class="status_desc mt-auto">{{#str}}lastliveclasscount, block_reportdashboard{{/str}}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="status_desc pb-2"><b>{{#str}}test, block_reportdashboard{{/str}}</b></div>
+				<div class="test row">
+					<div class="col-md-6">
+						<div class="p-2 bg-secondary d-flex flex-column">
+							<div class="count"><b>{{testscoresprogress}}</b></div>
+							<div class="progress">
+							  <div class="progress-bar" style="width:{{testscoresprogress}}"></div>
+							</div>
+							<div class="status_desc mt-auto">{{#str}}avgtestscore, block_reportdashboard{{/str}}
+								<span>
+									<i class="fa fa-question-circle" title="{{#str}}avgtestscore_help, block_reportdashboard{{/str}}"></i>
+								</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="p-2 bg-secondary d-flex flex-column">
+							<div class="count"><b>{{lasttestcount}}</b></div>
+							<div class="status_desc mt-auto">{{#str}}lasttestcount, block_reportdashboard{{/str}}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

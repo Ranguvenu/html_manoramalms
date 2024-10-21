@@ -1,0 +1,131 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_packages/packagedetails_overview
+
+    TODO describe template packagedetails_overview
+
+    Example context (json):
+    {
+    }
+}}
+{{#packageview}}
+	<div class="col-12 p-0 mb-3 d-flex justify-content-between package_view">
+		<div class=""><div class="rounded package_img" style="background-image:url('{{{packageimageurl}}}')" alt="{{packagename}}">
+		</div></div>
+		<div class="package_info pl-4">
+			<div>{{{packagedescription}}}</div>
+			<div class="mt-4">
+				<div class="mb-3"><span class="mr-2"><i class="fa fa-clock-o text-dark-blue" aria-hidden="true"></i></span>
+				<span>{{startdate}} - {{enddate}}</span></div>
+				<div class="text-dark-gray ml-4 mb-3 pl-1">Package Type: {{package_type}}</div>
+				<div class="mb-3"><span class="mr-2"><i class="fa fa-calendar-o text-dark-blue" aria-hidden="true"></i></span>
+				<span>Validity : {{validity}}</span></div>
+			</div>
+			<div class="border-top d-flex py-3 package_info_footer">
+				<div class="text-dark-blue pr-4 package-footer-divider"><span class="mr-2"><i class="fa fa-graduation-cap" aria-hidden="true"></i></span>
+				<span>{{#str}} courses, local_packages {{/str}}: {{packagecourses}}</span></div>
+				<div class="text-primary pl-4"><span class="mr-2"><i class="fa fa-users" aria-hidden="true"></i></span>
+				<span>{{#str}} batches, local_packages {{/str}} : {{packagebatches}}</span></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="mb-3 mt-5 subjects_wrap">
+		<h5>{{#str}} subjects, local_packages {{/str}}</h5>
+		<div class="d-flex flex-wrap flex-row subject card_wrap my-4">
+			{{#clonedcourseinfo}}				
+			<div class="col-md-6 d-flex flex-wrap flex-row mb-4 subject card_content">
+				<div class="col-12 subject px-3 pt-3 pb-1 card_body">
+					<div class="d-flex flex-wrap flex-row mb-3">
+						<div><img src="{{{subjectimageurl}}}" class="rounded" width="90" height="90"></div>
+						<div class="d-flex card-right flex-column pl-2">
+							<div class="d-flex justify-content-between align-items-center mb-2">
+								<div><span class="fs-lg fw-semibold mb-0">{{subjectname}}</span></div>
+								<div class="d-flex">
+									<a class="mr-3 addsessionslink text-decoration-underline text-dark-blue" data-packageid={{packageid}} data-courseid={{courseid}} data-action="addsessions" >{{#str}} addsessions, local_packages {{/str}}</a>
+									<a class="mr-3 viewsessionslink text-decoration-underline text-primary" data-packageid={{packageid}} data-courseid={{courseid}} data-coursename="{{subjectname}}" data-action="viewsessions" >{{#str}} viewsessions, local_packages {{/str}}</a>
+
+									<div class="dropdown actions_wrap">
+										<a class="dropdown-toggle action_icon fs-xl" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+										    <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+										</a>
+
+										<div class="dropdown-menu actions_list p-0" aria-labelledby="dropdownMenuLink">
+											<span class="dropdown-menu-arrow"></span>
+										    <a class="dropdown-item actions_item" href="{{{courseviewurl}}}">{{#str}}view{{/str}}</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="mb-2"><span>{{#pix}} nooftopics, local_packages {{/pix}}</span><span class="fs-sm">{{#str}} nooftopics, local_packages {{/str}} : </span><span class="text-dark-blue">{{totaltopics}}</span></div>
+							<div class="mb-2"><span>{{#pix}} seats, local_packages {{/pix}}</span><span class="fs-sm">{{#str}} totalseats, local_packages {{/str}} :</span> <span class="text-dark-blue">10/20</span></div>
+						</div>
+					</div>
+
+					<div class="d-flex justify-content-between border-top border-gray-900 px-3 py-2">
+						<div class="mr-3"><span>{{#pix}} classrooms, local_packages {{/pix}}</span><span class="fs-sm">{{#str}} totalclassrooms, local_packages {{/str}} : </span><span class="text-dark-blue">5</span></div>
+
+						<div class="mr-3"><span>{{#pix}} practicetest, local_packages {{/pix}}</span><span class="fs-sm">{{#str}} practisetest, local_packages {{/str}} : </span><span class="text-dark-blue">4</span></div>
+
+						<div class="mr-3"><span>{{#pix}} sessions, local_packages {{/pix}}</span><span class="fs-sm">{{#str}} totalsessions, local_packages {{/str}} : </span><span class="text-dark-blue">{{totalsessions}}</span></div>
+
+					</div>
+				</div>
+			</div>
+			{{/clonedcourseinfo}}
+		</div>
+	</div>
+	
+	<div class="mb-3 mt-5 batches_wrap">
+		<h5>{{#str}} batches, local_packages{{/str}}</h5>
+		<div class="d-flex flex-wrap flex-row batches card_wrap my-4">
+			{{#batchinfo}}				
+			<div class="col-md-6 d-flex flex-wrap flex-row mb-4 batches card_content">
+				<div class="col-12 batches px-3 pt-3 pb-1 card_body">
+					<div class="d-flex flex-wrap flex-row mb-3">
+						<div><img src="{{{batchimage}}}" width="70" height="70" class="rounded"></div>
+						<div class="d-flex card-right flex-column pl-2">
+							<div class="d-flex justify-content-between mb-2">
+								<div><span class="fs-lg fw-semibold mb-0">{{batchname}}</span></div>
+								
+							</div>
+							<div class="mb-2"><span class="fs-sm">{{#str}} batchcode, local_packages {{/str}} : </span><span class="text-dark-blue">{{batchcode}}</span></div>
+						</div>
+					</div>
+
+					<div class="d-flex justify-content-between border-top border-gray-900 px-1 py-2">
+						<div class="mr-2 fs-sm"><span class="mr-1 text-primary"><i class="fa fa-calendar" aria-hidden="true"></i></span><span>{{#str}} enroldate, local_packages {{/str}} : </span><span class="text-dark-blue">{{enrolldate}}</span></div>
+
+						<div class="mr-2 fs-sm"><span class="mr-1 text-primary"><i class="fa fa-clock-o" aria-hidden="true"></i></span><span>{{#str}} duration, local_packages {{/str}} : </span><span class="text-dark-blue">{{duration}}</span></div>
+
+						<div class="fs-sm"><span class="mr-1 text-primary"><i class="fa fa-users" aria-hidden="true"></i></span><span>{{#str}} studentslimit, local_packages {{/str}} : </span><span class="text-dark-blue">{{groupenrolledusers}}/{{studentlimit}}</span></div>
+
+					</div>
+				</div>
+			</div>
+			{{/batchinfo}}
+		</div>
+	</div>
+{{/packageview}}
+
+{{#js}}
+    require(['local_packages/session','local_goals/customgoals'], function(session,customgoals) {
+		session.init();
+		customgoals.init();
+    });
+{{/js}}

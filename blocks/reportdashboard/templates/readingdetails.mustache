@@ -1,0 +1,48 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template block_reportdashboard/readingdetails
+
+    TODO describe template readingdetails
+
+    Example context (json):
+    {
+    }
+}}
+<div id="readingdetailstab"> 
+<div class="d-flex justify-content-between mt-4">
+    <div class="p-3">{{#str}} avgtimespend, block_reportdashboard {{/str}}  <b>{{pagetime}}</b></div>
+    <div class="p-3">{{#str}} avgcompletion, block_reportdashboard {{/str}}  <b>{{avgpagecompletion}}%</b></div>
+    <div class="p-3">{{#str}} unreadcount, block_reportdashboard {{/str}}  <b>{{unreadpagecount}}</b></div>
+</div>
+<div class = "reportdashboard_header mt-4">
+	<div id='plotreportcontainer{{readingreportid}}' class='plotreport_dashboard_container' data-reportid={{readingreportid}}
+            data-reporttype={{readingtype}} data-blockinstance={{readingreportid}}>
+	</div>
+</div>
+</div>
+{{#js}}
+    require(['block_learnerscript/report'], function(s) {
+			var params = {};
+			params.reportid = {{readingreportid}};
+			params.reporttype = '{{readingtype}}';
+			params.instanceid = {{readingreportid}};
+			params.filters = {filter_courses:{{courseid}}};
+			params.reportdashboard = false;
+			s.PackageReportsdata(params);
+		});
+{{/js}}

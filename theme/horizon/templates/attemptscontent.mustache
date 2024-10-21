@@ -1,0 +1,89 @@
+<div class="quiz_info my-2">
+	<div class="my-2"><span>Exam details</span></div>
+    <div class="m-0 row p-3 rounded exam_details">
+        <div class="col-md-3 border-right">
+            <div class="duration_block p-2">
+                <div><h5>{{duration}}</h5></div>
+                <div class="details">Duration</div>
+            </div>
+        </div>
+        <!-- <div class="col-md-2 border-right">
+            <div class="question_type p-2">
+                <div><h5>MCQ</h5></div>
+                <div class="details">Question Type</div>
+            </div>
+        </div> -->
+        <div class="col-md-3 border-right">
+            <div class="total_question p-2">
+                <div><h5>{{qcount}}</h5></div>
+                <div class="details">Total Questions</div>
+            </div>
+        </div>
+        <!-- <div class="col-md-2 border-right">
+            <div class="marks p-2">
+                <div><h5>1</h5></div>
+                <div class="details">Marks Per Question</div>
+            </div>
+        </div> -->
+        <div class="col-md-3 border-right">
+            <div class="total_marks p-2">
+                <div><h5>{{qmarks}}</h5></div>
+                <div class="details">Total Marks</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="attempts p-2">
+                <div><h5>{{attemptscount}}</h5></div>
+                <div class="details">Attempted</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="reviewpageheader">
+	<div class="justify-content-between reviewheader_content p-4">
+		<div class="reviewheading">
+			<h5>{{#str}}scorecard, quiz{{/str}}</h5>
+			<p class="m-0"><span class="text-muted">{{#str}}testname, quiz{{/str}}</span> {{examname}}</p>
+		</div>
+	<!-- <div class="d-flex justify-content-center align-items-center">
+		<a href="{{backtocourse}}"><button class="btn back_btn">{{#str}}backtocoursepage, quiz{{/str}}</button></a>
+	</div> -->
+	</div>
+
+	{{# alluserattempts }}
+		<div class="px-4 pb-5 pt-4">
+			<h6>{{#str}}attmptno, quiz{{/str}} {{count}}</h6>
+			<div class="review_card">
+				<div class="row">
+					<div class="col-md-2 col-4">
+						<h5 class="review_data">{{reviewdata}}</h5>
+						<p class="review_label">{{#str}}youhavescored, quiz{{/str}}</p>
+					</div>
+					<div class="col-md-2 col-4">
+						<h5 class="review_data">{{timetaken}}</h5>
+						<p class="review_label">{{#str}}timetakenbyuser, quiz{{/str}}</p>
+					</div>
+					<div class="col-md-2 col-4">
+						<h5 class="review_data">{{answeredcorrect}}</h5>
+						<p class="review_label">{{#str}}correctc, quiz{{/str}}</p>
+					</div>
+					<div class="col-md-2 col-4">
+						<h5 class="review_data">{{answeredwrong}}</h5>
+						<p class="review_label">{{#str}}wrongc, quiz{{/str}}</p>
+					</div>
+					<div class="col-md-2 col-4">
+						<h5 class="review_data">{{unanswered}}</h5>
+						<p class="review_label">{{#str}}unansweredc, quiz{{/str}}</p>
+					</div>
+					<div class="col-md-2 col-4">
+						<h5 class="review_data">{{attempt}}</h5>
+						<p class="review_label">{{#str}}attmptno, quiz{{/str}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="d-flex justify-content-end pb-3 px-5">
+			<a href="{{reviewurl}}" class="btn btn-primary">{{#str}}answerkey, quiz{{/str}}</a>
+		</div>
+	{{/ alluserattempts }}
+</div>

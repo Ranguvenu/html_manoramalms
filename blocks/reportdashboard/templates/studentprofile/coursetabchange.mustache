@@ -1,0 +1,253 @@
+{{# records}}
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card progress_card shadow-sm h-100">
+                <div class="card-header"><h6 class="mb-0">Progress</h6></div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 col-6">
+                            <div class="progress course_progress">
+                                <div class="progress-bar" style="background: radial-gradient(closest-side, white 70%, transparent 70% 100%), conic-gradient(#5cdf9d {{coursepercentage}}%, #f2f2f2 0);">
+                                            <progress value="30" min="0" max="100" style="visibility:hidden;height:0;width:0;">{{coursepercentage}}%</progress><span class="percent_value">{{coursepercentage}}%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-6">
+                            <ul class="progress_data pl-0">
+                                <!-- <li class="d-flex justify-content-between py-1">
+                                    <span class="content_name">{{#str}} video, block_reportdashboard {{/str}}</span>
+                                    <span class="content_percentage"><b>{{video}}%</b></span>
+                                </li> -->
+                                <li class="d-flex justify-content-between py-1">
+                                    <span class="content_name">{{#str}} liveclass, block_reportdashboard {{/str}}</span>
+                                    <span class="content_percentage"><b>{{liveclasspercentage}}%</b></span>
+                                </li>
+                                <li class="d-flex justify-content-between py-1">
+                                    <span class="content_name">{{#str}} practicequestion, block_reportdashboard {{/str}}</span>
+                                    <span class="content_percentage"><b>{{practicequestion}}%</b></span>
+                                </li>
+                                <li class="d-flex justify-content-between py-1">
+                                    <span class="content_name">{{#str}} test, block_reportdashboard {{/str}}</span>
+                                    <span class="content_percentage"><b>{{test}}%</b></span>
+                                </li>
+                                <li class="d-flex justify-content-between py-1">
+                                    <span class="content_name">{{#str}} reading, block_reportdashboard {{/str}}</span>
+                                    <span class="content_percentage"><b>{{reading}}%</b></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card test_card shadow-sm h-100">
+                <div class="card-header"><h6 class="mb-0">{{#str}} testprogress, block_reportdashboard {{/str}}</h6></div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="progress course_progress">
+                                <div class="progress-bar" style="background: radial-gradient(closest-side, white 70%, transparent 70% 100%), conic-gradient(#f889a6 {{avgtestscore}}%, #f2f2f2 0);">
+                                            <progress value="30" min="0" max="100" style="visibility:hidden;height:0;width:0;"></progress><span class="percent_value">{{avgtestscore}}%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-center">
+                            <div class="d-flex justify-content-between w-100">
+                                <span class="content_name">{{#str}} averagetestscore, block_reportdashboard {{/str}}</span>
+                                <span class="content_percentage"><b>{{avgtestscore}}%</b></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <div class="col-md-4">
+            <div class="card attendance_card shadow-sm h-100">
+                <div class="card-header"><h6 class="mb-0">{{#str}} attendance, block_reportdashboard {{/str}}</h6></div>
+                <div class="card-body">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <div class="progress course_progress">
+                                <div class="progress-bar" style="background: radial-gradient(closest-side, white 70%, transparent 70% 100%), conic-gradient(#fabf6f {{liveclasspercentage}}%, #f2f2f2 0);">
+                                            <progress value="30" min="0" max="100" style="visibility:hidden;height:0;width:0;"></progress><span class="percent_value">{{liveclasspercentage}}%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-center flex-column">
+                            <div class="d-flex justify-content-between w-100">
+                                <span class="content_name">{{#str}} total, block_reportdashboard {{/str}}</span>
+                                <span class="content_percentage"><b>{{total}}</b></span>
+                            </div>
+                            <div class="d-flex justify-content-between w-100">
+                                <span class="content_name">{{#str}} attended, block_reportdashboard {{/str}}</span>
+                                <span class="content_percentage"><b>{{attended}}</b></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="chapterwise_report_data mt-4">
+        <div class="d-flex mb-2">
+            {{#str}} chapterwisereport, block_reportdashboard {{/str}}
+            <!-- Default switch -->
+            <div class="custom-control custom-switch ml-1">
+              <input type="checkbox" class="custom-control-input chapterwisecheckbox" name="chapterwisecheckbox" id="customSwitches{{id}}" data-id = "{{id}}">
+              <label class="custom-control-label" for="customSwitches{{id}}"></label>
+            </div>
+        </div>
+        <div class="lsreport{{id}} report_container mt-4 coursewisedata">
+            <ul class="nav nav-pills">
+                <!-- <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#home{{id}}">{{#str}} video, block_reportdashboard {{/str}}</a></li> -->
+                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu{{id}}1">{{#str}} liveclass, block_reportdashboard {{/str}}</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu{{id}}2">{{#str}} reading, block_reportdashboard {{/str}}</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu{{id}}3">{{#str}} practicequestions, block_reportdashboard {{/str}}</a></li>
+                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu{{id}}4">{{#str}} testscores, block_reportdashboard {{/str}}</a></li>
+            </ul>
+    
+            <div class="tab-content mt-4">
+                <!-- <div id="home{{id}}" class="tab-pane fade in active">
+                  <h3>HOME</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div> -->
+                <div id="menu{{id}}1" class="tab-pane fade in active">
+                    <div class="row">
+                        <div class="col-md-2 pr-0">
+                            <div class="p-2 d-flex border rounded flex-column h-100" style="background-color:#fff;">
+                                <div class="count"><b>{{fullattended}}</b></div>
+                                <div class="status_desc mt-auto">{{#str}} attended, block_reportdashboard {{/str}}</div>   
+                            </div>
+                        </div>
+                        <div class="col-md-2 pr-0">
+                            <div class="p-2 d-flex border rounded flex-column h-100" style="background-color:#fff;">
+                                <div class="count"><b>{{partiallyattended}}</b></div>
+                                <div class="status_desc mt-auto">{{#str}} partiallyattended, block_reportdashboard {{/str}}</div>   
+                            </div>
+                        </div>
+                        <div class="col-md-2 pr-0">
+                            <div class="p-2 d-flex border rounded flex-column h-100" style="background-color:#fff;">
+                                <div class="count"><b>{{missedliveclass}}</b></div>
+                                <div class="status_desc mt-auto">{{#str}} missed, block_reportdashboard {{/str}}</div>   
+                            </div>
+                        </div>
+                    </div>
+                    <div class="liveclassdetails_report studentreports" id = "customreports{{liveclassreportid}}">
+                        <span class="report_schedule menu-action" onclick='(function(e){ require(["block_reportdashboard/reportdashboard","jqueryui"],function(reportdashboard){reportdashboard.customreportfilter({reportid: {{liveclassreportid}},instanceid:{{liveclassreportid}}}); e.preventDefault();
+                                e.stopImmediatePropagation(); e.stopPropagation(); })})(event)'>
+                                <span class ="report_action_icons dropbtn widgetheader custom_Filters"><b><span class="customreporticon"></span></b></span>
+                            </span>
+                        {{> block_reportdashboard/studentprofile/liveclassreport}}
+                    </div>
+                </div>
+                <div id="menu{{id}}2" class="tab-pane fade">
+                    <div class="row">
+                        <div class="col-md-2 pr-0">
+                            <div class="p-2 d-flex border rounded flex-column h-100" style="background-color:#fff;">
+                                <div class="count"><b>{{timespent}}</b></div>
+                                <div class="status_desc mt-auto">{{#str}} timespent, block_reportdashboard {{/str}}</div>   
+                            </div>
+                        </div>
+                        <div class="col-md-2 pr-0">
+                            <div class="p-2 d-flex border rounded flex-column h-100" style="background-color:#fff;">
+                                <div class="count"><b>{{readingcompleted}}%</b></div>
+                                <div class="status_desc mt-auto">{{#str}} completed, block_reportdashboard {{/str}}</div>   
+                            </div>
+                        </div>
+                    </div>
+                    <div class="readingdetails_report studentreports" id = "customreports{{readingreportid}}">
+                       <span class="report_schedule menu-action" onclick='(function(e){ require(["block_reportdashboard/reportdashboard","jqueryui"],function(reportdashboard){reportdashboard.customreportfilter({reportid: {{readingreportid}},instanceid:{{readingreportid}}, courseid: {{courseid}}}); e.preventDefault();
+                                e.stopImmediatePropagation(); e.stopPropagation(); })})(event)'>
+                                <span class ="report_action_icons dropbtn widgetheader custom_Filters"><b><span class="customreporticon"></span></b></span>
+                            </span>
+                        {{> block_reportdashboard/studentprofile/readingreport}}
+                    </div>
+                </div>
+                <div id="menu{{id}}3" class="tab-pane fade">
+                    <div class="row">
+                        <div class="col-md-2 pr-0">
+                            <div class="p-2 d-flex border rounded flex-column h-100" style="background-color:#fff;">
+                                <div class="count"><b>{{attempted}}%</b></div>
+                                <div class="status_desc mt-auto">{{#str}} attempted, block_reportdashboard {{/str}}</div>   
+                            </div>
+                        </div>
+                        <div class="col-md-2 pr-0">
+                            <div class="p-2 d-flex border rounded flex-column h-100" style="background-color:#fff;">
+                                <div class="count"><b>{{answered}}%</b></div>
+                                <div class="status_desc mt-auto">{{#str}} answered, block_reportdashboard {{/str}}</div>   
+                            </div>
+                        </div>
+                        <div class="col-md-2 pr-0">
+                            <div class="p-2 d-flex border rounded flex-column h-100" style="background-color:#fff;">
+                                <div class="count"><b>{{correct}}%</b></div>
+                                <div class="status_desc mt-auto">{{#str}} correct, block_reportdashboard {{/str}}</div>   
+                            </div>
+                        </div>
+                        <div class="col-md-2 pr-0">
+                            <div class="p-2 d-flex border rounded flex-column h-100" style="background-color:#fff;">
+                                <div class="count"><b>{{wrong}}%</b></div>
+                                <div class="status_desc mt-auto">{{#str}} wrong, block_reportdashboard {{/str}}</div>   
+                            </div>
+                        </div>
+                    </div>
+                    <div class="practicequestionsdetails_report studentreports" id = "customreports{{practicequestionsreportid}}">
+                        {{> block_reportdashboard/studentprofile/practicequestionsreport}}
+                    </div>
+                </div>
+                <div id="menu{{id}}4" class="tab-pane fade">
+                    <div class="row">
+                        <div class="col-md-2 pr-0">
+                            <div class="p-2 d-flex border rounded flex-column h-100" style="background-color:#fff;">
+                                <div class="count"><b>{{availabletests}}</b></div>
+                                <div class="status_desc mt-auto">{{#str}} availabletest, block_reportdashboard {{/str}}</div>   
+                            </div>
+                        </div>
+                        <div class="col-md-2 pr-0">
+                            <div class="p-2 d-flex border rounded flex-column h-100" style="background-color:#fff;">
+                                <div class="count"><b>{{submitted}}</b></div>
+                                <div class="status_desc mt-auto">{{#str}} submitted, block_reportdashboard {{/str}}</div>   
+                            </div>
+                        </div>
+                        <div class="col-md-2 pr-0">
+                            <div class="p-2 d-flex border rounded flex-column h-100" style="background-color:#fff;">
+                                <div class="count"><b>{{missed}}</b></div>
+                                <div class="status_desc mt-auto">{{#str}} missed, block_reportdashboard {{/str}}</div>   
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testscoredetails_report studentreports" id = "customreports{{testscorereportid}}">
+                       <span class="report_schedule menu-action" onclick='(function(e){ require(["block_reportdashboard/reportdashboard","jqueryui"],function(reportdashboard){reportdashboard.customreportfilter({reportid: {{testscorereportid}},instanceid:{{testscorereportid}}}); e.preventDefault();
+                                e.stopImmediatePropagation(); e.stopPropagation(); })})(event)'>
+                                <span class ="report_action_icons dropbtn widgetheader custom_Filters"><b><span class="customreporticon"></span></b></span>
+                            </span>
+                        {{> block_reportdashboard/studentprofile/testscorereport}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lsreport{{id}} chapterwisereport studentreports d-none">
+            {{> block_reportdashboard/studentprofile/chapterwisereport }}
+        </div>
+    </div>
+</div>
+{{/ records}}
+{{^ records}}
+    <div class="alert alert-info">
+        {{#str}} coursesnotavailable, block_reportdashboard {{/str}}
+    </div>
+{{/ records}}
+{{#js}}
+    
+    $(document).ready(function(){
+        $('.chapterwisecheckbox').change(function(){
+            var id = $(this).attr('data-id');
+            $('.lsreport'+id).addClass('d-none');
+            if($(this).is(':checked')){
+                $('.lsreport'+id+'.chapterwisereport').removeClass('d-none');
+            } else{
+                $('.lsreport'+id+'.coursewisedata').removeClass('d-none');
+            }
+        })
+});
+{{/js}}

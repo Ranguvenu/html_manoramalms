@@ -1,0 +1,57 @@
+<h5 class="card-title d-inline">{{#str}}pluginname, block_notification {{/str}}</h5>
+{{# notificationdetails}}
+
+<!-- <div class="box shadow-sm bg-white mb-3">
+    <div class="box-title  p-3">
+        <h6 class="m-0">{{day}}</h6>
+    </div>
+    <div class="p-3 badge ">{{type}}</div>
+    <div class="font-weight-bold mr-3">
+        <div class="text-truncate">{{notificationname}}</div>
+        <div class="small">{{{message}}}</div>
+    </div>
+    <span class="ml-auto mb-auto">
+        <div class="text-left">
+            <span>{{date}}</span>
+        </div>
+        <br />
+        <div class="text-right text-muted pt-1">{{weekday}}</div>
+    </span>
+   
+</div> -->
+
+<div class="notifications_wrap d-flex flex-column flex-wrap w-100">
+    <div class="d-flex flex-column flex-wrap w-100">
+        <div class="date fs-sm fw-medium mb-3 px-3">{{day}}</div>
+        <div class="notifications_info_wrap mb-3 w-100">
+            <div class="notifications_details">
+                <div class="mb-2">
+                    <span class="name fs-sm fw-medium">{{type}}</span>
+                </div>
+
+                <div class="title fs-normal fw-semibold mb-2">{{notificationname}}</div>
+
+                <div class="description fs-md mb-2">{{{message}}}</div>
+
+                <div class="activity_data_wrap px-3 py-2 d-flex justify-content-between fs-sm fw-medium">
+                    <div>{{date}}</div><div>{{weekday}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/ notificationdetails}}
+{{^ notificationdetails}}
+<div class="px-2 py-1 no_notification">
+    <div class="no_notification_description">
+        <h5 class="text-center">{{#str}}nonotifications, block_notification {{/str}}</h5>
+        <div class="text-center text-muted fs-sm">{{#str}}nonotifications_desc, block_notification {{/str}}</div>
+    </div>
+</div>
+
+{{/ notificationdetails}}
+{{#viewmore}}
+<div class="viewmore_btn">
+    <a href="{{config.wwwroot}}/message/output/popup/notifications.php">View more</a>
+</div>
+{{/viewmore}}

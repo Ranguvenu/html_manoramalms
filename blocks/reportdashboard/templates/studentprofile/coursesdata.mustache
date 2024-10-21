@@ -1,0 +1,36 @@
+{{# packagecoursesdata}}
+<div class="card shadow-sm border-0 mt-3 packagecoursesdata">
+    <div class="row">
+        <div class="col-md-3 col-6">
+            <div class="coursecompletion_data">
+                <h5>{{coursecompletion}}%</h5>
+                <div class="progress mb-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: {{coursecompletion}}%; background-color: {{coursecompletioncolor}} !important;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p class="coursecompletion_label text-muted">{{#str}} coursecompletion, block_reportdashboard {{/str}}</p>
+            </div>
+        </div>
+        <div class="col-md-3 col-6">
+            <div class="averagetestscore_data">
+                <h5>{{averagetestscore}}%</h5>
+                <div class="progress mb-2">
+                   <div class="progress-bar bg-warning" role="progressbar" style="width: {{averagetestscore}}%; background-color: {{averagetestscorecolor}} !important;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <p class="averagetestscore_label text-muted">{{#str}} averagetestscore, block_reportdashboard {{/str}}</p>
+            </div>
+        </div>
+        <div class="col-md-3 col-6">
+            <div class="timespend_data">
+                <h5 class="mb-3">{{timespend}}</h5>
+                <p class="timespend_label text-muted">{{#str}} timespent, block_reportdashboard {{/str}}</p>
+            </div>
+        </div>
+        <div class="col-md-3 col-6">
+            <div class="attendance_data">
+                <h5 class="mb-3">{{attendance}}</h5>
+                <p class="attendance_label text-muted">{{#str}} attendance, block_reportdashboard {{/str}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{{/ packagecoursesdata }}

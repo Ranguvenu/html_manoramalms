@@ -1,0 +1,17 @@
+<div>
+    <div class="w-100 pull-left p-0">
+        <h3 class="watnext_head pb-15">{{# str}}what_next, local_onlineexams{{/ str}}</h3>
+    </div>
+    <div class="onlineexam_buttons col-12 pull-left pt-15 pb-15">
+        <div class="col-md-6 pull-left">{{# str}}doyouwantto_addthecontent, local_onlineexams{{/ str}}</div>
+        <div class="col-md-6 pull-left pr-0">
+            <a href={{configpath}}/course/view.php?id={{courseid}}><button class="btn btn-primary">{{# str}}goto, local_onlineexams{{/ str}}</button></a>
+        </div>
+    </div>
+    <div class="course_buttons col-12 pull-left pt-15 pb-15 mt-2">
+         <div class="col-md-6 pull-left">{{# str}}doyouwantto_enrolusers, local_onlineexams{{/ str}}</div>
+         <div class="col-md-6 pull-left pr-0">
+            <a href={{configpath}}/local/onlineexams/onlineexamsenrol.php?id={{courseid}}&enrolid={{enrolid}}><button class="btn btn-primary">{{# str}}goto, local_onlineexams{{/ str}}</button></a>
+        </div>
+    </div>
+</div>

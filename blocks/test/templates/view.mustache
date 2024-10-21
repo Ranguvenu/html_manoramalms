@@ -1,0 +1,47 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template block_test/view
+
+    This template renders the view for the list of my courses block.
+
+    Example context (json):
+    {
+        "nocoursesimg": "https://moodlesite/theme/image.php/boost/block_starredcourses/1535727318/courses"
+    }
+}}
+{{# courses}}
+<div class="blkcourse_card_wrap p-3 bg-white rounded-lg mb-3">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="course_card_container d-flex align-items-center">
+                <div class="card_left mr-2 cardimg_content">
+                    <img src="{{courseimage}}" class="float-left rounded-lg"  height="110px" width="165px" alt="{{coursename}}" >
+                </div>
+                <div class="card_content mx-2">
+                    <span class="fs-lg fw-semibold categorytitle">{{coursename}}</span>
+                    <p class="fs-sm text-muted valid_dateinfo">{{# str}}date , block_test{{/ str}} : {{coursestartdate}} - {{courseenddate}} </p>
+                </div>
+                <div class="card_right ml-2 enroll_btn">
+                    <a href="{{config.wwwroot}}/course/view.php?id={{url}}" class="btn btn-primary">{{# str}}begintest , block_test{{/ str}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{/ courses}}
+

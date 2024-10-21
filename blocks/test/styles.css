@@ -1,0 +1,29 @@
+@media (max-width: 768px) {
+    .block_test .blkcourse_card_wrap {
+        padding: 0.8rem 0.5rem 3.5rem 0.5rem!important;
+    }
+    .block_test .blkcourse_card_wrap .enroll_btn {
+        position: absolute;
+        bottom: -2.8rem;
+        width: calc(100% - 1.8rem);
+        margin: 0!important;
+    }
+    .block_test .blkcourse_card_wrap .enroll_btn a {
+        width: 100%;
+        font-size: 12px;
+    }
+    .block_test .blkcourse_card_wrap .cardimg_content img {
+        width: 120px;
+        height: 80px;
+    }
+    .block_test .blkcourse_card_wrap .course_card_container {
+        align-items: start!important;
+    }
+    .block_test .blkcourse_card_wrap .categorytitle {
+        font-size: 14px;
+    }
+    .block_test .blkcourse_card_wrap .valid_dateinfo {
+        font-size: 12px;
+        margin-top: 5px;
+    }
+}

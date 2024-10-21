@@ -1,0 +1,21 @@
+<div id="studymaterial_container" class="p-4">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="studymaterial_heading" class="">
+                <div class="d-inline-block theme-border-bottom-3">
+                    <!--<h5 class="theme_text_color"></h5>-->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            {{> local_studymaterial/studymaterial_details }}
+
+        </div>
+    </div>
+</div>
+{{#js}}
+require(['local_studymaterial/customstudymaterial'], function(s) {
+s.init();
+});
+
+{{/js}}

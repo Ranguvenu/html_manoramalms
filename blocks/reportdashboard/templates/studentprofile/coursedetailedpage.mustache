@@ -1,0 +1,38 @@
+<div class="detailed_report_widget mt-4 tabs">
+    
+        <h6 class="report_widget_header">{{#str}} detailedreport, block_reportdashboard {{/str}}</h6>
+
+        <ul class="nav nav-tabs studentdashboardtablist" id="myTab" role="tablist">
+            {{# courses}}
+          <li class="nav-item" role="presentation">
+            <button class="nav-link {{#selected}} active {{/selected}} coursetab" id="coursetabid" data-toggle="tab" data-target="#courselisttab{{courseid}}" value={{courseid}} type="button" role="tab" aria-controls="home" aria-selected="true" data-id="{{courseid}}">{{coursename}}</button>
+          </li>
+          {{/ courses}}
+        </ul>
+    </div>
+{{> block_reportdashboard/studentprofile/coursetabsdata}}
+{{#js}}
+    
+    $(document).ready(function(){
+        $('.studentdashboardtablist button').click(function(e) {
+            var self = this;
+            var courseid = $(this).attr('data-id');
+            var startdate =  $(".lsstartdate").val();
+            var duedate =  $(".duedate").val();
+            require(['block_reportdashboard/reportdashboard'], function(s) {
+                var params = {};
+                params.courseid =  courseid;
+                params.userid = $('.uservalue').val();
+                params.startdate = ($(".startdate").val()) ? $(".startdate").val() : 0;
+                params.duedate = ($(".duedate").val()) ? $(".duedate").val() : 0;
+                params.lsstartdate = ($(".lsstartdate").val()) ? $(".lsstartdate").val() : 0;
+                params.lsduedate = ($(".lsduedate").val()) ? $(".lsduedate").val() : 0;
+                params.reportdashboard = false;
+                s.coursetabsdata(params);
+            });
+        });
+        
+
+});
+{{/js}}
+     

@@ -1,0 +1,20 @@
+<table class="generaltable" id="qrejectedreasonstatus">
+    <thead>
+        <tr>
+            <th>{{#str}}slno, local_questions{{/str}}</th>
+            <th>{{#str}}rejecteduser, local_questions{{/str}}</th>
+            <th>{{#str}}rejectedon, local_questions{{/str}}</th>
+            <th>{{#str}}reason, local_questions{{/str}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#rejectedquestionsdata}}
+        <tr>
+            <td>{{count}}</td>
+            <td>{{userfullname}}</td>
+            <td>{{daterejectedon}}</td>
+            <td>{{reason}}</td>
+        </tr>
+        {{/rejectedquestionsdata}}
+    </tbody>
+</table>

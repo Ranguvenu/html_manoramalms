@@ -1,0 +1,149 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template block_notification/customcalendardata
+
+    TODO describe template customcalendardata
+
+    Example context (json):
+    {
+    }
+}}
+{{#events}}
+{{^iszoom}}
+<div class="calendar_events attempt_text">
+    <div class="header_section">
+        <div class="attempt_textimg">
+            <!-- <i class="fa fa-sticky-note-o" aria-hidden="true"></i> -->
+            <span class="icon"></span>
+
+        </div>
+        <div class="header_content align-items-center">
+            <h6 class="m-0"><span>{{typeofevent}}</span>:<span>{{name}}</span></h6>
+        </div>
+    </div>
+    <div class="row calendar_events_content">
+        <div class="col-md-3 col-6">
+            <div class="dateinfo">
+                <div class="labels text-muted">{{#str}}date, block_notification{{/str}}</div>
+                <div class="datainfo">{{#userdate}} {{timestart}}, {{#str}} strftimedaydatetime, block_notification {{/str}} {{/userdate}} {{^timestart}}N/A{{/timestart}}</div>
+            </div>
+            <div class="timeinfo">
+                <div class="labels text-muted">{{#str}}time, block_notification{{/str}}</div>
+                <div class="datainfo">{{#userdate}} {{timestart}}, {{#str}} strftimetime12, core_langconfig {{/str}} {{/userdate}} - {{#userdate}} {{timeend}}, {{#str}} strftimetime12, core_langconfig {{/str}} {{/userdate}}</div>
+            </div>
+        </div>
+        <div class="col-md-3 col-6">
+            {{#duration}}
+            <div class="duration">
+                <div class="labels text-muted">{{#str}}duration, block_notification{{/str}}</div>
+                <div class="datainfo">{{duration}}</div>
+            </div>
+            {{/duration}}
+             <div class="typeinfo">
+                <div class="labels text-muted">Type</div>
+                <div class="datainfo">{{typeofevent}}</div>
+            </div>
+        </div>
+        <div class="col-md-3 col-6">
+            {{#isquiz}}
+            <div class="questionscount">
+                <div class="labels text-muted">{{#str}}noofquestions, block_notification{{/str}}</div>
+                <div class="datainfo">{{qcount}} {{#str}}questions, block_notification{{/str}}</div>
+            </div>
+            <div class="marks">
+                <div class="labels text-muted">{{#str}}marks, block_notification{{/str}}</div>
+                <div class="datainfo">{{qmarks}} {{#str}}marks, block_notification{{/str}}</div>
+            </div>            
+            {{/isquiz}}
+            {{^isquiz}}
+            <div class="marks">
+                <div class="labels text-muted">{{#str}}marks, block_notification{{/str}}</div>
+                <div class="datainfo">{{qmarks}} {{#str}}marks, block_notification{{/str}}</div>
+            </div> 
+            {{/isquiz}}
+        </div>
+        {{#isquiz}}
+        <div class="col-md-3 col-12">
+            <a href="{{url}}"><button class="text_btn">{{#str}}begintest, block_notification{{/str}}</button></a>
+        </div>
+        {{/isquiz}}
+        {{^isquiz}}
+        <div class="col-md-3 col-12">
+            <a href="{{url}}"><button class="text_btn">{{#str}}start, block_notification{{/str}}</button></a>
+        </div>
+        {{/isquiz}}
+
+    </div> 
+    
+</div>
+{{/ iszoom}}
+
+{{#iszoom}}
+<div class="calendar_events liveclass">
+    <div class="header_section">
+        <div class="liveclassimg">
+            <!-- <i class="fa fa-sticky-note-o" aria-hidden="true"></i> -->
+            <span class="icon"></span>
+        </div>
+        <div class="header_content align-items-center">
+            <h6 class="m-0"><span>{{typeofevent}}</span>:<span>{{name}}</span></h6>
+            <i>{{{description}}}</i>
+        </div>
+    </div>
+    <div class="row calendar_events_content">
+        <div class="col-md-4">
+            <div class="row m-0">
+                <div class="col-sm-12 col-6 p-0">
+                    <div class="text-muted mb-2">{{#userdate}} {{timestart}}, {{#str}} strftimedaydatetime, block_notification {{/str}} {{/userdate}}</div>
+                </div>
+                <div class="col-sm-12 col-6 p-0">
+                    <div class="text-muted mb-2">{{#userdate}} {{timestart}}, {{#str}} strftimetime12, core_langconfig {{/str}} {{/userdate}} -  {{#userdate}} {{timeend}}, {{#str}} strftimetime12, core_langconfig {{/str}} {{/userdate}}</div>
+                </div>
+            </div>  
+        </div>
+        <div class="col-md-6">
+            <div class="row m-0">
+                <div class="col-md-6 col-sm-6 col-6 d-flex align-items-center p-0">
+                    {{#lessonplanurl}}
+                    <div class="notes"><i><a href="{{lessonplanurl}}">{{#str}}classnote, block_notification{{/str}}</i></a></div>
+                    {{/lessonplanurl}}
+                </div>
+                <div class="col-md-6 col-sm-6 col-6 d-flex align-items-center p-0">
+                    {{#classnotesurl}}
+                    <div class="lesson"><i><a href="{{classnotesurl}}">{{#str}}lessonplan, block_notification{{/str}}</i></a></div>
+                    {{/classnotesurl}}
+                </div>
+            </div>
+        </div>
+        
+        {{#linkurl}}
+        <div class="col-md-2"><a href="{{linkurl}}"><button class="watch_btn">{{#str}}join_meeting, zoom{{/str}}</button></a></div>
+        {{/linkurl}}
+        {{#recordingsurl}}
+        <div class="col-md-2"><a href="{{recordingsurl}}"><button class="watch_btn">{{#str}}watch, block_notification{{/str}}</button></a></div>
+        {{/recordingsurl}}
+        {{#viewpageurl}}
+        <div class="col-md-2"><a href="{{viewpageurl}}"><button class="watch_btn">{{#str}}view, block_notification{{/str}}</button></a></div>
+        {{/viewpageurl}}
+        
+    </div>
+    
+</div>
+{{/iszoom}}
+{{/events}}
+

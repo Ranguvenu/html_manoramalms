@@ -1,0 +1,121 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{# onlineexams_view_count}}
+{{# card_view}}
+<div  class="userdashboard_content" >
+    <div id="{{{subtab}}}" class="tab-pane divslider active active_subtab">
+    <div class="userdashboard_content userdashboard_ctype_elearning row d-flex flex-row flex-{{#enableflow}}no{{/enableflow}}wrap">
+        {{# moduledetails}}
+            <div class="col-lg-5 col-md-6 col-sm-12 col-12 tabs_cmn_class onlineexams_inprogress_slide {{{subtab}}} {{indexClass}} ctype_elearning d-flex" data-index="{{index}}">
+                <div class="course_container d-flex w-100">
+                    <div class="courseimg_container ">
+                        <div alt="{{course_fullname}}" class="courseimg courseimg_bg" style="background-image:url('{{course_image_url}}')">
+                               <!-- <div class="course_progress_container d-flex align-items-center">
+                                    <div class="progress_circular" style="background-image: conic-gradient(white {{progress}}%, transparent 0%);"> </div>
+                                    <div class="progress_status">{{#str}}completed,block_userdashboard{{/str}} </div>
+                                    <div class="progress_percentage">{{progress}}%</div>
+                                </div> -->
+                         </div>
+
+                    </div>
+                    <div class=" coursecontent d-flex flex-column justify-content-between p-2">
+                        <div>
+                            <div class="d-flex mt-2">
+                                <div class="course_name  flex-grow-1">
+                                    <a href="{{course_url}}" title="{{{course_fullname}}}"> {{course_fullname}}</a>
+                                </div>
+                             </div>
+                            {{# onlineexamsummary}} 
+                            <div class="desc coursedesc">{{{onlineexamsummary}}} </div>
+                            {{/ onlineexamsummary}} 
+                            {{# fullonlineexamsummary }}<a href= "#" data-toggle="popover" title="{{ course_fullname }}" data-content="{{ fullonlineexamsummary }}">view more</a>{{/ fullonlineexamsummary }}
+                        </div>
+                        <div>
+                            <div class="lastopend_label my-2">{{#str}}last_opened, block_userdashboard{{/str}} : <strong>{{{lastaccessdate}}}</strong></div>
+                            <a href="{{{course_url}}}" class="">
+                                <button class="btn btn-primary my-2 launch_btn">{{label_name}}</button>
+                            </a>
+                        </div>
+                        
+                    </div>
+                </div>    
+            </div>
+
+        {{/ moduledetails}}
+        {{# viewMoreCard}}
+            <!-- <div class="col-sm-6 col-12 pull-left view_more_data_card ctype_elearning d-flex justify-content-center align-items-center">
+                <a class="center_elemet" href="{{{view_more_url}}}">View More</a>
+            </div> -->
+        {{/ viewMoreCard}}
+    </div>
+    </div>
+</div>
+{{/ card_view}}
+{{#list_view}} 
+<table id ="userdashboard_table_content" class="generaltable">
+      <thead>
+          <tr>
+              <th>{{#str}}coursename, local_onlineexams{{/str}}</th>
+              <th></th>
+              <th>{{#str}}coursedescription, local_onlineexams{{/str}}</th>
+              <th>{{#str}}lastaccess, local_onlineexams{{/str}}</th>
+              <th>{{#str}}progress, local_onlineexams{{/str}}</th>
+          </tr>
+    </thead>
+    <tbody>
+          {{# moduledetails}}
+         <tr>
+            <td> 
+                <div class="course_name">
+                    <a href="{{course_url}}" title="{{{course_fullname}}}"> {{course_fullname}}</a>
+                </div>
+            </td>
+            <td>
+                {{#course_completedon}}
+                    <a href="{{{course_url}}}">
+                          <button class="btn btn-sm launch_btn">{{#str}}completed_course, block_userdashboard{{/str}}</button>
+                     </a>
+                {{/course_completedon}}
+                
+                {{^course_completedon}}
+                    <a href="{{{course_url}}}">
+                        <button class="btn btn-sm launch_btn">{{label_name}}</button>
+                    </a>
+                 {{/course_completedon}}   
+                 {{{ copyaction }}}
+            </td>
+
+              <td>
+                {{{onlineexamsummary}}} 
+             </td>
+             <td>{{{lastaccessdate}}}</td>
+             <td>{{progress}}%</td>
+         </tr>
+        {{/ moduledetails}}
+    </tbody>
+</table>
+{{/list_view}}
+{{/ onlineexams_view_count}}
+{{^ onlineexams_view_count}}
+    {{> block_userdashboard/userdashboard_nodata_text}}
+{{/ onlineexams_view_count}}
+{{#enableslider}}
+    {{> block_userdashboard/userdashboard_enable_slider}}
+{{/enableslider}}
+
+
+    

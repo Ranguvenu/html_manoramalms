@@ -1,0 +1,26 @@
+/**
+ * @package    local_notifications
+ * @copyright  2012-2021 Silecs {@link http://www.silecs.info/societe}
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+.cache {
+	display: none;
+}
+.notificationlabel {
+    /**margin-left:16%;**/
+}
+.notificationgras {
+    font-weight: 700;
+}
+#id_submitbutton {
+    font-weight: 700;
+}
+#fitem_id_complement div.fitemtitle {
+    width: 0px;
+}
+#fitem_id_complement div.felement {
+    margin: 0px;
+}
+.complement {
+    width: 100%;
+}

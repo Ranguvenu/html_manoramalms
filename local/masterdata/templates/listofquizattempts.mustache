@@ -1,0 +1,43 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_masterdata/listofquestionattempts
+
+    TODO describe template listofquestionattempts
+
+    Example context (json):
+    {
+    }
+}}
+<div class="row" id="questionattempts_list_container">
+    <div class="col-md-12">
+            <div class="row my-3">
+                <div class="col-md-8">
+                     {{{globalinput}}}
+                </div>
+                <div class="col-md-4  d-flex action_btns justify-content-center">
+                   <a href="{{{backtoquizurl}}}"><button class="btn btn-primary">Back to Quiz</button></a>
+                </div>
+            </div>
+        <div id="questionattempts_container" class="my-3">
+            {{{attemptslist}}}
+        </div>
+    </div>
+</div>
+
+
+

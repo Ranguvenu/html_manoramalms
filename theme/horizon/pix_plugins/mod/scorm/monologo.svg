@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50">
+  <defs>
+    <clipPath id="clip-scorm_package">
+      <rect width="50" height="50"/>
+    </clipPath>
+  </defs>
+  <g id="scorm_package" data-name="scorm package" clip-path="url(#clip-scorm_package)">
+    <path id="scorm" d="M41.418,18.824,34.159,6.038a1.679,1.679,0,0,0-1.34-.838H8.81a1.514,1.514,0,0,0-1.34.838L.268,18.824a2.24,2.24,0,0,0-.168.838V39.315a1.6,1.6,0,0,0,1.508,1.619h38.47a1.564,1.564,0,0,0,1.508-1.619V19.661A1.865,1.865,0,0,0,41.418,18.824ZM3.9,18.21l5.7-10.218,9.715.112V18.321Zm18.481.112V8.159h9.771l5.36,10.218H22.378v-.056Zm16.3,2.959V38.031H3V21.28H38.682Z" transform="translate(3.9 1.801)" fill="#606060" stroke="#fff" stroke-width="0.2"/>
+  </g>
+</svg>

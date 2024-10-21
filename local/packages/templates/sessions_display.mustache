@@ -1,0 +1,63 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_packages/sessions_display
+
+    TODO describe template sessions_display
+
+    Example context (json):
+    {
+    }
+}}
+<div class="global_filter_structure">
+      <input id="session_data_global_filter" class="global filter form-control col-md-6" placeholder={{#str}}search,local_packages{{/str}} type="text" name="search_query">
+</div>
+<div id="targetsessionspc" data-region="targetsessionspc-preview-container" class="competencies_pc_container viewcompetencys px-3 py-4">
+      <div data-region="targetsessionspc-count-container"></div>
+      <div data-region="targetsessionspc-list-container" class ="methoddata">
+      </div>
+      <span class="overlay-icon-container cardpaginate-loader {{$hiddenclass}}{{^visible}}hidden{{/visible}}{{/hiddenclass}}" data-region="overlay-icon-container">
+            <span class="loading-icon icon-no-margin">{{#pix}} ajax-loader, local_packages, {{#str}} loading {{/str}} {{/pix}}</span>
+      </span>
+</div>              
+<script>
+      var options = 
+      {
+            targetID: 'targetsessionspc',
+            templateName: 'local_packages/sessions_view',
+            methodName: 'display_sessions',
+            perPage: 5,
+            cardClass: 'col-md-6 col-12',
+            viewType: 'table'
+     };
+      var dataoptions = {packageid:{{packageid}},courseid:{{courseid}}};
+      require(['theme_horizon/cardPaginate'], function(cardPaginate) {
+            cardPaginate.reload(options, dataoptions,'');
+            var search_interval = 100;
+            var timer;
+            $(document).on('keyup', '#session_data_global_filter', function(){
+                  var searchval = $(this).val();
+                  var filterdata = {search_query: searchval};
+                  timer = setTimeout(function(){
+                  cardPaginate.reload(options, dataoptions,filterdata);
+                  },search_interval);
+            });
+            $(document).on('keydown', '#session_data_global_filter', function(){
+                clearTimeout(timer);
+            });
+      });
+</script>

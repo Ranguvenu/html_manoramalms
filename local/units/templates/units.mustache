@@ -1,0 +1,21 @@
+<div id="units_container" class="p-4">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="units_heading" class="">
+                <div class="d-inline-block theme-border-bottom-3">
+                    <!--<h5 class="theme_text_color"></h5>-->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            {{> local_units/units_details }}
+            
+        </div>
+    </div>
+</div>
+{{#js}}
+    require(['local_units/customunits'], function(s) {
+        s.init();
+    });
+
+{{/js}}

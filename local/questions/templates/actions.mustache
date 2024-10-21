@@ -1,0 +1,16 @@
+<div class="d-flex justify-content-end align-items-center">
+   
+    <a href="{{config.wwroot}}./uploadquestions.php"><button class="btn btn-primary mr-2"><i class="fa fa-upload" aria-hidden="true" ></i>
+                {{#str}}uploadquestions , local_questions {{/str}}
+    </button></a>
+    
+     <button class="btn btn-primary mr-2"  data-action="createquestion"><i class="fa fa-plus" aria-hidden="true" ></i>
+        {{#str}}createquestion, local_questions{{/str}}
+    </button>
+</div>
+
+{{#js}}
+    require(['local_questions/questions'], function(s) {
+        s.init();
+    });
+{{/js}}

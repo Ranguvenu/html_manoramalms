@@ -1,0 +1,26 @@
+
+<div class="d-flex justify-content-end align-items-center addcategories">
+    {{#cancreatecat}}
+     <a tabindex="0" role="button" class="btn btn-primary mr-2" data-action="cteatecategory" title="{{#str}}addnewcategory, local_faq{{/str}}"><img src="{{config.wwwroot}}/local/faq/pix/createcategory.png" class="createcategory"></a>
+    {{/cancreatecat}}
+    {{#cancreatequery}}
+      <a tabindex="0" role="button" class="btn btn-primary" data-action="cteatequeries" title="{{#str}}addnewquery, local_faq{{/str}}"><img src="{{config.wwwroot}}/local/faq/pix/addnewquery.png" class="addnewquery"></a>
+    {{/cancreatequery}}
+</div>
+<!-- <div class="row create-category m-1 float-right">
+    <div class="col align-self-end">
+        <a tabindex="0" role="button" class="btn btn-primary" data-action="cteatecategory"><i class="fa fa-plus" aria-hidden="true"></i> {{#str}}addnewcategory, local_faq{{/str}}</a>
+    </div>
+</div>
+
+<div class="row create-query m-1 float-right">
+    <div class="col align-self-end">
+        <a tabindex="0" role="button" class="btn btn-primary" data-action="cteatequeries"><i class="fa fa-plus" aria-hidden="true"></i> {{#str}}addnewquery, local_faq{{/str}}</a>
+    </div>
+</div> -->
+
+{{#js}}
+    require(['local_faq/faqform'], function(s) {
+        s.init();
+    });
+{{/js}}

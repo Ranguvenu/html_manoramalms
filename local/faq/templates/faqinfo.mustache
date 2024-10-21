@@ -1,0 +1,45 @@
+
+<div class="faq-container">
+    {{#categories}}
+    <div class="category_content">
+          <div class="category_header">
+            <div class="category_name">{{categoryname}}</div>
+            {{#caneditdeletecategory}}
+            <div class="category_edits">
+                <!-- <a tabindex="0"  class="theme_text_color1 mr-1 edit-category" data-action="cteatecategory" data-id = {{categoryid}}><i class="fa fa-pencil fa-fw" aria-hidden="true"></i> {{#str}}edit_faqcategory, local_faq{{/str}}</a>
+                <a tabindex="0"  class="theme_text_color1 mr-1 delete-category" data-action="deletefaq" data-id = {{categoryid}} data-name = {{categoryname}}><i class="fas fa-trash-alt" aria-hidden="true"></i> {{#str}}deletecategory, local_faq{{/str}}</a> -->
+                <a tabindex="0"  class="theme_text_color1 mr-1 edit-category" data-action="cteatecategory" data-id = {{categoryid}} title="{{#str}}edit_faqcategory, local_faq{{/str}}"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i></a>
+                <a tabindex="0"  class="theme_text_color1 mr-1 delete-category" data-action="deletefaq" data-id = {{categoryid}} data-name = {{categoryname}} title="{{#str}}deletecategory, local_faq{{/str}}"><i class="fas fa-trash-alt" aria-hidden="true"></i></a>
+            </div>
+            {{/caneditdeletecategory}}
+          </div>
+         
+      {{#queries}}
+      <div class="query_content">
+          <div class="query_header collapsed" data-toggle="collapse" data-target="#querydescription{{queryid}}">
+            <div class="query_name"><img src="{{config.wwwroot}}/local/faq/pix/plus.png" class="plus"><img src="{{config.wwwroot}}/local/faq/pix/minus.png" class="minus">{{queryname}}</div>
+              {{#caneditdeletequery}}
+            <div class="query_edits">
+              <!-- <a tabindex="0"  class="theme_text_color1 mr-1 edit-query" data-action="cteatequeries" data-id = {{queryid}}><i class="fa fa-pencil fa-fw" aria-hidden="true"></i> {{#str}}edit_faqquery, local_faq{{/str}}</a>
+              <a tabindex="0"  class="theme_text_color1 mr-1 delete-query" data-action="deletequery" data-id = {{queryid}} data-name = {{queryname}}><i class="fas fa-trash-alt" aria-hidden="true"></i> {{#str}}deletequery, local_faq{{/str}}</a> -->
+              <a tabindex="0"  class="theme_text_color1 mr-1 edit-query" data-action="cteatequeries" data-id = {{queryid}} title="{{#str}}edit_faqquery, local_faq{{/str}}"><i class="fa fa-pencil fa-fw" aria-hidden="true"></i></a>
+              <a tabindex="0"  class="theme_text_color1 mr-1 delete-query" data-action="deletequery" data-id = {{queryid}} data-name = {{queryname}} title="{{#str}}deletequery, local_faq{{/str}}"><i class="fas fa-trash-alt" aria-hidden="true"></i> </a>
+            </div>
+            {{/caneditdeletequery}}
+          </div>   
+          <div id="querydescription{{queryid}}" class="collapse querydescription">
+              <p class="query_desc">{{{querydescription}}}</p>
+          </div>
+        
+      </div>
+      {{/queries}}
+      </div>
+    {{/categories}}
+  </div>
+  
+
+  
+
+
+  
+

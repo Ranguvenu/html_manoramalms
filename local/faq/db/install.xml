@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="local/faq/db" VERSION="2018092500" COMMENT="XMLDB for faq"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd">
+  <TABLES>
+    <TABLE NAME="local_faq_queries" COMMENT="Queries Table">
+        <FIELDS>
+            <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+            <FIELD NAME="categoryid" TYPE="int" LENGTH="10" NOTNULL="true"  DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="name" TYPE="char" NOTNULL="true" SEQUENCE="false"/>
+            <FIELD NAME="code" TYPE="char" NOTNULL="true" SEQUENCE="false"/>
+            <FIELD NAME="sortorder" TYPE="int" LENGTH="10" NOTNULL="true"  DEFAULT="0"  SEQUENCE="false"/>
+            <FIELD NAME="description" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+            <FIELD NAME="attachments" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false"/>
+            <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true"   DEFAULT="0"  SEQUENCE="false"/>
+            <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0"   SEQUENCE="false"/>
+            <FIELD NAME="usercreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0"  SEQUENCE="false"/>
+            <FIELD NAME="usermodified" TYPE="int" LENGTH="10" NOTNULL="true"  DEFAULT="0"   SEQUENCE="false"/>
+        </FIELDS>
+    <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        <KEY NAME="categoryid" TYPE="foreign" FIELDS="categoryid" REFTABLE="local_faq_categories" REFFIELDS="id"/>
+    </KEYS>
+    </TABLE>
+    <TABLE NAME="local_faq_categories" COMMENT="Faq Categories">
+        <FIELDS>
+            <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+            <FIELD NAME="name" TYPE="char" NOTNULL="true" SEQUENCE="false"/>
+            <FIELD NAME="code" TYPE="char" NOTNULL="true" SEQUENCE="false"/>
+            <FIELD NAME="logo" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false"/>
+            <FIELD NAME="description" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+            <FIELD NAME="sortorder" TYPE="int" LENGTH="10" NOTNULL="true"  DEFAULT="0"  SEQUENCE="false"/>
+            <FIELD NAME="timecreated" TYPE="int"  LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="timemodified" TYPE="int"  LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="usercreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0"  SEQUENCE="false"/>
+            <FIELD NAME="usermodified" TYPE="int"   LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        </FIELDS>
+    <KEYS>
+    <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+    </KEYS>
+    </TABLE>
+</TABLES>
+</XMLDB>

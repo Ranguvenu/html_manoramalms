@@ -1,0 +1,317 @@
+.block_notification.block .card-body .content {
+    padding: 0 !important;
+}
+.block_notification.block .notifications_info_wrap {
+    border-bottom: 1px #EDEDED solid;
+}
+.block_notification.block .notifications_details {
+    padding: 0 1rem 2rem
+}
+.block_notification.block .date,
+.block_notification.block .description {
+    color: #5F6368;
+    word-wrap: break-word;
+} 
+.block_notification.block .name {
+    background-color: #FFF6F9; 
+    border-radius: 5px;
+    color: #ED396C;
+    word-wrap: break-word;
+    padding: 2px 8px;
+}
+.block_notification.block .title {
+    color: #333333;
+    word-wrap: break-word;
+}
+.block_notification.block .activity_data_wrap {
+    background-color: #FFF6F9; 
+    border-radius: 4px;
+    color: #ED396C;
+    word-wrap: break-word;
+}
+.block_notification.block .card-body .content {
+    margin-top: 0px !important;
+}
+.block_notification.block .card-body .card-title {
+    padding: 1rem 0.5rem;
+}
+
+/*calendar css satrts */
+#page-blocks-notification-calendar #customcalendar {
+	overflow-x: auto;
+    display: flex;
+    gap: 15px;
+    padding: 10px 5px;
+}
+/*#page-blocks-notification-calendar #customcalendar::-webkit-scrollbar {
+    display: none;
+}*/
+#page-blocks-notification-calendar #customcalendar .card {
+    border-radius: 4px;
+    min-width: 85px;
+    text-align: center;
+    padding: 8px 5px;
+    border: none;
+    background-color: #fafafa;
+    box-shadow: 0px 0px 10px 0px #e9e9e9;
+    background-color: #fff;
+}
+#page-blocks-notification-calendar #customcalendar .dayinfo {
+    text-transform: uppercase;
+    font-size: 14px;
+}
+#page-blocks-notification-calendar #customcalendar .datesinfo a{
+	color: #000;
+	text-decoration: none;
+}
+#page-blocks-notification-calendar #customcalendar .monthinfo{
+	font-size: 14px;
+}
+#page-blocks-notification-calendar #customcalendar .dateinfo {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+
+#page-blocks-notification-calendar #customcalendar .card.active,
+#page-blocks-notification-calendar #customcalendar .card.active:hover ,
+#page-blocks-notification-calendar #customcalendar .card:hover {
+    background-color: #ED396C;
+}
+#page-blocks-notification-calendar #customcalendar .card.active .datesinfo a,
+#page-blocks-notification-calendar #customcalendar .card.active:hover .datesinfo a ,
+#page-blocks-notification-calendar #customcalendar .card:hover .datesinfo a{
+    color: #fff;
+}
+/*calendar css ends */
+
+#page-blocks-notification-calendar .calendar_events {
+    border: 1px solid lightgrey;
+    border-radius: 8px;
+    margin-top: 1rem;
+    overflow: hidden;
+}
+#page-blocks-notification-calendar .calendar_events .calendar_events_content {
+	padding: 20px;
+	margin: 0;
+	padding-left: 3.2rem;
+    background-color: #fff;
+}
+/*.calendar_events.liveclass */
+
+#page-blocks-notification-calendar .calendar_events.liveclass .header_section {
+    background-color: #f8fff2;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    padding: 15px;
+    gap: 10px;
+    align-items: center;
+}
+#page-blocks-notification-calendar .calendar_events.liveclass .header_section i a{
+    font-weight: 500;
+    color: grey;
+}
+#page-blocks-notification-calendar .calendar_events.liveclass .watch_btn {
+    border: 1px solid #ed396c;
+    border-radius: 3px;
+    font-weight: 500;
+    padding: 0.5rem 2.5rem;
+    background-color: #fff;
+    color: #ed396c;
+    float: right;
+}
+#page-blocks-notification-calendar .calendar_events.liveclass .liveclassimg i {
+    font-size: 28px;
+    color: #ed396c;
+}
+#page-blocks-notification-calendar .calendar_events.liveclass .liveclassimg {
+    padding: 0px 0px 0px 10px;
+}
+#page-blocks-notification-calendar .calendar_events.liveclass .notes a,
+#page-blocks-notification-calendar .calendar_events.liveclass .lesson a{
+    color: #365eae;
+}
+
+/*.calendar_events.attempt_text */
+
+#page-blocks-notification-calendar .calendar_events.attempt_text .header_section {
+    background-color: #fff4f2;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    padding: 15px;
+    align-items: center;
+}
+#page-blocks-notification-calendar .calendar_events.attempt_text .text_btn {
+    border: 1px solid #ed396c;
+    border-radius: 3px;
+    font-weight: 500;
+    padding: 0.3rem 1rem;
+    background-color: #ed396c;
+    color: #fff;
+    float: right;
+}
+#page-blocks-notification-calendar .calendar_events.attempt_text .attempt_textimg i {
+    font-size: 28px;
+    color: #ed396c;
+}
+#page-blocks-notification-calendar .calendar_events.attempt_text .attempt_textimg {
+    padding: 0px 10px;
+}
+#page-blocks-notification-calendar .calendar_events.attempt_text .dateinfo ,
+#page-blocks-notification-calendar .calendar_events.attempt_text .duration ,
+#page-blocks-notification-calendar .calendar_events.attempt_text .questionscount {
+	margin-bottom: 2rem;
+}
+
+
+#page-blocks-notification-calendar #customcalendar::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+#page-blocks-notification-calendar #customcalendar::-webkit-scrollbar-thumb {
+    background-color: #d0d0d0;
+    border-radius: 20px;
+    border: 3px solid #f8f9fa;
+}
+#page-blocks-notification-calendar #customcalendar::-webkit-scrollbar-track {
+    background: #f8f9fa;
+}
+
+#page-blocks-notification-calendar .arrows {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+    align-items: center;
+}
+#page-blocks-notification-calendar .arrows .horizon-prev ,
+#page-blocks-notification-calendar .arrows .horizon-next {
+    width: 29px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ED396C;
+    background-color: #EFDFE4;
+    border: none;
+}
+.block_notification .content .viewmore_btn {
+    float: right;
+    padding: 0 1rem 0.5rem;
+}
+#page-blocks-notification-calendar .Calendarheader_content {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+#page-blocks-notification-calendar #customcalendardata {
+    overflow-x: auto;
+/*    height: 100vh;*/
+    height: 100vh;
+}
+#page-blocks-notification-calendar #customcalendardata::-webkit-scrollbar {
+    display: none;
+}
+#page-blocks-notification-calendar #id_year ,
+#page-blocks-notification-calendar #id_month {
+    border-radius: 3px;
+    border: 1px solid #C8C8C8;
+    background-color: #F3F3F3;
+    height: calc(1.5em + 0.45rem + 2px);
+    padding: 0.275rem 1.75rem 0.275rem 0.75rem;
+    font-size: 14px;
+    font-weight: 500;
+}
+#page-blocks-notification-calendar .calendar_events .liveclassimg .icon {
+    background-image: url([[pix:block_notification|liveclass]]);
+    width: 26px;
+    height: 20px;
+    display: block;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#page-blocks-notification-calendar .calendar_events .attempt_textimg .icon {
+    background-image: url([[pix:block_notification|lesson]]);
+    width: 25px;
+    height: 25px;
+    display: block;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#page-blocks-notification-calendar .activities_due .warning_icon {
+    background-image: url([[pix:block_notification|vector]]);
+    min-width: 21px;
+    min-height: 21px;
+    display: block;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#page-blocks-notification-calendar .activities_due {
+    background-color: #FEF5E6;
+    border-radius: 6px;
+    padding: 10px 19px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#page-blocks-notification-calendar .activities_due .warning_text {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+#page-blocks-notification-calendar .activities_due .view_btn {
+    color: #F09701;
+    font-weight: 500;
+}
+#page-blocks-notification-calendar .calendar_events h4 {
+    font-weight: 500;
+    margin-top: 10px;
+    font-size: 16px;
+}
+.block_notification {
+    height: 100%;
+}
+.block_notification .no_notification .no_notification_description h5{
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+}
+.block_notification .no_notification {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#page-blocks-notification-calendar #customcalendardata .header_content h6{
+    font-weight: 600;
+}
+@media(max-width: 767px) {
+    .calendar_events_content a,
+    .calendar_events_content a .watch_btn,
+    .calendar_events_content a .text_btn{
+        width: 100%;
+        margin-top: 1rem;
+    }
+    #page-blocks-notification-calendar .calendar_events .calendar_events_content {
+        padding: 20px 0px!important;
+    }
+   /* #page-blocks-notification-calendar .calendar_events .calendar_events_content .col-md-3 {
+        width: 50%;
+        float: left;
+    }*/
+    /*#page-blocks-notification-calendar .calendar_events .calendar_events_content .col-md-3 .lesson{
+        position: absolute;
+        right: -98px;
+        top: -29px;
+    }
+    #page-blocks-notification-calendar .calendar_events .calendar_events_content .col-md-3 {
+        position: relative;
+    }*/
+    #page-blocks-notification-calendar .calendar_events .calendar_events_content .datainfo {
+        margin-bottom: 10px;
+    }
+}

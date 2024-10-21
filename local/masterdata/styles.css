@@ -1,0 +1,11 @@
+#page-local-masterdata-viewattempt .multichoice .content .formulation fieldset .answer .incorrect>div ,
+#page-local-masterdata-viewattempt .multichoice .content .formulation fieldset .answer .correct>div {
+    flex-grow: 1;
+    line-height: 2.4;
+}
+#page-local-masterdata-viewquizattempts .activity-header ,
+#page-local-masterdata-viewattempt .activity-header
+{
+    display: none;
+}
+

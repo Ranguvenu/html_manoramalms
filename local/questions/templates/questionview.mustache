@@ -1,0 +1,25 @@
+ <div class="row">
+    <div class="col-md-12">
+        <div id="questions_section">
+            <div class="row my-3">
+                <div class="col-md-4">
+                    {{{globalinput}}}
+                </div>
+                <div class="col-md-8">
+                
+                   {{> local_questions/actions}}
+                </div>
+            </div>
+
+            <div id="questions_container">
+                 {{{questiondetails}}}
+            </div>
+        </div> 
+    </div>
+</div>
+
+{{#js}}
+    require(['local_questions/questions'], function(s) {
+        s.init();
+    });
+{{/js}}

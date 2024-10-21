@@ -1,0 +1,45 @@
+/*
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+
+/**
+ * theme epsilon Maven pro font selection.
+ *
+ * @package   theme_epsilon
+ * @copyright 2018 eAbyas Info Solutons Pvt Ltd, India
+ * @author    eAbyas  <info@eAbyas.in>
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+ 
+/*font-family Maven Pro*/
+@font-face {
+	/*NO SUPPORT FOR Maven Pro LIGHT*/
+	font-family: 'Maven Pro';
+	    src: url('Maven_Pro/maven-pro-regular.ttf') format('truetype'),
+	         url('Maven_Pro/maven-pro-regular.woff') format('woff'),
+	         url('Maven_Pro/maven-pro-regular.woff2') format('woff'),
+	         url('Maven_Pro/maven-pro-regular.eot?#iefix') format('embedded-opentype');
+	         font-weight: 300;
+	         font-weight: normal;
+	         font-style: normal;
+}
+@font-face {
+	font-family: 'Maven Pro';
+	    src: url('Maven_Pro/maven-pro-bold.ttf') format('truetype');
+	         font-weight: 700;
+	         font-style: normal;
+}
+
+*{font-family: "Maven Pro";}

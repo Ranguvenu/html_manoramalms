@@ -1,0 +1,133 @@
+<div class="calendar_events attempt_text">
+    <div class="header_section">
+        <div class="attempt_textimg">
+            <!-- <i class="fa fa-sticky-note-o" aria-hidden="true"></i> -->
+            <span class="icon"></span>
+        </div>
+        <div class="header_content align-items-center">
+            <h5 class="m-0"><span>{{typeofevent}}</span>:<span>{{name}}</span></h5>
+            {{#isquiz}}
+                {{# missed }}
+                {{^achievedgrade}}
+                <div class="missed_status">Missed</div>
+                {{/achievedgrade}}
+                {{/ missed }}
+                {{^ missed }}
+                {{#achievedgrade}}
+                <div class="missed_status">{{achievedgrade}}</div>
+                {{/achievedgrade}}
+                {{/ missed }}
+            {{/isquiz}}
+        </div>
+        
+    </div>
+    <div class="row calendar_events_content">
+        <div class="col-md-3">
+            <div class="dateinfo">
+                <div class="labels text-muted">{{#str}}date, block_notification{{/str}}</div>
+                <!-- <div class="datainfo">{{#datestart}} {{#userdate}}{{datestarts}}, {{#str}} strftimedaydatetime, block_notification {{/str}}{{/userdate}}{{/datestart}}{{^datestart}}{{datestarts}}{{/datestart}}</div> -->
+                <div class="datainfo">{{quizdate}}</div>
+            </div>
+            <div class="timeinfo">
+                <div class="labels text-muted">{{#str}}time, block_notification{{/str}}</div>
+                <div class="datainfo">{{#timestart}} {{#userdate}} {{timestarts}}, {{#str}} strftimetime12, core_langconfig {{/str}} {{/userdate}} - {{/timestart}}  
+                {{#timeend}}{{#userdate}} {{timeends}}, {{#str}} strftimetime12, core_langconfig {{/str}} {{/userdate}}{{/timeend}}{{^timestart}}{{timestarts}}{{/timestart}}</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+           {{#duration}}
+            <div class="duration">
+                <div class="labels text-muted">{{#str}}duration, block_notification{{/str}}</div>
+                <div class="datainfo">{{duration}}</div>
+            </div>
+           {{/duration}}
+             <div class="typeinfo">
+                <div class="labels text-muted">Type</div>
+                <div class="datainfo">{{typeofevent}}</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            
+            <div class="questionscount">
+                <div class="labels text-muted">{{#str}}noofquestions, block_notification{{/str}}</div>
+                {{#qcount}}
+                    <div class="datainfo">{{qcount}} {{#str}}questions, block_notification{{/str}}</div>
+                {{/qcount}}
+                {{^qcount}}
+                    <div class="datainfo">0 {{#str}}questions, block_notification{{/str}}</div>
+                {{/qcount}}
+            </div>
+            <div class="marks">
+                <div class="labels text-muted">{{#str}}marks, block_notification{{/str}}</div>
+                {{#qmarks}}
+                <div class="datainfo">{{qmarks}} {{#str}}marks, block_notification{{/str}}</div>
+                {{/qmarks}}
+                {{^qmarks}}
+                <div class="datainfo">0 {{#str}}marks, block_notification{{/str}}</div>
+                {{/qmarks}}
+            </div>            
+            
+        </div>
+        {{#migratedattemptview}}
+
+            <div class="col-md-3">
+                <div class="attempts">
+                    <div class="labels text-muted">{{#str}}attempt, block_notification{{/str}}</div>
+                    <div class="datainfo">{{attemptscount}}</div>
+                </div>
+                {{#migratedattemptview}}
+                <div class="masterdataattempts mt-5">
+                    <div class="labels text-muted">{{#str}}migratedattempts, block_notification{{/str}}</div>
+                    <div class="datainfo">{{{migratedattemptscount}}}</div>
+                </div>
+                {{/migratedattemptview}}            
+            </div>
+        
+        {{/migratedattemptview}}
+
+        {{^migratedattemptview}}
+            <div class="col-md-1">
+                <div class="labels text-muted">{{#str}}attempt, block_notification{{/str}}</div>
+                <div class="datainfo">{{attemptscount}}</div>
+            </div>
+        {{/migratedattemptview}}
+         <div class="col-md-2">
+        {{#isquiz}}
+        {{# missed }}
+            {{# canuserattempt}}
+               
+                    <a href="{{scorecardurl}}"><button class="mb-1 text_btn">{{#str}}answerkey, block_notification{{/str}}</button></a>
+               
+            {{/ canuserattempt}}    
+        {{/ missed }}
+        {{^ missed }}
+        {{^yettostart}}
+            {{# canuserattempt}}
+                    <a href="{{startattempturl}}"><button class="mb-1 text_btn">{{#str}}begintest, block_notification{{/str}}</button></a>
+           
+            {{/ canuserattempt}}    
+        {{/yettostart}}
+        {{#achievedgrade}}
+            <a href="{{scorecardurl}}"><button class="mb-1 text_btn">{{#str}}scorecard, block_notification{{/str}}</button></a>
+   
+        {{/achievedgrade}}
+        {{/ missed }}
+        {{/isquiz}}
+        {{^isquiz}}
+        
+            {{# canuserattempt}}
+                <a href="{{startattempturl}}"><button class="mb-1 text_btn">{{#str}}start, block_notification{{/str}}</button></a>
+            {{/ canuserattempt}}
+   
+        {{/isquiz}}
+    </div>
+       <!--  <div class="col-md-3">
+            <a href="{{startattempturl}}"><button class="answerkey_btn">{{#str}}answerkey, block_notification{{/str}}</button></a>
+        </div>
+        <div class="col-md-3">
+            <a href="{{startattempturl}}"><button class="scorecard_btn">{{#str}}scorecard, block_notification{{/str}}</button></a>
+        </div> -->
+
+    </div> 
+    
+</div>

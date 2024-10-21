@@ -1,0 +1,77 @@
+<div id="student_dashboard_container">
+<div class="student_dashboard_container reportsdashboardcontainer mt-3">
+    <div class="d-flex flex-grow-1 pb-2 border-bottom align-items-center reportdates_container">
+        <div class="filters_dropdown  d-flex flex-column">
+                <input type="hidden" class="uservalue" value={{userid}}>
+                <select name="filter_packages" class = "dashboardpackages" id = "filterpackages" data-select2="1" data-role="{{dashboardrole}}">
+                    {{# packages }}
+                        <option value = "{{packageid}}" {{selected}}>{{packagename}}</option>
+                    {{/ packages }}
+                </select>
+            </div>
+            
+            <div class="startduedate ml-3">
+                <input type="date" value= "{{startdate}}" class="form-control startdate" id="startdate">
+                <input type="hidden" value= "{{lsstartdate}}" class="form-control lsstartdate" id="lsstartdate">
+            </div>
+            <div class="startduedate ml-3">
+                <input type="date" value="{{duedate}}" class="form-control duedate" id="duedate">
+                <input type="hidden" value="{{lsduedate}}" class="form-control lsduedate" id="lsduedate">
+            </div>
+    </div>
+    <!-- All courses data -->
+    {{> block_reportdashboard/studentprofile/coursesdata}}
+
+    <!-- Course wise data -->
+    {{> block_reportdashboard/studentprofile/coursewisedata}}
+    
+
+    <!-- Detailed Report Widget -->
+    {{> block_reportdashboard/studentprofile/coursedetailedpage}}
+
+</div>
+</div>
+
+{{#js}}
+    
+    $(document).ready(function(){
+        $('#filterpackages').on('change', function () {
+            var url = $(this).val(); // get selected value
+            var userid = $('.uservalue').val();
+            if (url) { // require a URL
+                window.location = 'studentprofile.php?filter_users='+userid+'&filter_packages=' + url; // redirect
+            }
+            return false;
+        });
+        $('#startdate').on('change', function () {
+            var self = this;
+            require(['block_reportdashboard/reportdashboard'], function(s) {
+                var params = {};
+                params.lsstartdate =  $(".lsstartdate").val();
+                params.lsduedate =  $(".lsduedate").val();
+                params.startdate =  $(".startdate").val();
+                params.duedate =  $(".duedate").val();
+                params.packageid =  $(".dashboardpackages").val();
+                params.userid =  $(".uservalue").val();
+                params.reportdashboard = false;
+                s.datefilters(params);
+            });
+        });
+        $('#duedate').on('change', function () {
+            var self = this;
+            require(['block_reportdashboard/reportdashboard'], function(s) {
+                var params = {};
+                params.lsstartdate =  $(".lsstartdate").val();
+                params.lsduedate =  $(".lsduedate").val();
+                params.startdate =  $(".startdate").val();
+                params.duedate =  $(".duedate").val();
+                params.packageid =  $(".dashboardpackages").val();
+                params.userid =  $(".uservalue").val();
+                params.reportdashboard = false;
+                s.datefilters(params);
+            });
+        });
+
+
+});
+{{/js}}

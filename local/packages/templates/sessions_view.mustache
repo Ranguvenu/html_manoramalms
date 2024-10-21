@@ -1,0 +1,73 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_packages/sessions_view
+
+    TODO describe template sessions_view
+
+    Example context (json):
+    {
+    }
+}}
+{{#response}}
+    {{^records}}
+    {{#nodata}}
+        <div class = 'w-100 pull-left alert alert-info'>{{nodata}}</div>
+    {{/nodata}}
+    {{/records}}
+    {{#viewtypeCard}}
+        <table class="table generaltable table-striped">
+            <thead>
+                <tr>
+                    <th>{{#str}}batchname,local_packages{{/str}}</th>
+                    <th>{{#str}}code,local_packages{{/str}}</th>
+                    <th>{{#str}}startdate,local_packages{{/str}}</th>
+                    <th>{{#str}}enddate,local_packages{{/str}}</th>
+                    <th>{{#str}}starttime,local_packages{{/str}}</th>
+                    <th>{{#str}}endtime,local_packages{{/str}}</th>
+                    <th class="text-center">{{#str}}action,local_packages{{/str}}</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                {{#records}}
+                <tr>
+                    <td>{{batchname}}</td>
+                    <td>{{schedulecode}}</td>
+                    <td>{{startdate}}</td>
+                    <td>{{enddate}}</td>
+                    <td>{{starttime}}</td>
+                    <td>{{endtime}}</td>
+                    <td>
+                        <div class="d-flex action_btns justify-content-center">
+                            <a href="#"  data-action="addsessions" data-id={{id}} data-packageid={{packageid}} data-courseid={{courseid}}  data-toggle="tooltip" title="{{#str}}edit,local_packages{{/str}}" ><span class="bg-primary text-white" data-toggle="tooltip" title="{{edit}}"><i class="fa fa-pencil fa-fw"></i></span></a>
+                        
+                            <a href="#" data-action="deletesession" data-id={{id}} data-batchname="{{batchname}}" data-schedulecode="{{schedulecode}}" data-toggle="tooltip" title="{{#str}}delete,local_packages{{/str}}"><span class="bg-danger text-white"><i class="fa fa-trash-o" aria-hidden="true"></i></span></a> 
+                        </div>
+                  </td> 
+                </tr>
+                {{/records}}
+            </tbody>
+        </table>
+   {{/viewtypeCard}}
+{{/response}}
+{{#js}}
+    require(['local_packages/session'], function(s) {
+        s.init();
+    });
+{{/js}}

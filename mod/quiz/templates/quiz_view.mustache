@@ -1,0 +1,69 @@
+<div class="quizpage_container shadow-lg rounded">
+    <div class="quizview_page">
+        <div class="header d-flex justify-content-between border-bottom p-3">
+             <!---- Ramanjaneyulu commented  MU-189 starts---->
+            <h5 class="mb-0">Test Details</h5>
+             <!-- <h5 class="mb-0">Instructions</h5> -->
+        </div>
+       <!--  <div class="test_name mt-2 p-3">
+            <p class="mb-0"> 
+                <span class="topic_name">{{name}}</span>
+            </p>
+        </div> -->
+        <!---- Ramanjaneyulu commented  MU-189 ends---->
+        <div class="quiz_info mt-2 p-3">
+            <div class="row p-3 rounded">
+                <div class="col-md-3 border-right">
+                    <div class="duration_block p-2">
+                        <div><h5>{{duration}}</h5></div>
+                        <div class="details">Duration</div>
+                    </div>
+                </div>
+                <!-- <div class="col-md-3 border-right">
+                    <div class="question_type p-2">
+                        <div><h5>MCQ</h5></div>
+                        <div class="details">Question Type</div>
+                    </div>
+                </div> -->
+                <div class="col-md-3 border-right">
+                    <div class="total_question p-2">
+                        <div><h5>{{qcount}}</h5></div>
+                        <div class="details">Total Questions</div>
+                    </div>
+                </div>
+                <!-- <div class="col-md-3 border-right">
+                    <div class="marks p-2">
+                        <div><h5>1</h5></div>
+                        <div class="details">Marks Per Question</div>
+                    </div>
+                </div> -->
+                <div class="col-md-3 border-right">
+                    <div class="total_marks p-2">
+                        <div><h5>{{qmarks}}</h5></div>
+                        <div class="details">Total Marks</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="attempts p-2">
+                        <div><h5>{{attemptscount}}</h5></div>
+                        <div class="details">Attempted</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="instruction_block mt-4 border-bottom p-3">
+            <h5>General Instructions</h5>
+            {{{summary}}}
+            {{# additional_summary}}
+                {{{additional_summary}}}
+            {{/ additional_summary}}
+            {{^ additional_summary}}
+            <div>
+                <div class="attempt_btn p-3 d-flex align-items-center justify-content-center">
+                    <a class="btn btn-secondary text-center" href="{{backtocourse}}">{{#str}} back{{/str}}</a>
+                    <a class="btn btn-primary text-center" href="{{startattempturl}}">{{#str}} starttest, quiz{{/str}}</a>
+                </div>
+            </div>
+            {{/ additional_summary}}
+        </div>
+</div>

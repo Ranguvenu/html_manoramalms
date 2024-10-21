@@ -1,0 +1,124 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template theme_horizon/drawers
+
+    Horizon drawer template.
+
+    Context variables required for this template:
+    * sitename - The name of the site
+    * output - The core renderer for the page
+    * bodyattributes - attributes for the body tag as a string of html attributes
+    * sidepreblocks - HTML for the blocks
+    * hasblocks - true if there are blocks on this page
+    * courseindexopen - true if the nav drawer should be open on page load
+    * regionmainsettingsmenu - HTML for the region main settings menu
+    * hasregionmainsettingsmenu - There is a region main settings menu on this page.
+
+    Example context (json):
+    {
+        "sitename": "Moodle",
+        "output": {
+            "doctype": "<!DOCTYPE html>",
+            "page_title": "Test page",
+            "favicon": "favicon.ico",
+            "main_content": "<h1>Headings make html validators happier</h1>"
+         },
+        "bodyattributes":"",
+        "navdraweropen": false,
+        "blockdraweropen": true,
+        "regionmainsettingsmenu": "",
+        "hasregionmainsettingsmenu": false,
+    }
+}}
+<div id="profile_wrap" class="container">
+    <div class="d-flex justify-content-between align-items-center mt-3">
+        <div class="fs-max-xl fw-semibold">My Profile</div>
+        <div><a href="{{config.wwwroot}}" class="back_btn">Back</a></div>
+    </div>
+    <div class="profile_details d-flex flex-wrap justify-content-between bg-white rounded-sm px-4 py-5 mt-4">
+        <div class="userprofileimg_content">
+            <img src="{{userimg}}" alt="{{username}}" class="profile_img rounded-circle mb-2"  />
+            <div class="fs-max-lg text-center">{{username}}</div>
+        </div>
+        <div class="profile_details_content">
+            <div class="mb-4">
+                <div class="fs-md text-wrap profile_label mb-1">DOB</div>
+                <div class="text-wrap">{{userdob}}</div>
+            </div>
+            <div>
+                <div class="fs-md text-wrap profile_label mb-1">Gender</div>
+                <div class="text-wrap">{{usergender}}</div>
+            </div>
+        </div>
+        <div class="profile_details_content">
+            <div class="mb-4">
+                <div class="fs-md text-wrap profile_label mb-1">Email ID</div>
+                <div class="text-wrap">{{usermail}}</div>
+            </div>
+            <div>
+                <div class="fs-md text-wrap profile_label mb-1">Phone Number</div>
+                <div class="text-wrap">{{userphone}}</div>
+            </div>
+        </div>
+        <div class="mb-4 useraddress">
+            <div class="fs-md text-wrap profile_label mb-1">Address</div>
+            <div class="text-wrap">{{useraddress}}</div>
+        </div>
+ 
+        <div class="d-flex align-items-end flex-column loginasurl_content">
+            <a href="{{{loginasurl}}}" class="px-4 py-2 bg-primary rounded-sm text-center text-white fs-md fw-medium">Login as</a>
+            {{# editprofileurl}}
+            <a href="{{{editprofileurl}}}" class="mt-2 px-4 py-2 bg-primary rounded-sm text-center text-white fs-md fw-medium">Edit Profile</a>
+            {{/ editprofileurl}}
+        </div> 
+
+
+    </div>
+    <!-- <div class="d-flex justify-content-end my-3"><a href="javascript:void(0)" class="changepwd_link fw-medium text-decoration-none">Change Password</a></div> -->
+
+    <div class="profile_tabs " >
+        <ul class="nav my-5" id="pills-tab">
+
+            <li class="nav-item mr-3">
+                <a class="nav-link rounded-pill"  href="#inprogress" data-toggle="tab">In progress</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link rounded-pill" href="#completed" data-toggle="tab">Completed</a>
+            </li>
+        </ul>
+        <div class="tab-content clearfix block_mycourses block">
+            <div class="tab-pane active" id="inprogress">
+                {{#inprogresscourses}}
+                {{{inprogresscourses}}}
+                {{/inprogresscourses}}
+                {{^inprogresscourses}}
+                <div class="d-flex justify-content-left my-3"> {{#str}} noinprogresspackage, theme_horizon {{/str}}</div>
+                {{/inprogresscourses}}
+            </div>
+            <div class="tab-pane " id="completed">
+                {{#completescourses}}
+                {{{completescourses}}}
+                {{/completescourses}}
+                {{^completescourses}}
+                <div class="d-flex justify-content-left my-3">{{#str}} nocompletedpackage, theme_horizon {{/str}}</div>
+                {{/completescourses}}
+            </div>
+        </div>
+    </div>
+</div>
+

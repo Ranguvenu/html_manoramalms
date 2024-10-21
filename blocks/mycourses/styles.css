@@ -1,0 +1,177 @@
+/*.block.block_mycourses .mycourses_wrap .cat_left {
+    max-width: 165px;
+}*/
+/*.block.block_mycourses .blkcourse_card_wrap .cat_right {
+    flex-grow: 1;
+}*/
+.block.block_mycourses .blkcourse_card_wrap .progress {
+    background-color: #FAFAFA;
+}
+.block.block_mycourses .blkcourse_card_wrap .catprogress_wrap .progress{
+    height: 5px;
+}
+.block.block_mycourses .blkcourse_card_wrap .catprogress_wrap .progress .progress-bar{
+    border-radius: 0.5rem;
+}
+.block.block_mycourses .blkcourse_card_wrap .catcourselist .progress{
+    height: 45px;
+    border-radius: 0.2rem;
+    position: relative;
+    margin-bottom: 5px;
+}
+.block.block_mycourses .blkcourse_card_wrap .catcourselist .progress .progress-bar{
+    background-color: #FFEAF0;
+    border-radius: 0.2rem;
+}
+.block.block_mycourses .blkcourse_card_wrap .catcourselist .course_progress span{
+    position: absolute;
+    top: 49%;
+}
+.block.block_mycourses .blkcourse_card_wrap .catcourselist .course_progress a{
+    position: absolute;
+    top: 49%;
+    right: 1rem;
+}
+.block_mycourses .blkcourse_card_wrap.singlecourse {
+    padding: 0px!important;
+    background-color: transparent!important;
+    box-shadow: none;
+}
+.block_mycourses .blkcourse_card_wrap .catprogress_wrap .daysremaining .text-success {
+    color: #00A550 !important;
+    font-size: 12px;
+}
+.block_mycourses .blkcourse_card_wrap .catprogress_wrap .daysremaining .text-danger {
+    color: #E9222D !important;
+    font-size: 12px;
+}
+.block_mycourses .blkcourse_card_wrap .viewcourses_btn a{
+    font-size: 12px;
+}
+
+/*kiran css starts*/
+@media(max-width: 768px) { 
+    .no_activecourses {
+        margin-top: 1rem;
+    }
+    .block_mycourses .blkcourse_card_wrap{
+        padding: 0.8rem 0.5rem 5.5rem 0.5rem!important;
+    }
+    .block_mycourses .blkcourse_card_wrap .blkcourse_cardcontent{
+        width: 100%;
+        align-items: start!important;
+    }
+    .block_mycourses .blkcourse_card_wrap .cardimg_content img{
+        width: 150px;
+        height: 100px;
+    }
+    .block_mycourses .blkcourse_card_wrap .blkcourse_cardtitle{
+        flex-direction: column;
+        align-items: start!important;
+    }
+    .block_mycourses .blkcourse_card_wrap .categorytitle {
+        font-size: 14px;
+    }
+    .block_mycourses .blkcourse_card_wrap .numcourses {
+        position: absolute;
+        bottom: 0px;
+        font-size: 12px;
+        left: 165px;
+    }
+    .block_mycourses .blkcourse_card_wrap .valid_dateinfo {
+        font-size: 12px;
+        padding-bottom: 1.1rem;
+        margin-top: 5px;
+    }
+    .block_mycourses .blkcourse_card_wrap .catprogress_wrap {
+        position: absolute;
+        bottom: -64px;
+        width: 100%;
+        left: 0px;
+    }
+
+    .block_mycourses .blkcourse_card_wrap .viewcourses_btn {
+        position: absolute;
+        bottom: -74px;
+        width: 100%;
+        left: 0px;
+        text-align: center!important;
+    }
+
+    .block_mycourses .blkcourse_card_wrap .catcourselist {
+        position: relative;
+        top: 4.5rem;
+    }
+    .block_mycourses .singlecourse_card  ,
+    #page-blocks-recommended_courses-courseview .blkcourse_card_wrap  ,
+    .block_recommended_courses .blkcourse_card_wrap {
+        padding: 0.8rem 0.5rem 3.5rem 0.5rem!important;
+    }
+    .block_mycourses .singlecourse_card .enroll_btn ,
+    #page-blocks-recommended_courses-courseview .blkcourse_card_wrap .enroll_btn ,
+    .block_recommended_courses .blkcourse_card_wrap .enroll_btn {
+        position: absolute;
+        bottom: -2.8rem;
+        margin: 0!important;
+    }
+/*    #page-blocks-recommended_courses-courseview .blkcourse_card_wrap .enroll_btn ,*/
+    .block_mycourses .singlecourse_card .enroll_btn {
+        width: 100%;
+    }
+    .block_recommended_courses .blkcourse_card_wrap .enroll_btn ,
+    #page-blocks-recommended_courses-courseview .blkcourse_card_wrap .enroll_btn {
+        width: calc(100% - 1.8rem);
+    }
+    .block_mycourses .singlecourse_card .enroll_btn a,
+    #page-blocks-recommended_courses-courseview .blkcourse_card_wrap .enroll_btn a,
+    .block_recommended_courses .blkcourse_card_wrap .enroll_btn a{
+        width: 100%;
+        font-size: 12px;
+    }
+    .block_mycourses .singlecourse_card .blkcourse_cardcontent ,
+    .block_recommended_courses .blkcourse_card_wrap .blkcourse_cardcontent {
+        align-items: start!important;
+    }
+    .block_mycourses .singlecourse_card .cardimg_content img ,
+    .block_recommended_courses .blkcourse_card_wrap .cardimg_content img {
+        width: 150px;
+        height: 100px;
+    }
+    .block_mycourses .singlecourse_card .categorytitle ,
+    .block_recommended_courses .blkcourse_card_wrap .categorytitle {
+        font-size: 16px;
+    }
+    .block_mycourses .singlecourse_card .valid_dateinfo ,
+    .block_recommended_courses .blkcourse_card_wrap .valid_dateinfo {
+        font-size: 12px;
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 767px) {
+    .block_mycourses .blkcourse_card_wrap .cardimg_content img,
+    .block_mycourses .singlecourse_card .cardimg_content img  ,
+    .block_recommended_courses .blkcourse_card_wrap .cardimg_content img  {
+        width: 120px !important;
+        height: 80px !important;
+    }
+    .block_mycourses .blkcourse_card_wrap .numcourses {
+        left: 136px;
+    }
+}
+.no_activecourses h5 {
+    font-weight: 600;
+    border-bottom: 1px solid #ebebeb;
+    padding-bottom: 12px;
+}
+.no_activecourses .noactive_status {
+    font-weight: 600;
+    font-size: 15px;
+}
+.no_activecourses p {
+    font-size: 14px;
+}
+/*kiran css ends*/
+.freetrailtext{
+  color: red !important;
+}

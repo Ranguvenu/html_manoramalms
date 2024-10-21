@@ -1,0 +1,20 @@
+<div class='brightcove-container'>
+  <video-js
+    id = "brightcove_player"
+    data-account="{{settings.accountid}}"
+    data-player="{{settings.playerid}}"
+    data-embed="default"
+    controls=""
+    data-video-id="{{recordingobj.videoid}}"
+    data-playlist-id=""
+    data-application-id=""
+    class="vjs-fluid"></video-js>
+</div>
+<script src="https://players.brightcove.net/{{settings.accountid}}/{{settings.playerid}}_default/index.min.js"></script>
+<script>
+  videojs.getPlayer('brightcove_player').ready(function() {
+    var myPlayer = this;
+    // Set the viewer id for Brightcove analytics
+    myPlayer.bcAnalytics.client.setUser('{{userinfo.email}}');
+  });
+</script>

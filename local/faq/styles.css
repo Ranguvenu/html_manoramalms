@@ -1,0 +1,98 @@
+#page-local-faq-index .faq-container {
+    padding: 1rem;
+}
+#page-local-faq-index .faq-container .category_content {
+    margin-bottom: 2rem;
+}
+#page-local-faq-index .category_header {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#page-local-faq-index .faq-container .category_content .category_header .category_name {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+}
+#page-local-faq-index .faq-container .category_content .category_header .category_edits ,
+#page-local-faq-index .faq-container .category_content .query_header .query_edits {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+#page-local-faq-index .faq-container .category_content .category_header .category_edits a ,
+#page-local-faq-index .faq-container .category_content .query_header .query_edits a {
+    color: #fff;
+    background-color: #ed396c;
+    font-size: 12px;
+    width: 23px;
+    height: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    text-decoration: none;
+}
+#page-local-faq-index .faq-container .category_content .category_header .category_edits a:hover ,
+#page-local-faq-index .faq-container .category_content .query_header .query_edits a:hover {
+    color: #ed396c;
+    border:1px solid #ed396c;
+    background-color: #fff;
+}
+
+#page-local-faq-index .query_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+#page-local-faq-index .faq-container .category_content .query_header .query_name {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+#page-local-faq-index .faq-container .category_content .query_header img.minus ,
+#page-local-faq-index .faq-container .category_content .query_header.collapsed img.plus {
+	display: block ;
+}
+#page-local-faq-index .faq-container .category_content .query_header img.plus ,
+#page-local-faq-index .faq-container .category_content .query_header.collapsed img.minus {
+	display: none;
+}
+#page-local-faq-index .faq-container .category_content .query_header img {
+	min-width: 16px;
+    min-height: 16px;
+}
+
+#page-local-faq-index .faq-container .category_content .querydescription {
+	font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    color: #5f6368;
+}
+#page-local-faq-index .faq-container .category_content .query_content {
+    padding: 1rem 0;
+    border-bottom: 2px solid #999999;
+}
+
+#page-local-faq-index .addcategories a ,
+#page-local-faq-index .addcategories a:hover {
+    background-color: transparent;
+    padding: 5px;
+    box-shadow: 0px 0px 4px #ddd;
+    border: none;
+}
+#page-local-faq-index .addcategories a:hover {
+    box-shadow: 0px 0px 4px #9a9a9a;
+}
+#page-local-faq-index .addcategories a img {
+	width: 25px;
+    height: 25px;
+}

@@ -1,0 +1,117 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template block_reportdashboard/coursestudentsinfo
+
+    TODO describe template coursestudentsinfo
+
+    Example context (json):
+    {
+    }
+}}
+<div id="admindashboarddetails">
+		{{> block_reportdashboard/studentsdetails}}
+		<div class="studentwise_report_table mt-4">
+			<div class = "d-flex justify-content-between mb-4">
+				<div class="d-flex">
+					<div class="chapterwisecheckbox d-none">
+					Chapterwise report
+					<!-- Default switch -->
+						<div class="custom-control custom-switch ml-1 ">
+							<input type="checkbox" class="custom-control-input chaptercheckbox" name="chapterwisecheckbox" id="customSwitches1">
+							<label class="custom-control-label" for="customSwitches1"></label>
+						</div>
+					</div>
+				</div>
+				<div class="d-flex">
+					Studentwise report
+					<!-- Default switch -->
+					<!-- <div class="custom-control custom-switch ml-1">
+					<input type="checkbox" class="custom-control-input studentcheckbox" name="studentwisecheckbox" id="customSwitches" checked>
+					<label class="custom-control-label" for="customSwitches"></label>
+					</div> -->
+					<div class="custom-control custom-switch ml-1">
+					<input type="checkbox" class="custom-control-input studentcheckbox" name="studentwisecheckbox" id="customSwitches" checked>
+					<label class="custom-control-label" for="customSwitches"></label>
+					</div>
+					<input type='hidden' name='courseid' id='courseid' class = 'courseid' value={{courseid}} />"
+				</div>
+			</div>
+			<div class="student_data_table p-3 studentwisechapters" id = "customreports{{studentwisechapterreportid}}">
+					<span class="report_schedule dropdown-item menu-action" onclick='(function(e){ require(["block_reportdashboard/reportdashboard","jqueryui"],function(reportdashboard){reportdashboard.customreportfilter({reportid: {{studentwisechapterreportid}},instanceid:{{studentwisechapterreportid}}}); e.preventDefault();
+								e.stopImmediatePropagation(); e.stopPropagation(); })})(event)'>
+						<span class ="report_action_icons dropbtn widgetheader custom_Filters" title="Filters"><span class="customreporticon"></span></span>
+					</span>
+				<div class="table-responsive">
+					<div class = "reportdashboard_header">
+						<div id='reportcontainer{{studentwisechapterinstance}}' class='report_dashboard_container'
+						data-reportid={{studentwisechapterreportid}}
+						data-reporttype={{studentwisechapterstype}} data-blockinstance={{studentwisechapterreportid}} >
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="activitytabs p-3 d-none">
+				<ul class="nav nav-tabs">
+					<li class="nav-item liveclasstab" role="presentation" ><a class="tablinks nav-link active" data-toggle="tab" href="#liveclassdetailstab">{{#str}} liveclass, block_reportdashboard {{/str}}</a></li>
+					<li class="nav-item readingtab" role="presentation"><a class="tablinks nav-link" data-toggle="tab" href="#readingdetailstab">{{#str}} reading, block_reportdashboard {{/str}}</a></li>
+					<li class="nav-item practicetesttab" role="presentation"><a class="tablinks nav-link" data-toggle="tab" href="#practicetestdetailstab">{{#str}} practicequestions, block_reportdashboard {{/str}}</a></li>
+					<li class="nav-item testscoretab" role="presentation"><a class="tablinks nav-link" data-toggle="tab" href="#testscoredetailstab">{{#str}} testscores, block_reportdashboard {{/str}}</a></li>
+					<li class="nav-item forumtab" role="presentation"><a class="tablinks nav-link" data-toggle="tab" href="#forumdetailstab">{{#str}} forum, block_reportdashboard {{/str}}</a></li>
+				</ul>
+				<div class="tab-content">
+					<div class="liveclassdetails_report tab-pane show active" id="liveclassdetailstab">
+					</div>
+					<div class="readingdetails_report tab-pane" id="readingdetailstab">
+					</div>
+					<div class="practicetestdetails_report tab-pane" id="practicetestdetailstab">
+					</div>
+					<div class="testscoredetails_report tab-pane" id="testscoredetailstab">
+					</div>
+					<div class="forumdetails_report tab-pane" id="forumdetailstab">
+					</div>
+				</div>
+			</div>
+			<div class="chapterwise_report_table d-none" id="studentsdetails">
+				{{> block_reportdashboard/chapterdetails}}
+			</div>
+		</div>
+	</div>
+{{#js}}
+    $(document).ready(function(){
+	    $('input[name="chapterwisecheckbox"]').change(function(){
+				$('.activitytabs').addClass('d-none');
+				$('.student_data_table').addClass('d-none');
+				if($(".chaptercheckbox").is(':checked')){
+	                $('.chapterwise_report_table').removeClass('d-none');
+	            } else {
+					$('.activitytabs').removeClass('d-none');
+					$('.chapterwise_report_table').addClass('d-none');
+				}
+			});
+
+    require(['block_learnerscript/report'], function(s) {
+			var params = {};
+			params.reportid = {{studentwisechapterreportid}};
+			params.reporttype = '{{studentwisechapterstype}}';
+			params.instanceid = {{studentwisechapterreportid}};
+			params.filters = {filter_courses:{{courseid}}};
+			params.reportdashboard = false;
+			s.PackageReportsdata(params);
+		});
+	});
+{{/js}}

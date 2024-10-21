@@ -1,0 +1,66 @@
+<div class="subject_report_widgets mt-4">
+    <div class="row">
+        {{# coursewisedata}}
+        <div class="col-md-3">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h6>{{coursename}}</h6>
+                    <div class="progress course_progress">
+                        <div class="progress-bar" style="background: radial-gradient(closest-side, white 70%, transparent 70% 100%), conic-gradient({{coursecompletioncolor}}, {{coursepercentage}}%, #f2f2f2 0);">
+                            <progress value="30" min="0" max="100" style="visibility:hidden;height:0;width:0;"></progress><span class="percent_value">{{coursepercentage}}%</span>
+                        </div>
+                    </div>
+                    <div class="percentage_container mt-3">
+                        <div class="mb-4 test_score">
+                            <div class="d-flex justify-content-between">
+                                <span class="score">{{#str}} averagetestscore, block_reportdashboard {{/str}}</span>
+                                <span class="score_percentage"><b>{{avgtestscore}}%</b></span>
+                            </div>
+                            <div class="progress mb-2">
+                                <div class="progress-bar" role="progressbar" style="width: {{avgtestscore}}%; background-color: {{averagetestscorecolor}} !important;" aria-valuenow="{{avgtestscore}}" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="mb-4 practice_test">
+                            <div class="d-flex justify-content-between">
+                                <span class="score">{{#str}} practicetest, block_reportdashboard {{/str}}</span>
+                                <span class="score_percentage"><b>{{practicetest}}%</b></span>
+                            </div>
+                            <div class="progress mb-2">
+                                <div class="progress-bar" role="progressbar" style="width: {{practicetest}}%; background-color: {{practicetestcolor}} !important;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="mb-4 reading">
+                            <div class="d-flex justify-content-between">
+                                <span class="score">{{#str}} reading, block_reportdashboard {{/str}}</span>
+                                <span class="score_percentage"><b>{{reading}}%</b></span>
+                            </div>
+                            <div class="progress mb-2">
+                                <div class="progress-bar" role="progressbar" style="width: {{reading}}%; background-color: {{readingcolor}} !important;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="mb-4 live_class">
+                            <div class="d-flex justify-content-between">
+                                <span class="score">{{#str}} liveclass, block_reportdashboard {{/str}}</span>
+                                <span class="score_percentage"><b>{{liveclass}}</b></span>
+                            </div>
+                            <div class="progress mb-2">
+                                <div class="progress-bar" role="progressbar" style="width: {{liveclasspercentage}}%; background-color: {{liveclasscolor}} !important;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="mb-4 video">
+                            <!-- <div class="d-flex justify-content-between">
+                                <span class="score">{{#str}} video, block_reportdashboard {{/str}}</span>
+                                <span class="score_percentage"><b>{{video}}%</b></span>
+                            </div> -->
+                            <!-- <div class="progress mb-2">
+                                <div class="progress-bar" role="progressbar" style="width: {{video}}%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div class="questionsaskedinforum"><span><b>{{forumquestions}}</b> {{#str}} questionsaskedinforum, block_reportdashboard {{/str}}</span></div>
+                </div>
+            </div>
+        </div>
+        {{/ coursewisedata}}
+    </div>
+</div>

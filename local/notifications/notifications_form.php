@@ -1,0 +1,131 @@
+<?php
+/**
+ * @package    local_notifications
+ * @copyright  2012-2021 Silecs {@link http://www.silecs.info/societe}
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
+
+use \local_notifications\notifstudents;
+use \local_notifications\notification;
+
+require_once($CFG->libdir.'/formslib.php');
+
+class local_notifications_notifications_form extends moodleform {
+    public function definition() {
+        global $CFG;
+
+        $mform = $this->_form;
+        $customdata = $this->_customdata;
+
+        // hidden elements
+        $mform->addElement('hidden', 'id');
+        $mform->setType('id', PARAM_INT);
+        $mform->addElement('hidden', 'mod');
+        $mform->setType('mod', PARAM_ALPHA);
+        $mform->addElement('hidden', 'courseid');
+        $mform->setType('courseid', PARAM_INT);
+
+        //recipients
+        $sendok = true;
+        $mform->addElement('header', 'recipient', get_string('recipients', 'local_notifications'));
+        $optionsSendAll = [];
+        if ($customdata['nbNotifiedStudents'] == 0) {
+            $optionsSendAll = ['disabled' => 'disabled'];
+            $sendok = false;
+        }
+        $mform->addElement('radio', 'send', '', '<span class="fake-fitemtitle">' . $customdata['recipients'] . '</span>', 'all', $optionsSendAll);
+        if($sendok) {
+            $mform->setDefault('send', 'all');
+        }
+
+        $notifrecipients = new notifstudents($customdata['courseid']);
+        $allgroups = $notifrecipients->get_all_groups();
+        $allgroupings = $notifrecipients->get_all_groupings();
+        $liststudents = $notifrecipients->get_list_students();
+
+        $selected = [];
+
+        if (count($allgroups)) {
+            $selectgroup = $mform->CreateElement('select','groups', 'Groupes', $allgroups);
+            $selectgroup->setMultiple(true);
+            $selected[] = $selectgroup;
+        }
+        if (count($allgroupings)) {
+            $selectgrouping = $mform->CreateElement('select','groupings', 'Groupements', $allgroupings);
+            $selectgrouping->setMultiple(true);
+            $selected[] = $selectgrouping;
+        }
+
+        if (count($selected)) {
+            $mform->addElement(
+                'radio',
+                'send',
+                '',
+                '<span class="fake-fitemtitle">' . get_string('selectedmembers', 'local_notifications') . '</span>',
+                'selection'
+            );
+            $mform->addGroup($selected, 'myselected', "", array('&nbsp;&nbsp;&nbsp;'), false);
+            $mform->disabledIf('groups[]', 'send', 'neq', 'selection');
+            $mform->disabledIf('groupings[]', 'send', 'neq', 'selection');
+            if ($sendok == false) {
+                $mform->setDefault('send', 'selection');
+                $sendok = true;
+            }
+        } else {
+            $mform->addElement('radio', 'send', '', '<span class="fake-fitemtitle">'
+                . get_string('groupsgroupingsnone', 'local_notifications') . '</span>', 'selection', ['disabled' => 'disabled']);
+        }
+
+        if (count($liststudents)) {
+            $mform->addElement('radio', 'send', '', '<span class="fake-fitemtitle">' .
+                get_string('selectstudents', 'local_notifications') . '</span>', 'selectionstudents', $optionsSendAll);
+
+            $mform->addElement('select', 'students', '', $liststudents)->setMultiple(true);
+            $mform->disabledIf('students', 'send', 'neq', 'selectionstudents');
+        }
+
+        //message
+        $mform->addElement('header', 'message', get_string('content', 'local_notifications'));
+        $subjectlabel = html_writer::tag('span', get_string('subject', 'local_notifications'), array('class' => 'notificationgras'));
+        $msgbody = notification::get_email_body($customdata['msgbodyinfo'], 'html');
+        $msghtml = html_writer::tag('p', $subjectlabel . $customdata['mailsubject'], array('class' => 'notificationlabel'))
+            . html_writer::tag('p', get_string('body', 'local_notifications'), array('class' => 'notificationlabel notificationgras'))
+            . html_writer::tag('p', $msgbody, array('class' => 'notificationlabel'));
+
+        $mform->addElement('html', $msghtml);
+        $mform->setExpanded('message');
+
+        $mform->addElement('header', 'complementheader', get_string('complement', 'local_notifications') );
+        $mform->setExpanded('complementheader');
+        $mform->addElement('textarea', 'complement', null, ['rows' => 5, 'class' => 'complement', 'style' => 'resize:both;']);
+        $mform->setType('complement',PARAM_RAW);
+
+        //-------------------------------------------------------------------------------
+        // buttons
+        if ($sendok) {
+            $this->add_action_buttons(true,  get_string('submit', 'local_notifications'));
+        }
+    }
+
+    public function validation($data, $files) {
+        $errors = parent::validation($data, $files);
+        if (empty($errors)) {
+            $this->validation_recipient($data, $errors);
+        }
+        return $errors;
+    }
+
+    private function validation_recipient($data, &$errors) {
+        if (isset($data['send'])) {
+            if ($data['send'] == 'selection' && !isset($data['groups']) && !isset($data['groupings'])) {
+                 $errors['myselected'] = get_string('errorselectgroup', 'local_notifications');
+            }
+            if ($data['send'] == 'selectionstudents' && !isset($data['students'])) {
+                 $errors['students'] = get_string('errorselectstudent', 'local_notifications');
+            }
+        } else {
+            $errors['send'] = get_string('errorselectrecipient', 'local_notifications');
+        }
+        return $errors;
+    }
+}

@@ -1,0 +1,92 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template block_reportdashboard/liveclassdetails
+
+    TODO describe template liveclassdetails
+
+    Example context (json):
+    {
+    }
+}}
+
+<div id="liveclassdetailstab">
+<div class="d-flex justify-content-between mt-4">
+    <div class="p-3">{{#str}}totalclasses, block_reportdashboard{{/str}}  <b>{{totalliveclasses}}</b></div>
+    <div class="p-3">{{#str}}classtimespend, block_reportdashboard{{/str}} <b>{{zoomtimespend}}</b></div>
+</div>
+<div class = "reportdashboard_header mt-4">
+	<div id='plotreportcontainer{{liveclassreportid}}' class='plotreport_dashboard_container' data-reportid={{liveclassreportid}}
+            data-reporttype={{liveclasstype}} data-blockinstance={{liveclassreportid}}>
+	</div>
+</div>
+<div class = "reportdashboard_header mt-4 ">
+<div class="container bg-white">
+    <div class="bg-white">
+        <div class="row">
+            <div class='col-6 d-flex flex-column align-items-stretch plotreport_dashboard_container h-100 mh-100' id='plotreportcontainer{{liveclassattendanceid}}' data-reportid={{liveclassattendanceid}}
+                data-reporttype={{liveclassattendancetype}} data-blockinstance={{liveclassattendanceid}}>
+            </div>
+        <div class="bg-white col-6">
+            <div class='mt-5 d-flex flex-column pt-6 h-100'>
+                <div class="row mb-1">
+                    <p class="text-sm col-1 font-weight-bold"><small class="font-weight-bold">{{#str}} zero_percent, block_reportdashboard {{/str}}</small></p>
+                    <p class="text-sm col-11"><small>{{#str}} zeropercent_text, block_reportdashboard {{/str}}</small></p>
+                </div>
+                <div class="row mb-1">
+                    <p class="text-sm col-1 font-weight-bold"><small class="font-weight-bold">{{#str}} twentyfive_percent, block_reportdashboard {{/str}}</small></p>
+                    <p class="text-sm col-11"><small>{{#str}} twentyfivepercent_text, block_reportdashboard {{/str}}</small></p>
+                </div>
+                <div class="row mb-1">
+                    <p class="text-sm col-1 font-weight-bold"><small class="font-weight-bold">{{#str}} fifty_percent, block_reportdashboard {{/str}}</small></p>
+                    <p class="text-sm col-11"><small>{{#str}} fiftypercent_text, block_reportdashboard {{/str}}</small></p>
+                </div>
+                <div class="row mb-1">
+                    <p class="text-sm col-1 font-weight-bold"><small class="font-weight-bold">{{#str}} seventyfive_percent, block_reportdashboard {{/str}}</small></p>
+                    <p class="text-sm col-11"><small>{{#str}} seventyfivepercent_text, block_reportdashboard {{/str}}</small></p>
+                </div>
+                <div class="row mb-1">
+                    <p class="text-sm col-1 font-weight-bold"><small class="font-weight-bold">{{#str}} hundred_percent, block_reportdashboard {{/str}}</small></p>
+                    <p class="text-sm col-11"><small>{{#str}} hundredpercent_text, block_reportdashboard {{/str}}</small></p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+</div>
+{{#js}}
+    require(['block_learnerscript/report'], function(s) {
+			var params = {};
+			params.reportid = {{liveclassreportid}};
+			params.reporttype = '{{liveclasstype}}';
+			params.instanceid = {{liveclassreportid}};
+			params.filters = {filter_courses:{{courseid}}};
+			params.reportdashboard = false;
+			s.PackageReportsdata(params);
+		});
+    require(['block_learnerscript/report'], function(s) {
+			var params = {};
+			params.reportid = {{liveclassattendanceid}};
+			params.reporttype = '{{liveclassattendancetype}}';
+			params.instanceid = {{liveclassattendanceid}};
+			params.filters = {filter_courses:{{courseid}}};
+			params.reportdashboard = false;
+			s.PackageReportsdata(params);
+		});
+{{/js}}
+

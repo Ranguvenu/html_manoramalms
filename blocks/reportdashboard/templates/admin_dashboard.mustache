@@ -1,0 +1,48 @@
+<div class="admin_dashboard_container reportsdashboardcontainer mt-3">
+	<div class="dropdowns_menu">
+		<div class="dropdown_list row">
+			<div class="filters_dropdown  d-flex flex-column pr-1">
+				<label for="browser" class="form-label">{{#str}}selectgoals, block_reportdashboard{{/str}}</label>
+				<select name="filter_goals" class = "dashboardgoals" id = "dashboardgoals" data-select2="1" data-role="{{dashboardrole}}">
+					{{# goalsoptions }}
+						<option value = "{{goalid}}">{{goalname}}</option>
+					{{/ goalsoptions }}
+				</select>
+			</div>
+			<div class="filters_dropdown  d-flex flex-column pr-1">
+				<label for="browser" class="form-label">{{#str}}board, block_reportdashboard{{/str}}</label>
+				<select name="filter_boards" class = "dashboardboards" id = "dashboardboards" data-select2="1" data-role="{{dashboardrole}}">
+					{{# boardsoptions }}
+						<option value = "{{boardid}}">{{boardname}}</option>
+					{{/ boardsoptions }}
+				</select>
+			</div>
+			<div class="filters_dropdown  d-flex flex-column pr-1">
+				<label for="browser" class="form-label">{{#str}}class, block_reportdashboard{{/str}}</label>
+				<select name="filter_classes" class = "dashboardclasses" id = "dashboardclasses" data-select2="1" data-role="{{dashboardrole}}">
+					{{# classesoptions }}
+						<option value = "{{classid}}">{{classname}}</option>
+					{{/ classesoptions }}
+				</select>
+			</div>
+			<div class="filters_dropdown  d-flex flex-column pr-1">
+				<label for="browser" class="form-label">{{#str}}subject, block_reportdashboard{{/str}}</label>
+				<select name="filter_subjects" class = "dashboardsubjects" id = "dashboardsubjects" data-select2="1" data-role="{{dashboardrole}}">
+					{{# subjectsoptions }}
+						<option value = "{{subjectid}}">{{subjectname}}</option>
+					{{/ subjectsoptions }}
+				</select>
+			</div>
+			<div class="filters_dropdown  d-flex flex-column pr-1">
+				<label for="browser" class="form-label">{{#str}}batch, block_reportdashboard{{/str}}</label>
+				<select name="filter_batches" class = "dashboardbatches" id = "dashboardbatches" data-select2="1" data-role="{{dashboardrole}}">
+					{{# batchesoptions }}
+						<option value = "{{batchtid}}">{{batchname}}</option>
+					{{/ batchesoptions }}
+				</select>
+			</div>
+		</div>
+	</div>
+
+{{> block_reportdashboard/coursestudentsinfo}}
+</div>

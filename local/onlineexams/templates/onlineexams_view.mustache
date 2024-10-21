@@ -1,0 +1,208 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_onlineexams/catalog
+
+    This template renders the courses content for the courses plugin.
+
+    Example context (json):
+    {}
+}}
+{{#response}}
+    {{! card view }}
+    {{#viewtypeCard}}
+        <div class="row clearfix">
+            {{#records}}
+                {{# hascourses}}
+                        <div class="{{cardClass}} catcourses_list {{course_class}} ">
+                            <div class=" course_container rounded d-flex flex-column justify-content-between">
+                                <div class="courseimg_container ">
+                                    <div style="background-image: url('{{{ courseimage }}}');" alt="{{ coursename }}" class="courseimg courseimg_bg d-flex flex-column justify-content-between" >
+                                         <!-- <div class="course_progress_container d-flex align-items-center">
+                                            <div class="progress_circular" style="background-image:conic-gradient(white 0%,transparent 0%);">
+                                            </div>
+                                            <div class="progress_status">Completed</div>
+                                            <div class="progress_percentage">0%</div>
+                                        </div> -->
+                                        <div class="d-flex justify-content-end">
+                                            <div class="cog_icon dropdown action_menu_dropdown" >
+                                            {{#actions}}
+                                                <span data-toggle="dropdown" aria-expanded="false">
+                                                    <i class="fa fa-gear" aria-hidden="true"></i>
+                                                </span>
+                                                <div class="dropdown-menu dropdown-menu-right shadow-sm">
+                                                    {{#update}}
+                                                    {{# editcourse}}
+                                                        {{{ editcourse }}}
+                                                    {{/ editcourse}}
+                                                    {{/update}}
+                                                   {{#update}}
+                                                        {{#auto_enrol}}
+                                                            <a href="{{ auto_enrol }}" class="dropdown-item" title= "{{#str}}auto_enrol, local_onlineexams{{/str}}">
+                                                                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                                                            </a>
+                                                        {{/auto_enrol}}
+                                                    {{/update}}
+                                                    {{#enrol}}
+                                                    <a href="{{ enrollusers }}" class="dropdown-item" title= "{{#str}}userenrolments, local_onlineexams{{/str}}" >
+                                                        <i class="fa fa-user" aria-hidden="true"></i>User Enrollments
+                                                    </a>
+                                                     {{/enrol}}
+                                                     {{#enrolled}}
+                                                     <a href="{{ enrolledusers }}" class="dropdown-item" title= "{{#str}}enrolledusers, local_onlineexams{{/str}}" >
+                                                         <i class="fa fa-user" aria-hidden="true"></i>Enrolled Users
+                                                     </a>
+                                                      {{/enrolled}}
+                                                    {{#update}}
+                                                        {{# update_status}}
+                                                            {{{update_status}}}
+                                                        {{/ update_status}}
+                                                    {{/update}}
+                                                   
+                                                    {{#deleteaction}}
+                                                        {{{ deleteaction }}}
+                                                    {{/deleteaction}}
+                                                </div>
+                                            {{/actions}}
+                                            </div>
+                                        </div>
+                                        <div class="courseenroll_strips d-flex align-items-start m-1">
+                                            <div class="info_container enrolment_info">
+                                                <span class="info_title enrollments">
+                                                    {{#str}}enrollments, local_onlineexams{{/str}}:
+                                                </span>
+                                                <span class="info_value">{{enrolled_count}}</span>   
+                                            </div>
+                                            <div class="info_container completed_info">
+                                                <span class="info_title completed">
+                                                    {{#str}}completed, local_onlineexams{{/str}} : 
+                                                </span>
+                                                <span class="info_value">{{completed_count}}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="coursecontent d-flex flex-column justify-content-between">
+                                    <div class="flex-grow-1">
+                                    <div class="d-flex mt-1">
+                                        <h5 class="flex-grow-1 course_name">
+                                            {{^ coursenameCut}}
+                                            <a href="{{ courseurl }}" title="{{ coursename }}">{{ coursename }}</a>
+                                            {{/ coursenameCut}}
+                                            {{# coursenameCut}}
+                                            <a href="{{ courseurl }}" title="{{ coursename }}">{{ coursenameCut }}</a>
+                                            {{/ coursenameCut}}
+                                        </h5>
+                                        <!-- {{#actions}}
+                                            <div>
+                                                <div class="dropdown action_menu_dropdown">
+                                                    <span  data-toggle="dropdown" class="px-2" aria-expanded="false">
+                                                        <i class="fa fa-ellipsis-h"></i>
+                                                    </span>
+                                                <div class="dropdown-menu dropdown-menu-right shadow-sm">
+                                                    {{#enrol}}
+                                                        <a href="{{ enrollusers }}" class="dropdown-item" title= "{{#str}}userenrolments, local_onlineexams{{/str}}" >
+                                                            <i class="fa fa-user" aria-hidden="true"></i>User Enrollments
+                                                        </a>
+                                                   {{/enrol}}
+                                                   {{#update}}
+                                                        {{#auto_enrol}}
+                                                            <a href="{{ auto_enrol }}" class="dropdown-item" title= "{{#str}}auto_enrol, local_onlineexams{{/str}}">
+                                                                <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                                                            </a>
+                                                        {{/auto_enrol}}
+                                                    {{/update}}
+                                                    {{#update}}
+                                                        {{# editcourse}}
+                                                            {{{ editcourse }}}
+                                                        {{/ editcourse}}
+                                                        {{# update_status}}
+                                                            {{{update_status}}}
+                                                        {{/ update_status}}
+                                                    {{/update}}
+                                                   
+                                                    {{#deleteaction}}
+                                                        {{{ deleteaction }}}
+                                                    {{/deleteaction}}
+                                                </div>
+                                                </div>
+                                            </div>
+                                        {{/actions}} -->
+                                    </div>
+                                    <div class="coursedesc mb-2">
+                                        {{#onlineexamsummary }}
+                                            <p class="desc" title = "Onlineexam Descripton" >{{ onlineexamsummary }}</p>
+                                        {{/onlineexamsummary }}
+                                        {{^onlineexamsummary }}
+                                            <p class="alert alert-info text-center mt-1">{{#str}}noonlineexamdesc, local_onlineexams{{/str}}</p>
+                                        {{/onlineexamsummary }}
+                                    </div>
+                                </div>
+                                    <!--<div class="d-flex mb-2">
+                                        <span class="text-muted">{{#str}}category, local_onlineexams{{/str}} : </span> <span class="ml-1">{{#catnamestring}}{{catnamestring}}{{/catnamestring}}{{^catnamestring}}N/A{{/catnamestring}}</span>
+                                    </div>-->
+                                    <!-- <div class="d-flex course_department ">
+                                        <span class="text-muted">{{#str}}department, local_onlineexams{{/str}} : </span>
+                                            <span class="ml-1">{{{}}}</span>
+                                    </div> -->
+                                    <div class="mt-auto grade_container">
+                                        <div class="courseinfo_container row">      
+                                            <div class="info_container points_info col-md-6 p-0">
+                                                <div class="brain_icon mr-2"></div>
+                                                <span class="info_title">{{#str}}maxgrade, local_onlineexams{{/str}} : </span> 
+                                                <span class="info_value">{{maxgrade}}  </span>
+                                            </div> 
+                                            <div class="info_container rating_info col-md-6 p-0">
+                                                <div class="star_icon">
+                                                    <i class="fa fa-star-o gradestar_icon" aria-hidden="true"></i>
+                                                </div>
+                                                <span class="info_title">  {{#str}}gradepass, local_onlineexams{{/str}} : </span> 
+                                                <span class="info_value"> {{ passgrade}}</span>
+                                            </div>
+                                            <!-- <div class="info_container enrolment_info">
+                                                <div class="icon"></div>
+                                                <span class="info_title enrollments">
+                                                    {{#str}}enrollments, local_onlineexams{{/str}}:
+                                                </span>
+                                                <span class="info_value"> {{enrolled_count}}</span> 
+                                               
+                                            </div>
+                                            <div class="info_container completed_info">
+                                                <span class="info_title completed">
+                                                    {{#str}}completed, local_onlineexams{{/str}} : 
+                                                </span>
+                                                <span class="info_value"> {{completed_count}}</span>
+                                            </div> -->
+                                        </div>
+                                        <div class="coursetype coursetypes_container">    
+                                            <div class="info_title">{{#str}} from {{/str}} : <span class="dates">{{examfromdate}}</span></div>
+                                            <div class="info_title">{{#str}} to{{/str}} : <span>{{examtodate}}</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                {{/ hascourses}}
+                <div class="col-md-12">{{{ pagination }}}</div>
+                {{# nocourses}}
+                  <div class='w-full pull-left text-center alert alert-info'>No courses available.</div>
+                {{/ nocourses}}
+            {{/records}}
+        </div>
+    {{/viewtypeCard}}
+{{/response}}
+

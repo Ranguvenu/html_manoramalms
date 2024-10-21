@@ -1,0 +1,23 @@
+{{#response}}
+    {{#records}}
+    <div class= "table-responsive">
+        <table class="table">
+            <thead class="thead-light">
+                <tr>
+
+                  <th scope="col">{{# str}} id, local_questions{{/ str}}</th>
+                  <th scope="col">{{# str}} questionid, local_questions{{/ str}}</th>
+                </tr>
+            </thead>
+          <tbody>
+          {{# hascourses}}
+              <tr>
+                  <td>{{id}}</a></td>
+                  <td>{{questionid}}</td>
+              </tr>
+           {{/ hascourses}} 
+          </tbody>
+        </table>
+        </div>
+    {{/ records}}
+{{/ response}}

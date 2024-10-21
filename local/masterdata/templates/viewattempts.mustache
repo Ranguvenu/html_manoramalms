@@ -1,0 +1,95 @@
+{{!
+    @template local_masterdata/viewattempts
+
+    TODO describe template viewattempts
+
+    Example context (json):
+    {
+    }
+}}
+<div class="reviewpageheader quiz">
+	<div class="d-flex justify-content-between reviewheader_content p-4">
+		<div class="reviewheading">
+			<h5>Score Card</h5>
+			<p class="m-0"><span class="text-muted">Test :</span>{{testname}}</p>
+		</div>
+		<div class="d-flex justify-content-center align-items-center">
+			<a href="{{{backtoattemptlist}}}"><button class="btn back_btn">{{navigationlable}}</button></a>
+		</div>
+		
+	</div>
+	<div class="px-4 pb-5 pt-4">
+		<div class="review_card">
+			<div class="row">
+				<div class="col-md-6">
+					<h5 class="review_data">{{scored}}/{{total}}</h5>
+					<p class="review_label">You've Scored</p>
+				</div>
+				<div class="col-md-6">
+					<h5 class="review_data">{{timetaken}}</h5>
+					<p class="review_label">Time taken</p>
+				</div>
+				{{! <div class="col-md-2">
+					<h5 class="review_data">0</h5>
+					<p class="review_label">Correct</p>
+				</div>
+				<div class="col-md-2">
+					<h5 class="review_data">0</h5>
+					<p class="review_label">Wrong</p>
+				</div>
+				<div class="col-md-2">
+					<h5 class="review_data">5</h5>
+					<p class="review_label">Not Answered</p>
+				</div>
+				<div class="col-md-2">
+					<h5 class="review_data">1</h5>
+					<p class="review_label">Attempt</p>
+				</div> }}	
+			</div>
+		</div>
+	</div>
+</div>
+{{# canviewattemptsinfo}}
+	   {{# questiondetails}}
+	   	    {{# questiondetails}}
+				<div class="questioninfo">
+					<div class="que multichoice deferredfeedback {{qustionheadermessage}}">
+				
+						<div class="info">
+							<h3 class="no">Question <span class="qno">{{questionindex}}</span></h3>
+							<div class="state">{{answerlable}}</div>
+						</div>
+						<div class="content">
+							<div class="formulation clearfix">
+								<h4 class="accesshide">Question text</h4>
+									<div class="qtext">
+										<p>{{{question}}}</p>
+									</div>
+								<fieldset class="ablock no-overflow visual-scroll-x">
+									<legend class="prompt h6 font-weight-normal sr-only"><span class="sr-only">Question 1</span> Answer</legend>
+									<div class="answer">
+										{{#answeroptions}}
+											<div class="r0 {{# studentanswer}} {{answerclass}}  {{/ studentanswer}}">
+												<div class="d-flex w-auto" data-region="answer-label">
+													<div class="flex-fill ml-1">
+														<p><span>{{{answer_option}}}</span></p>
+													</div>
+												</div>
+												{{# answerclass}}
+												    {{# studentanswer}}
+												     <span class="ml-1"><i class="icon fa {{displayclass}} fa-fw " title="{{displaylable}}" role="img" aria-label="{{displaylable}}"></i></span>
+											        {{/ studentanswer}}
+											   {{/ answerclass}}
+											</div>
+										{{/answeroptions}}
+									</div>
+									Solution : {{{solution}}}
+								</fieldset>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			{{/ questiondetails}}
+		{{/ questiondetails}}
+{{/ canviewattemptsinfo}}

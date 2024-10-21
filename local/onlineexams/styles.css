@@ -1,0 +1,1191 @@
+#page-local-courses-enrolledusers #course_users_wrapper {
+    width: 100%;
+    /*overflow-x: auto;*/
+    /*overflow-y: hidden*/
+}
+
+#page-local-courses-enrolledusers #course_users tbody td:nth-last-child(2),
+#page-local-courses-enrolledusers #course_users thead th:nth-last-child(2) {
+    min-width: 80px
+}
+
+#page-local-courses-enrolledusers #course_users tbody td .fa-id-card-o.pull-right {
+    margin-top: 3px;
+    margin-left: 0
+}
+
+.collapsibleregioncaption {
+    border: none;
+    padding: 0 !important
+}
+
+#page-local-courses-courseenrol #addcontrols input[type=submit],
+#page-local-courses-courseenrol #region-main input[type=button],
+#page-local-courses-courseenrol #removecontrols input[type=submit] {
+    border: none
+}
+
+.openLMStransition.local_courses .date_selector .visibleifjs .icon {
+    margin-top: 12px
+}
+
+.cat_pop_icon {
+    position: absolute;
+    left: 22px;
+    top: 25px
+}
+
+#page-local-courses-courseenrol .userselector div {
+    display: none
+}
+
+body#page-local-courses-courseenrol #assignform {
+    width: 97%;
+    background-color: #fff;
+    padding: 0 1%;
+    clear: both;
+    float: none;
+    margin: auto;
+    text-align: center;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 4px 4px 5px #dedcdc;
+    margin-bottom: 25px
+}
+
+body#page-local-courses-courseenrol table.roleassigntable.generaltable.generalbox.boxaligncenter tr>td {
+    background-color: #f5f5f5
+}
+
+body#page-local-courses-courseenrol #assignform>div:first-child {
+    overflow-x: auto
+}
+
+body#page-local-courses-courseenrol #assignform>div#continue {
+    margin-top: 5px
+}
+
+body#page-local-courses-courseenrol .course_enroll_label_btns,
+body#page-local-courses-courseenrol .course_enroll_label_right_btns {
+    width: 100%;
+    min-width: 322px;
+    max-width: 322px
+}
+
+body#page-local-courses-courseenrol .course_enroll_label_btns {
+    float: left
+}
+
+body#page-local-courses-courseenrol .course_enroll_label_right_btns {
+    float: left
+}
+
+body#page-local-courses-courseenrol span.course_enroll_label_btns_span {
+    font-size: 14px;
+    line-height: 20px;
+    vertical-align: middle;
+    float: left;
+    max-width: 126px;
+    padding: 5px 0
+}
+
+body#page-local-courses-courseenrol .course_description {
+    height: 225px;
+    overflow: hidden;
+    word-break: break-word
+}
+
+body#page-local-courses-courseenrol .course_description.show_more_description {
+    height: inherit;
+    overflow: auto
+}
+
+body#page-local-courses-courseenrol img#image.content-img {
+    width: 100%;
+    height: 300px
+}
+
+#page-local-onlineexams-index div#id_summary_editoreditable {
+    height: 150px !important;
+    min-height: 150px !important;
+    max-height: 150px !important
+}
+
+#page-local-onlineexams-index .course_buttons {
+    padding: 5px
+}
+
+#page-local-onlineexams-index .course_buttons a {
+    float: left
+}
+
+#popup_category_wrapper {
+    width: 100%;
+    float: left;
+    overflow: auto
+}
+
+#page-local-onlineexams-index .course_container {
+    background-color: #fff;
+    color: #000;
+    height: calc(100% - 30px);
+    min-height: 215px !important;
+    box-shadow: 0px 0px 8px #ddd;
+   /* padding: 25px 10px;*/
+    margin: 15px 0;
+    border-radius:0;
+}
+
+.courseimg {
+    width: 100%;
+    height: 205px;
+    position: relative;
+}
+
+#page-local-onlineexams-index .course_name a {
+    font-size: 18px;
+    word-break: break-word;
+    color: #000;
+    text-decoration: none;
+}
+/* #page-local-onlineexams-index .course_name a:hover,
+#page-local-onlineexams-index .course_name a:active,
+#page-local-onlineexams-index .course_name a:focus,
+#page-local-onlineexams-index .course_name a:visited {
+    text-decoration: none;
+} */
+
+.coursedesc {
+    min-height: 45px
+}
+
+.desc {
+    color: #6d6e70
+}
+
+#page-local-onlineexams-index .course_actionslist {
+    float: right
+}
+
+#page-local-onlineexams-index .filter_form {
+    position: relative;
+    top: -30px;
+    transform: translateX(1366px);
+    -webkit-transform: translateX(1366px);
+    transition: all .5s
+}
+
+#page-local-onlineexams-index .search_filter {
+    margin-top: 42px
+}
+
+#page-local-onlineexams-index .course_filters {
+    width: 100%;
+    float: right;
+    padding: 0 20px;
+    margin: auto;
+    z-index: 2;
+    position: absolute;
+    overflow: hidden
+}
+
+#page-local-onlineexams-index .course_filters.open {
+    height: auto;
+    min-height: 120px
+}
+
+#page-local-onlineexams-index #filter_toggle {
+    z-index: 2;
+    position: relative;
+    right: 14px;
+    top: 7px;
+    cursor: pointer
+}
+
+#page-local-onlineexams-index #filter_toggle i.fa {
+    font-size: 25px;
+    color: #1177d1
+}
+
+#page-local-onlineexams-index .filter_form.openfilter {
+    width: 100%;
+    background-color: #d1d2d4;
+    padding: .5em 0 1em 0;
+    position: relative;
+    top: -30px;
+    z-index: 1;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transition: all .5s;
+    min-height: 110px;
+    border-radius: 5px
+}
+
+#page-local-onlineexams-index .search_filter {
+    padding-bottom: 25px
+}
+
+#page-local-onlineexams-index .collapsibleregion.collapsed {
+    height: 30px !important
+}
+
+#page-local-onlineexams-index .collapsibleregion {
+    height: auto !important;
+    overflow: visible
+}
+
+#page-local-onlineexams-index .collapsibleregioncaption a:hover {
+    text-decoration: none
+}
+
+#page-local-onlineexams-index .courseimg_bg {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #fff;
+    width:100%;
+    height:200px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+#page-local-onlineexams-index .dataTables_length {
+    display: none
+}
+
+#page-local-onlineexams-index .generaltable.dataTable.no-footer td img.iconsmall {
+    padding: 0 10px;
+    cursor: pointer
+}
+
+#page-local-onlineexams-index #category_tbl_wrapper #category_tbl_info {
+    display: none
+}
+
+#page-local-onlineexams-index .dataTables_paginate.paging_simple_numbers.paginate_button.current {
+    color: #fff;
+    background-color: #1177d1
+}
+
+
+body#page-local-onlineexams-index #region-main .card.card-block {
+    overflow-x: visible
+}
+body#page-local-onlineexams-index #category_tbl_filter {
+    float: left
+}
+
+body#page-course-view-tabtopics .section li.activity .actions form.togglecompletion .btn {
+    background-color: inherit;
+    color: inherit;
+    border: inherit;
+    outline: 0
+}
+
+.modal-body .watnext_head {
+    border-bottom: 1px solid #eee
+}
+
+.modal-body .course_buttons {
+    border-bottom: 1px solid #eee
+}
+
+body#page-local-onlineexams-index #category_tbl thead {
+    display: none
+}
+
+body#page-local-onlineexams-index #category_tbl tbody tr {
+    background: 0 0
+}
+
+body#page-local-onlineexams-index .catlist_container {
+    border: 1px solid #c5c5c5;
+    border-radius: 0
+}
+
+body#page-local-onlineexams-index .catlist_container .cattop_content {
+    border-bottom: 2px solid #d4d4d4;
+    background-color: #f2f2f2
+}
+
+body#page-local-onlineexams-index .catlist_container .catlistimg {
+    height: 85px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #fff
+}
+
+body#page-local-onlineexams-index .catlist_container .catcount {
+    font-size: 30px;
+    line-height: 14px
+}
+
+body#page-local-onlineexams-index .catlist_container .cattop_content .actions>a:first-of-type>.icon,
+body#page-local-onlineexams-index .catlist_container .cattop_content .actions>img.icon {
+    margin: 0;
+    padding-left: 10px;
+    cursor: pointer
+}
+
+body#page-local-onlineexams-index #category_tbl tbody td {
+    padding: 15px 10px;
+    width: 25%
+}
+
+body#page-local-onlineexams-index #category_tbl {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 0
+}
+
+body#page-local-onlineexams-index .catbottom_content.py-2.w-full {
+    padding: 15px
+}
+
+body#page-local-onlineexams-index .catlist_container .cattop_content .catname {
+    position: absolute;
+    font-weight: 600;
+    line-height: 30px;
+    font-size: 15px;
+    word-break: normal
+}
+
+body#page-local-onlineexams-index .catbottom_content .catnames {
+    position: relative;
+    font-weight: 600;
+    font-size: 14px;
+    word-break: normal
+}
+
+body#page-local-onlineexams-index .catbottom_content a {
+    color: #0b4f8a;
+    text-decoration: none;
+    padding-left: 4px
+}
+
+body#page-local-onlineexams-index .catlist_container .cattop_content .catnaming {
+    position: absolute;
+    font-weight: 200;
+    line-height: 45px;
+    font-size: 12px;
+    word-break: normal;
+    float: left !important
+}
+
+body#page-local-onlineexams-index .catlisticon i {
+    font-size: 25px;
+    color: #f26724
+}
+
+body#page-local-onlineexams-index .catlisticons i {
+    font-size: 25px;
+    color: #f26724
+}
+
+body#page-local-onlineexams-index .catlist_container .courses_str {
+    font-size: 17px;
+    padding-left: 3px
+}
+
+#back_tp_course {
+    border: 1px solid;
+    border-radius: 5px;
+    float: right;
+    margin: 5px;
+    padding: 5px
+}
+
+.coursebox {
+    margin: 10px 0;
+    width: 100%
+}
+
+.coursebox.clearfix.collapsed.odd {
+    background: #f9f9f9
+}
+
+#assignform {
+    clear: both
+}
+
+body#page-local-onlineexams-index .btn-link.btn-sm,
+body#page-local-onlineexams-index .btn-link.btn-sm:active,
+body#page-local-onlineexams-index .btn-link.btn-sm:focus,
+body#page-local-onlineexams-index .btn-link.btn-sm:hover {
+    text-decoration: none
+}
+
+#page-local-onlineexams-index .modal.openLMStransition .modal-body .course_buttons:last-child {
+    border-bottom: none
+}
+
+.course_extended_menu_list .catcreateicon {
+    font-size: 17px;
+    top: 3px;
+    position: absolute;
+    left: 16px;
+    color: #f26724
+}
+
+body#page-course-view-tabtopics .modal.openLMStransition .modal-content .mform #Department,
+body#page-local-onlineexams-index .modal.openLMStransition .modal-content .mform #Department {
+    height: 30px;
+    float: left;
+    margin-top: 32px
+}
+
+body#page-course-view-tabtopics .modal.openLMStransition .modal-content .mform #Category,
+body#page-local-onlineexams-index .modal.openLMStransition .modal-content .mform #Category {
+    height: 30px;
+    float: left;
+    margin-top: 32px
+}
+
+body#page-course-view-tabtopics .modal.openLMStransition .modal-content .mform .Sub,
+body#page-local-onlineexams-index .modal.openLMStransition .modal-content .mform .Sub {
+    height: 30px;
+    float: left;
+    margin-top: 32px
+}
+
+body#page-course-view-tabtopics .form-autocomplete-selection,
+body#page-local-onlineexams-index .form-autocomplete-selection {
+    margin-top: 2px !important
+}
+
+body#page-local-onlineexams-index .course_extended_menu_list .createiconchild {
+    top: 10px;
+    right: 4px
+}
+
+body#page-local-onlineexams-index .course_extended_menu_list .createiconchild {
+    right: 6px
+}
+
+#page-local-courses-upload-index #download_courses {
+    float: right;
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 5px
+}
+
+body#page-local-onlineexams-index .lable_align {
+    min-width: 100px
+}
+
+body#page-local-onlineexams-index .actionicons.opened .options_container,
+body#page-local-onlineexams-index .options_container:hover {
+    top: -13px;
+    right: -4px
+}
+
+body#page-local-onlineexams-index .catlist_container:hover .actionicons {
+    visibility: visible
+}
+
+body#page-local-onlineexams-index .actionicons {
+    visibility: hidden
+}
+
+.path-local-onlineexams .showoptions {
+    z-index: 2
+}
+
+#manage_categoriesid {
+    width: 100%;
+    float: left;
+    margin-top: 30px
+}
+
+body#page-local-onlineexams-index .catbtm_colon {
+    min-width: 80px
+}
+
+body#page-local-courses-upload-index h2+.mform {
+    clear: both
+}
+#page-local-onlineexams-oecategoryenrol #filters_form #filteringform .fitem.form-group {
+    margin: 1rem -15px;
+}
+
+@media (min-width:769px) and (max-width:1199px) {
+    body#page-local-onlineexams-index .catcourses_list .cat_btm .col-md-5,
+    body#page-local-onlineexams-index .catcourses_list .cat_btm .col-md-7 {
+        width: 100%;
+        text-align: center
+    }
+    body#page-local-onlineexams-index .catbtm_colon {
+        min-width: 100px
+    }
+    body#page-local-onlineexams-index .coursedesc {
+        min-height: 50px
+    }
+}
+
+@media(max-width:1217px) {
+}
+
+@media (min-width:768px) {
+    #page-local-courses-courseenrol .box3.col-md-2.actions,
+    #page-local-onlineexams-oecategoryenrol .box3.col-md-2.actions {
+        margin-top: 180px
+    }
+}
+
+@media (min-width:768px) and (max-width:1099px) {
+    #manage_categoriesid .col-md-3 {
+        width: 33.33%;
+        max-width: inherit
+    }
+    body#page-local-onlineexams-index .coursedesc {
+        word-break: break-all
+    }
+    body#page-local-onlineexams-index .coursedesc p {
+        font-size: 12px
+    }
+}
+
+@media (min-width:992px) and (max-width:1205px) {
+    .cat_btm .col-lg-5,
+    .cat_btm .col-lg-7 {
+        width: 100%;
+        max-width: inherit
+    }
+}
+
+@media(max-width:991px) {
+    #page-local-onlineexams-index .course_extended_menu_list .catcreateicon {
+        font-size: 21px
+    }
+}
+
+@media (min-width:980px) and (max-width:1185px) {
+    body#page-local-onlineexams-index .catlist_container .cattop_content .catname {
+        width: 84%
+    }
+    body#page-local-onlineexams-index .actionicons {
+        width: 15%
+    }
+}
+
+@media (min-width:870px) and (max-width:925px) {
+    #page-local-onlineexams-index .course_name a {
+        font-size: 16px !important
+    }
+}
+
+@media (min-width:768px) and (max-width:939px) {
+    body#page-local-onlineexams-index .catlist_container .cattop_content {
+        padding-left: 5px;
+        padding-right: 5px
+    }
+    body#page-local-onlineexams-index .catlist_container .cattop_content .catname {
+        font-size: 12px
+    }
+    body#page-local-onlineexams-index .catlist_container .col-md-6 {
+        padding-right: 0
+    }
+    body#page-local-onlineexams-index .catlist_container .catcount {
+        font-size: 22px
+    }
+    body#page-local-onlineexams-index .catlist_container .courses_str {
+        font-size: 13px
+    }
+    body#page-local-onlineexams-index .actionicons.opened .options_container,
+    body#page-local-onlineexams-index .options_container:hover {
+        right: -30px
+    }
+}
+
+@media (min-width:768px) and (max-width:869px) {
+    #page-local-onlineexams-index .course_name a {
+        font-size: 14px !important
+    }
+    #page-local-onlineexams-index .course_container .coursecontent {
+        padding-left: 0
+    }
+    #page-local-onlineexams-index .cat_btm .catbtm_info {
+        display: flex;
+        word-break: break-all
+    }
+    body#page-local-courses-courseenrol #fgroup_id_buttonar .form-submit {
+        margin-bottom: 3px !important
+    }
+}
+
+@media (min-width:769px) and (max-width:782px) {
+    body#page-local-onlineexams-index .catcourses_list .col-md-10 {
+        width: 82% !important
+    }
+}
+
+@media (max-width:768px) {
+    body#page-local-onlineexams-index .col-md-6.catcourses_list {
+        width: 100%
+    }
+    body#page-local-onlineexams-index .catbtm_colon {
+        min-width: 100px
+    }
+    body#page-local-onlineexams-index .coursedesc {
+        min-height: 50px
+    }
+    #page-local-onlineexams-index .course_container .coursecontent {
+        margin-bottom: 5px
+    }
+}
+
+@media (max-width:767px) {
+    #page-local-onlineexams-index .courseimg_bg {
+        display: none
+    }
+    #page-local-onlineexams-index .course_buttons {
+        clear: both;
+        float: left;
+        width: 100%
+    }
+    #page-local-onlineexams-index .actionicons,
+    #page-local-onlineexams-index .actionicons {
+        visibility: visible !important
+    }
+    #page-local-courses-courseenrol button.custom_btn.btn.remove.btn-default {
+        margin-top: 0
+    }
+    #page-local-courses-courseenrol .box3.col-md-2.actions {
+        margin-bottom: 3px
+    }
+}
+
+@media (min-width:544px) and (max-width:980px) {
+    body#page-local-onlineexams-index #category_tbl tbody td {
+        width: 50% !important;
+        float: left
+    }
+}
+
+@media (max-width:543px) {
+    body#page-local-onlineexams-index #category_tbl tbody td {
+        width: 100% !important;
+        float: left
+    }
+    body#page-local-onlineexams-index .catcourses_list .cat_btm {
+        text-align: left
+    }
+    body#page-local-onlineexams-index #region-main {
+        padding-top: 7px
+    }
+    .course_container .coursetype .certification,
+    .course_container .coursetype .classroom,
+    .course_container .coursetype .elearning,
+    .course_container .coursetype .learningpath,
+    .course_container .coursetype .program {
+        display: inline-block
+    }
+}
+
+@media(max-width:514px) {
+    #page-course-view-tabtopics .course_extended_menu_list li {
+        margin-bottom: 5px
+    }
+    .path-course-view .section .activity .actions,
+    .path-course-view .section .activity .activityinstance {
+        display: table-cell
+    }
+}
+
+@media (max-width:375px) {
+    body#page-local-onlineexams-index .catcourses_list .cat_btm .catbtm_info {
+        font-size: 14px
+    }
+    #page-local-onlineexams-index .course_name a {
+        font-size: 14px !important
+    }
+}
+
+body#page-local-courses-courseenrol #filters_form.collapsibleregion {
+    box-sizing: inherit
+}
+
+#page-local-onlineexams-index .catcourses_list:hover .actionicons {
+    visibility: visible
+}
+
+#page-local-onlineexams-index .actionicons {
+    visibility: hidden
+}
+
+body#page-local-onlineexams-index a:first-of-type>.icon,
+span:first-of-type>.icon {
+    margin-left: 0
+}
+
+body#page-local-onlineexams-index .quick_actions_list5.options_container:hover::after {
+    text-align: center;
+    left: 20px
+}
+
+
+.quick_actions_list6.options_container:hover {
+    display: inline-flex
+}
+body#page-local-onlineexams-index .actionicons a .icon {
+    font-size: initial;
+    width: initial;
+    height: initial;
+    vertical-align: inherit;
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: content-box;
+    box-sizing: inherit;
+    margin-right: 0;
+    color: #fff
+}
+
+#page-report-outline-index td.numviews {
+    text-align: left !important
+}
+
+#page-mod-quiz-review .answer i.fa {
+    margin-left: 20px
+}
+
+.path-course-view .completionprogress {
+    margin-top: 15px
+}
+
+#page-report-log-index form.logselecform {
+    margin-top: 15px
+}
+
+.course_container .coursetype .classroom {
+    color: #0071bc;
+}
+
+.course_container .coursetype .elearning {
+    color: #008dcf;
+}
+
+.course_container .coursetype .learningpath {
+    color: #ec1b23
+}
+
+.course_container .coursetype .program {
+   color: #3ab54a
+}
+
+.course_container .coursetype .certification {
+    color: #28aae2
+}
+.course_container .coursetypes_container.coursetype span{
+   
+    padding: 3px 0px;
+    display: flex;
+    
+    align-items: center;
+    border-radius: 3px;
+    font-size: 14px;
+    margin-right: 5px;
+}
+.course_container .courseinfo_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    margin: 3px 0;
+}
+.course_container .courseinfo_container .info_container{
+    display: flex;
+    align-items: center;
+    padding-right: 5px;
+    max-width: 50%;
+    margin-bottom: 2px;
+    flex: 0 0 50%;
+    min-width: 50%;
+}
+.course_container .courseinfo_container .info_container .info_value{
+    color: #008dcf;
+    font-weight: 700;
+    margin-right: 5px;
+}
+.course_container .courseinfo_container .info_container .icon{
+    width: 25px;
+    height: 25px;
+    background-size: 100%;
+    background-position: center center;
+    margin-right: 7px;
+    background-repeat: no-repeat;
+
+}
+.course_container .courseinfo_container .info_container.enrolment_info .icon{
+    background-image: url('[[pix:local_courses|courseinfo_icons/enrollments]]');
+}
+.course_container .courseinfo_container .info_container.points_info .icon{
+    background-image: url('[[pix:local_courses|courseinfo_icons/points]]');
+}
+.course_container .courseinfo_container .info_container.rating_info .icon{
+    background-image: url('[[pix:local_courses|courseinfo_icons/rating]]');
+}
+.course_container .courseinfo_container .info_container.completed_info .icon{
+    background-image: url('[[pix:local_courses|courseinfo_icons/completed]]');
+}
+#page-local-onlineexams-index #popup_category_wrapper .dataTables_paginate {
+    width: 100%;
+    text-align: right;
+    float: initial
+}
+
+#page-local-courses-courseenrol button.custom_btn.btn.move.btn-default,
+#page-local-courses-courseenrol button.custom_btn.btn.remove.btn-default {
+    margin: 2% 0;
+    width: 100%
+}
+
+#page-local-courses-courseenrol .dual_select option {
+    padding: 5px
+}
+
+#page-local-onlineexams-index .categoryname {
+    background: #d8ecf8;
+    font-size: 20px;
+    font-style: italic;
+    margin-bottom: 12px
+}
+
+#page-local-courses-enrolledusers .course_extended_menu_list {
+    top: -20px
+}
+
+body#page-local-courses-userdashboard .card_list_view {
+    display: none;
+}
+.ctype_elearning .coursedesc span{
+    text-align:center;
+    background-color: inherit;
+    border: 1px solid #d1edf6;
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+}
+
+/*hema   local course view file code*/
+
+#page-local-onlineexams-index .courseimg_bg{
+    padding: 10px!important;
+}
+/*#page-local-onlineexams-index .course_container{
+    padding: 6px !important;
+    height: calc( 100% - 20px );
+}*/
+/*progress bar code*/
+#page-local-onlineexams-index .course_progress_container  .progress_circular {
+    width: 28px;
+    height: 28px;
+    background-color: transparent;
+    background-image: conic-gradient(white 100%, transparent 0%);
+    border-radius: 50%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    border: 1px solid #fff;
+}
+#page-local-onlineexams-index .course_progress_container{
+    color: #fff;
+    gap: 4px;
+    padding: 3px;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    transition:  width .4s;
+    width: 38px;
+}
+ #page-local-onlineexams-index .course_container.course_progress_container .progress_percentage{
+    font-weight: bold;
+    margin-left: 5px;
+}
+#page-local-onlineexams-index .course_container:hover .course_progress_container .progress_percentage{
+  
+    margin-left: 0px;
+}
+#page-local-onlineexams-index .course_container .course_progress_container .progress_status{
+    display: none;
+}
+#page-local-onlineexams-index .course_container:hover .course_progress_container{
+    background-color: #2E64BA;
+    padding: 5px;
+    border: 0px solid #fff;
+    width: 100%;
+}
+#page-local-onlineexams-index  .progress_percentage {
+    margin-left: 6px !important;
+}
+#page-local-onlineexams-index .course_container:hover .course_progress_container .progress_status{
+    display: flex;
+}
+#page-local-onlineexams-index .alert-info{
+    border: none!important;
+    padding: 0;
+    text-align: left !important;
+    font-size: 12px;
+    color: #000;
+    margin-bottom: 0 !important;
+}
+#page-local-onlineexams-index .coursedesc{
+    margin-bottom: 0 !important;
+    min-height: 28px;
+}
+/*#page-local-onlineexams-index #region-main{
+    background-color: transparent;
+}*/
+
+#page-local-onlineexams-index .course_container .coursecontent span.text-muted {
+   white-space: nowrap;
+   color:#000 !important;
+   font-size:12px;
+
+}
+@media(max-width:425px){
+#page-local-onlineexams-index  .courseinfo_container .info_container{
+    min-width: 113px;
+}
+}
+
+/*coursecard changes*/
+
+/*#page-local-onlineexams-index .course_container .courseimg_container{
+    width: 100%;
+    max-width: 220px;
+    padding: 15px ;
+}*/
+#page-local-onlineexams-index .course_container .coursecontent{
+    padding: 14px;
+    flex-grow: 1;
+}
+@media(max-width:1023px){
+#page-local-onlineexams-index .course_container{
+    flex-direction: column;
+} 
+#page-local-onlineexams-index .course_container .courseimg_container{
+    max-width: 100%;
+}
+#page-local-onlineexams-index .courseimg_bg{
+    display: block;
+}
+}
+
+
+/*show option changes*/
+#page-local-onlineexams-index a.createcoursemodal .icon,
+#page-local-onlineexams-index a.delete_icon .icon,
+#page-local-onlineexams-index a.make_inactive .icon{
+    margin-right: 0;
+}
+
+/*coursepage view changes*/
+.courseheader .course_contextmenu_extended .course_extended_menu_list .icon{
+    border-radius: 0!important;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    color: #fff;
+    font-size: 23px;  
+}
+.course_contextmenu_extended .course_extended_menu_list .icon:hover {
+    background-color: transparent !important;
+}
+ .courseheader .course_extended_menu_list li{
+    margin:0;
+}
+.admin_default_menu .action-menu-trigger .dropdown .dropdown-item .icon{
+    color :#000 ;
+    font-size: 15px;
+}
+.admin_default_menu .action-menu-trigger .dropdown .dropdown-item:hover .icon,
+.admin_default_menu .action-menu-trigger .dropdown .dropdown-item:focus .icon,
+.admin_default_menu .action-menu-trigger .dropdown .dropdown-item:active .icon{
+    color:#fff ;
+}
+.admin_default_menu .action-menu-trigger .dropdown .dropdown-item:hover a{
+    text-decoration: none;
+}
+/*hema added online exams cards css*/
+#page-local-onlineexams-index  .course_container{
+    transform: scale(1);
+    transition: 0.5s;
+    z-index: 1000;
+}
+#page-local-onlineexams-index .course_container{
+    box-shadow: 7px 7px 30px #0000005C;
+}
+#page-local-onlineexams-index .course_container:hover {
+    transform: scale(1.1);
+    transition: 0.8s;
+    z-index: 1000;
+}
+#page-local-onlineexams-index .course_container .courseinfo_container .points_info,
+#page-local-onlineexams-index .course_container .courseinfo_container .rating_info{
+   width:100%;
+   margin-bottom: 2px;
+   font-size:12px;
+   max-width: 100%;
+}
+#page-local-onlineexams-index .course_container .courseinfo_container{
+    border:0;
+    padding:4px 0;
+    margin:0;
+}
+#page-local-onlineexams-index .courseimg_container .cog_icon{
+    color: #000;
+    background: #fff;
+    border-radius: 50%;
+    padding: 2px 4px;
+    font-size: 17px;
+    margin: -3px;
+    line-height: 17px;
+}
+#page-local-onlineexams-index .courseimg_container .info_value{
+    color:#fff ;
+    float:none;
+}
+#page-local-onlineexams-index .courseimg_container .info_container.enrolment_info,
+#page-local-onlineexams-index .courseimg_container .info_container.completed_info{
+    color: #fff;
+    font-size: 12px;
+    border-radius: 6px;
+    padding: 4px 10px;
+}
+#page-local-onlineexams-index .courseimg_container .info_container.enrolment_info{
+    border: 1px solid #ff6e22;
+    background: #ff6e22;    
+    margin-right: 10px;
+}
+#page-local-onlineexams-index .courseimg_container .info_container.completed_info{
+    border: 1px solid #00651a;
+    background: #00651a;
+}
+
+#page-local-onlineexams-index .course_container .courseinfo_container .info_container .info_value{
+    color:#000;
+    margin-left:3px;
+}
+#page-local-onlineexams-index .course_container .coursetypes_container.coursetype .info_title{
+    color:#000;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+#page-local-onlineexams-index .course_container .coursetypes_container.coursetype .info_title span{
+    color: #006699;
+    font-size: 12px;
+}
+#page-local-onlineexams-index .course_container .star_icon .gradestar_icon{
+    font-size: 20px;
+    margin-left: 4px;
+    margin-right: 6px;
+    display: flex;
+    color:#ff954e;
+    align-items: center;
+    justify-content: center;
+}
+#page-local-onlineexams-index .courseimg_bg:after{
+    content: "";
+    background-image: linear-gradient(to top,rgba(255,255,255,0),#00000063);
+    width: 100%;
+    height: 60%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+#page-local-onlineexams-index  .course_container  .brain_icon{
+    background-image: url('[[pix:local_onlineexams|brain]]');
+    background-position: top;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+}
+
+#page-local-onlineexams-userdashboard .course_container .courseimg_container{
+    width: 100%;
+}
+#page-local-onlineexams-userdashboard .courseimg_container .courseimg {
+    box-shadow: 0 0 6px 0 #0000003b;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+#page-local-onlineexams-userdashboard .course_container .coursecontent{
+   flex-grow: 1;
+   padding: 15px;
+}
+#page-local-onlineexams-userdashboard .course_name a {
+    font-size: 17px;
+    word-break: break-word;
+    color: #000;
+    font-weight: 600;
+    text-decoration: none;
+}
+#page-local-onlineexams-userdashboard .coursecontent .progress{
+    border-radius: 10px !important;
+}
+#page-local-onlineexams-userdashboard .nav-tabs{
+    margin-bottom: 1rem;
+}
+@media(max-width:767px){
+    #page-local-onlineexams-userdashboard .course_container{
+        flex-direction: column;
+    }
+    #page-local-onlineexams-userdashboard .course_container .courseimg_container{
+        max-width: 100%;
+    }
+    #page-local-onlineexams-userdashboard .course_container .coursecontent{
+        padding: 0 15px;
+    }
+    #page-local-onlineexams-userdashboard .userdashboard_content .desc{
+        max-height: 100%;
+    }
+}
+@media(min-width:768px) and (max-width:1023px){
+    #page-local-onlineexams-userdashboard .tabs_cmn_class{
+        flex:0 0 49.333333%;
+        max-width: 49.333333%;
+    }
+}
+#page-local-onlineexams-onlineexamsenrol .dual_select option {
+    padding: 5px;
+}
+#page-local-onlineexams-index .course_container .grade_container{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+@media(min-width:768px) and (max-width:1199px){
+    #page-local-onlineexams-index .course_container .courseinfo_container .points_info, 
+    #page-local-onlineexams-index .course_container .courseinfo_container .rating_info {
+        max-width: 100%;
+        flex: inherit;
+    }
+    #page-local-onlineexams-index .courseenroll_strips {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+@media(max-width:1023px){ 
+    #page-mod-quiz-view .activity-information .description-inner {
+        flex-direction: column;
+    }
+    #page-mod-quiz-view .quizinfo {
+        flex-direction: column;
+    }
+}
+
+
+#page-local-onlineexams-oecategoryenrol .btn {
+    background-color: #ED396C;
+    color: #fff;
+    border-color: #ED396C;
+    border-radius: 0.25rem;
+}

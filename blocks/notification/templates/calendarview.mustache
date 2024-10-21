@@ -1,0 +1,25 @@
+<div class="">
+    <h4 class="border-bottom fw-semibold pb-3">My Calendar</h4>
+    
+        <div class="activities_due mt-2 mb-3">
+
+            <div class="warning_text fs-md fw-semibold"><span class="warning_icon"></span>You have  {{duecount}}  activities due. Click here to see what's overdue.</div>
+            <a href="#" class="view_btn fs-sm " data-action="viewdueactivity" id="viewactivity" >View</a>
+        </div>
+    
+    <div class="Calendarheader_content">
+        {{{filters}}}
+        <div class="arrows text-right">
+            <a href="javascript:void(0)" class="btn btn-primary rounded-circle horizon-prev"><i class="fa fa-chevron-left"></i></a>
+            <a href="javascript:void(0)" class="btn btn-primary rounded-circle horizon-next"><i class="fa fa-chevron-right"></i></a>
+        </div>
+    </div>
+    
+    <div class="scrolling-wrapper-flexbox" id="customcalendar">
+    </div>
+</div>
+<div class="main_content">
+    <div id="customcalendardata">
+
+    </div>
+</div>

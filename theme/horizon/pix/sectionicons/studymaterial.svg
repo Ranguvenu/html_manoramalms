@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50">
+  <defs>
+    <clipPath id="clip-file">
+      <rect width="50" height="50"/>
+    </clipPath>
+  </defs>
+  <g id="file" clip-path="url(#clip-file)">
+    <path id="Vector_4_" data-name="Vector (4)" d="M4.353,41.11A4.182,4.182,0,0,1,1.3,39.815,4.182,4.182,0,0,1,0,36.756V4.353A4.182,4.182,0,0,1,1.3,1.3,4.182,4.182,0,0,1,4.353,0h32.4a4.182,4.182,0,0,1,3.059,1.3A4.182,4.182,0,0,1,41.11,4.353v32.4a4.423,4.423,0,0,1-4.354,4.354Zm-.331-4.023H37.087V8.431H4.023ZM9.534,20V16.7H31.025V20Zm0,8.817V25.515H22.208v3.306Z" transform="translate(4 4)" fill="#606060"/>
+  </g>
+</svg>

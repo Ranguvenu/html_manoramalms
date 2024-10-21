@@ -1,0 +1,32 @@
+{{#response}}
+{{#records}}
+{{#studymaterial}}
+<div class="goal_content mb-3">
+    <div class="goal_header d-flex align-items-center justify-content-between py-3">
+        <div>
+            <h5 data-toggle="collapse" href="#studymaterial-{{studymaterialid}}">{{name}}</h5>
+            <span class="goalstring">studymaterial</span>
+        </div>
+        <div class="d-flex action_btns">
+            {{# editstudymaterial}}
+            <a class="mr-1" data-action="createstudymaterial" data-id={{studymaterialid}} data-courseid={{course}}
+                title="{{#str}} edit, local_studymaterials {{/str}}">
+                <span class="editicon"><i class="fa fa-pencil fa-fw"></i></span></a>
+            {{/ editstudymaterial}}
+            {{# viewstudymaterial}}
+            <a class=" " href="{{config.wwroot}}./view.php?id={{studymaterialid}}" target="_blank"
+            title="{{#str}}view,local_studymaterials{{/str}}">
+            <span class="deleteicon "><i class="fa fa-book-reader" aria-hidden="true"></i></span></a>
+            {{/ viewstudymaterial}}
+            {{# deletestudymaterial}}
+            <a class=" " data-action="deletestudymaterial" data-id={{studymaterialid}} data-component="studymaterial"
+                data-name="{{name}}" data-code="{{code}}" title="{{#str}}delete,local_studymaterials{{/str}}">
+                <span class="deleteicon "><i class="fa fa-trash-o" aria-hidden="true"></i></span></a>
+            {{/ deletestudymaterial}}
+        </div>
+
+    </div>
+</div>
+{{/studymaterial}}
+{{/records}}
+{{/response}}

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="local/units/db" VERSION="2018092500" COMMENT="XMLDB for units"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd">
+  <TABLES>
+    <TABLE NAME="local_units" COMMENT="Units table">
+        <FIELDS>
+            <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+            <FIELD NAME="name" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+            <FIELD NAME="code" TYPE="char" NOTNULL="true" SEQUENCE="false"/>
+            <FIELD NAME="courseid" TYPE="int" LENGTH="10" NOTNULL="true"  DEFAULT="0"  SEQUENCE="false"/>
+            <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true"   DEFAULT="0"  SEQUENCE="false"/>
+            <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0"   SEQUENCE="false"/>
+            <FIELD NAME="usercreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0"  SEQUENCE="false"/>
+            <FIELD NAME="usermodified" TYPE="int" LENGTH="10" NOTNULL="true"  DEFAULT="0"   SEQUENCE="false"/>
+        </FIELDS>
+    <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+    </KEYS>
+    </TABLE>
+    <TABLE NAME="local_chapters" COMMENT="Chapters table">
+        <FIELDS>
+            <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+            <FIELD NAME="name" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+            <FIELD NAME="code" TYPE="char" NOTNULL="true" SEQUENCE="false"/>
+            <FIELD NAME="courseid" TYPE="int" LENGTH="10" NOTNULL="true"  DEFAULT="0"  SEQUENCE="false"/>
+            <FIELD NAME="unitid" TYPE="int" LENGTH="10" NOTNULL="true"  DEFAULT="0"  SEQUENCE="false"/>
+            <FIELD NAME="timecreated" TYPE="int"  LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="timemodified" TYPE="int"  LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="usercreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0"  SEQUENCE="false"/>
+            <FIELD NAME="usermodified" TYPE="int"   LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        </FIELDS>
+    <KEYS>
+    <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+    </KEYS>
+    </TABLE>
+     <TABLE NAME="local_topics" COMMENT="Topics table">
+        <FIELDS>
+            <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+            <FIELD NAME="name" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+            <FIELD NAME="code" TYPE="char" NOTNULL="true" SEQUENCE="false"/>
+            <FIELD NAME="courseid" TYPE="int" LENGTH="10" NOTNULL="true"  DEFAULT="0"  SEQUENCE="false"/>
+            <FIELD NAME="unitid" TYPE="int" LENGTH="10" NOTNULL="true"  DEFAULT="0"  SEQUENCE="false"/>
+            <FIELD NAME="chapterid" TYPE="int" LENGTH="10" NOTNULL="true"  DEFAULT="0"  SEQUENCE="false"/>
+            <FIELD NAME="timecreated" TYPE="int"  LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="timemodified" TYPE="int"  LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="usercreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0"  SEQUENCE="false"/>
+            <FIELD NAME="usermodified" TYPE="int"   LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        </FIELDS>
+    <KEYS>
+    <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+    </KEYS>
+    </TABLE>
+     <TABLE NAME="local_concept" COMMENT="Concept table">
+        <FIELDS>
+            <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+            <FIELD NAME="name" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+            <FIELD NAME="code" TYPE="char" NOTNULL="true" SEQUENCE="false"/>
+            <FIELD NAME="courseid" TYPE="int" LENGTH="10" NOTNULL="true"  DEFAULT="0"  SEQUENCE="false"/>
+            <FIELD NAME="unitid" TYPE="int" LENGTH="10" NOTNULL="true"  DEFAULT="0"  SEQUENCE="false"/>
+            <FIELD NAME="chapterid" TYPE="int" LENGTH="10" NOTNULL="true"  DEFAULT="0"  SEQUENCE="false"/>
+            <FIELD NAME="topicid" TYPE="int" LENGTH="10" NOTNULL="true"  DEFAULT="0"  SEQUENCE="false"/>
+            <FIELD NAME="timecreated" TYPE="int"  LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="timemodified" TYPE="int"  LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="usercreated" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0"  SEQUENCE="false"/>
+            <FIELD NAME="usermodified" TYPE="int"   LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+        </FIELDS>
+    <KEYS>
+    <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+    </KEYS>
+    </TABLE>
+</TABLES>
+</XMLDB>

@@ -1,0 +1,71 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_packages/classes_details
+
+    TODO describe template sessions_display
+
+    Example context (json):
+    {
+    }
+}}
+<div class="d-flex flex-wrap flex-row package card_wrap my-4">
+{{#response}}
+	{{^records}}
+		{{#nodata}}
+			<div class = 'w-100 pull-left alert alert-info'>{{nodata}}</div>
+		{{/nodata}}
+	{{/records}}
+{{#records}}
+	<!--<div class="col-12 mb-3 d-flex justify-content-between subjectdetail">
+		<div class="col-md-3 m-2 imageinfo"><img src=""></div>
+		<div class="col-md-9 m-2 detailinfo"></div>
+	</div>-->
+			
+	<div class="col-md-4 d-flex flex-wrap flex-row package card_content mb-4">
+		<div class="col-12 package card_body p-0">
+			<div class="image_container w-100 position-relative">
+				<div style="background-image: url('{{image}}')" alt="{{name}}" class="card_image_full "></div>
+				<div class="position-absolute card_tag fs-sm"><span class="py-1 px-3 bg-primary text-white card_tag_text">{{#str}}code, local_packages{{/str}} : {{code}}</span></div>
+			</div>
+			<div class="details_container p-3 mb-4">
+				<div class="mb-3">
+					<a class="text-dark fs-lg fw-medium" href="{{config.wwwroot}}./packagedetails.php?packageid={{packageid}}">{{name}}</a>
+				</div>
+				<div class="d-flex justify-content-between mb-3">
+					<div class="fs-sm">
+						<span class="card_label text-dark-gray"><span><!--<i class="fa fa-calendar text-primary mr-1" aria-hidden="true"></i>-->{{#pix}} date, local_packages {{/pix}}</span> {{#str}} startdate, local_packages {{/str}}<span> : </span></span>
+						<span class="card_value text-dark-blue">{{startdate}}</span>
+					</div>
+					<div class="fs-sm">
+						<span class="card_label text-dark-gray"><span><!--<i class="fa fa-calendar text-primary mr-1" aria-hidden="true"></i>-->{{#pix}} date, local_packages {{/pix}}</span> {{#str}} enddate, local_packages {{/str}}<span> : </span></span>
+						<span class="card_value text-dark-blue">{{enddate}}</span>
+					</div>
+				</div>
+				<div class="d-flex justify-content-between">
+					<div class="fs-sm"><span class="card_label text-dark-gray"><span><!--<i class='fas fa-graduation-cap text-primary mr-1'></i>-->{{#pix}} course, local_packages {{/pix}}</span>{{#str}} courses, local_packages {{/str}}<span> : </span></span>
+						<span class="card_value text-dark-blue">{{subjects}}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{{/records}}
+{{/response}}
+</div>
+
+	

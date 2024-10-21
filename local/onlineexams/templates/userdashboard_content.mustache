@@ -1,0 +1,62 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template block_userdashboard/inner_tab
+
+    Select an action to execute.
+
+    Classes required for JS:
+    * none
+
+    Data attibutes required for JS:
+    * none
+
+    Context variables required for this template:
+    * message - The message to explain why we ask user to select an action
+    * choices - List of possible actions
+    * confirm - Text for button confirms
+    * cancel -  Text for button cancel
+
+    Example context (json):
+    {
+        "message": "Message",
+        "choices": [
+            { "value": "1", "text": "One" },
+            { "value": "2", "text": "Two" }
+        ],
+        "confirm": "Confirm",
+        "cancel": "Cancel"
+    }
+}}
+<div class="w-full pull-left udb_tab_content elearning_onlineexams active" id="elearning_onlineexams">
+    <div class="portlet light shadow">
+        <div class="portlet-title">
+            {{> block_userdashboard/userdashboard_count_info}}
+            {{> local_onlineexams/userdashboard_inner_tab}}
+        </div>
+        <div class="portlet-body pull-left w-100">
+            <div class="userdashboard_filter_container">
+                <label><label>{{# str}}search, local_onlineexams{{/ str}} :
+                <input id="userdashboard_filter" class="ml-10 dashboard_filter" type="text" name="dashboard_filter" placeholder="" data-pluginname="local_onlineexams" data-tabname="{{tabname}}" data-templatename="local_onlineexams/dashboard_innercontent" data-status="{{status}}" value="{{{filter_text}}}"></label>
+            </div>
+            <div class= "divslide">
+        	   {{> local_onlineexams/dashboard_innercontent }}
+            </div>
+        </div>
+    </div>
+</div>
+

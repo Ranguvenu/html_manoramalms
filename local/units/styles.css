@@ -1,0 +1,136 @@
+#units_container{
+    min-height: 500px;
+    border-radius: 15px;
+    padding: 1rem;
+    background-color: #FDFDFD;
+}
+#units_container a:hover{
+    cursor: pointer;
+}
+
+#units_container .unit_content:nth-of-type(odd) {
+    border: 1px solid #eee;
+    padding: 10px;
+    border-radius: 10px;
+}
+#units_container .unit_content:nth-of-type(even) {
+    border: 1px solid #eee;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f3f3fe;
+}
+
+#units_container .unit_content:nth-of-type(even) .unit_chapter,
+#units_container .unit_content:nth-of-type(odd) .unit_topic,
+#units_container .unit_content:nth-of-type(even) .unit_concept {
+    border: 1px solid #eee;
+    padding: 8px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    margin-bottom: 10px;
+}
+#units_container .unit_content:nth-of-type(odd) .unit_chapter,
+#units_container .unit_content:nth-of-type(even) .unit_topic,
+#units_container .unit_content:nth-of-type(odd) .unit_concept {
+    border: 1px solid #989898;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f3f3fe;
+    margin-bottom: 10px;
+}
+span.unitstring, span.chapterstring, span.topicstring {
+    color: #989898;
+}
+#units_container .unit_content .unit_header .action_btns{
+    margin-right: 10px;
+}
+
+#units_container .unit_content .unit_header .action_btns .editicon,
+#units_container .unit_content .unit_chapter .action_btns .editicon,
+#units_container .unit_content .unit_topic .action_btns .editicon,
+#units_container .unit_content .unit_concept .action_btns .editicon{
+    padding: 2px;
+    border-radius: 15px;
+    background-color: #333399;
+}
+#units_container .unit_content .unit_header .action_btns .deleteicon,
+#units_container .unit_content .unit_chapter .action_btns .deleteicon,
+#units_container .unit_content .unit_topic .action_btns .deleteicon,
+#units_container .unit_content .unit_concept .action_btns .deleteicon{
+    padding: 2px 5px 3px 5px;
+    border-radius: 15px;
+    background-color: #ed396c;
+}
+#units_container h5,#units_container h6{
+    margin: 0;
+}
+#units_container .unit_chapter h6,
+#units_container .unit_topic h6,
+#units_container .unit_concept h6{
+    padding-left: 10px;
+}
+
+#units_container .unit_chapter span.heading,
+#units_container .unit_topic span.heading,
+#units_container .unit_concept span.heading{
+    padding-left: 10px;
+    color: #989898;
+}
+#units_container .unit_topic_content {
+    padding-left: 10px;
+}
+#units_container .unit_concept_content {
+    padding-left: 20px;
+}
+#units_container .unit_topic .topic_header,#units_container .unit_topic .topic_detail_container .topic_content{
+    padding: 15px 10px;
+}
+#units_container .unit_topic .topic_detail_container .topic_content h6{
+    font-weight: normal;
+}
+#units_container .unit_topic .topic_detail_container .topic_content{
+    background-color: #F8F8F8;
+}
+#units_container .unit_topic .topic_detail_container .topic_content{
+    border-top : 1px solid #D4DBE0;
+}
+#units_container .unit_topic .topic_detail_container .topic_content:first-child{
+    border-color: #989EA2;
+}
+
+.local_unit_sync_warning {color: #9F6000;background-color: #FEEFB3;margin-bottom: 7px;padding: 6px;}
+.local_unit_sync_error {color: #D8000C;background-color: #FFBABA;margin-bottom: 7px;padding: 6px;}
+.local_unit_sync_success {color: #4F8A10;background-color: #DFF2BF;margin-bottom: 7px;padding: 6px;}
+
+#page-local-sector-topicfamily .table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: unset !important;
+}
+body#page-local-sector-topicfamily #topicrole th.header.c0 {
+    width: 20% !important;
+}
+.profileeditor .createunit {
+    background-color: #ed396c;
+    border-color: #ed396c;
+}
+.texttransform{
+    text-transform: capitalize;
+}
+.hierarchypath{
+    font-size: 13px;
+    color: #989898;
+}
+
+@media (max-width:767px) {
+    #page-local-units-index #units_container .unit_content .unit_header {
+        flex-direction: column;
+        align-items: inherit!important;
+    }
+    #page-local-units-index #units_container .unit_content .unit_header .action_btns {
+        justify-content: end;
+    }
+    #page-local-units-index .profileeditor .createunit{
+        margin-top: 10px;
+    }
+}

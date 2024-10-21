@@ -1,0 +1,21 @@
+<div id="goals_container" class="p-4">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="goals_heading" class="">
+                <div class="d-inline-block theme-border-bottom-3">
+                    <!--<h5 class="theme_text_color"></h5>-->
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            {{> local_goals/goals_details }}
+            
+        </div>
+    </div>
+</div>
+{{#js}}
+    require(['local_goals/customgoals'], function(s) {
+        s.init();
+    });
+
+{{/js}}

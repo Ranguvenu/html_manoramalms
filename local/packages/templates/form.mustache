@@ -1,0 +1,16 @@
+<div class="col-md-12">
+<div class="row profileeditor mb-2">
+    <div class="col-md-4">
+       {{{ filter_content }}}
+    </div>
+    <div class="col-md-8">
+       
+    </div>
+</div>
+</div>
+
+{{#js}}
+    require(['local_goals/customgoals'], function(s) {
+        s.init();
+    });
+{{/js}}

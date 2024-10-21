@@ -1,0 +1,119 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template theme_horizon/global_filter
+
+    A preview section for the list of challenges that match the random
+    challenge criteria in the random challenge form.
+
+    Classes required for JS:
+    * none
+
+    Data attributes required for JS:
+    * none
+
+    Context variables required for this template:
+    * title A cleaned string (use clean_text()) to display.
+    * body HTML content for the boday
+
+    Example context (json):
+    {}
+}}
+
+
+{{# options}}
+    <div class="row">
+        <div class="global_filter_structure form-group m-0 {{#widthclass}} {{widthclass}} {{/widthclass}} {{^widthclass}} col-md-4 {{/widthclass}}">
+            {{#searchlabel}} <label class="{{labelclasses}}">{{searchlabel}}</label> {{/searchlabel}}
+            <div class="input_container position-relative" >
+            <input id="global_filter" autocomplete="off" class="global filter form-control {{inputclasses}}" placeholder="{{#placeholder}} {{placeholder}} {{/placeholder }} {{^placeholder }} {{#str}} search,theme_horizon{{/str}}{{/placeholder }}" type="text" name="search_query" data-options="{{options}}" value="{{q}}" data-dataoptions="{{dataoptions}}" data-status="{{status}}">
+            <span class="search_icon"></span>
+            </div>
+        </div>
+    </div>
+{{/ options}}
+
+{{#js}}
+    require(['theme_horizon/cardPaginate'], function(cardPaginate) {
+        var search_interval = 100;
+        var timer;
+        var searchvalue = $('#global_filter').val();
+        
+
+        $(document).on('keyup', '#global_filter', function(e){
+        
+            console.log($(this).data('options'));
+            console.log(JSON.parse($(this).attr('data-options')));
+            clearTimeout(timer);
+            var options = JSON.parse($(this).attr('data-options'));
+            var dataoptions = JSON.parse($(this).attr('data-dataoptions'));
+            var searchval = $(this).val();
+            var fieldname = $('#global_filter').attr('name');
+            var thisstatus = $(this).attr('data-status');
+            console.log(options); 
+            timer = setTimeout(function(){
+                {{! var filterdata = $(this).data('filterdata'); }}
+                var formdata =  $('{{submitid}}').serializeArray();
+                values = [];
+                filterdatavalue = [];
+                $.each(formdata, function (i, field) {
+                    valuedata = [];
+                    if(field.name != '_qf__filters_form' && field.name != 'sesskey'){
+                        if(!(field.name == 'options' || field.name == 'dataoptions')){
+                            {{! values[field.name] = field.value; }}
+                        {{! }else{ }}
+                            var str = field.name;
+                            if(str.indexOf('[]') != -1){
+                                field.name = str.substring(0, str.length - 2);
+                            }
+                            if(field.value != '_qf__force_multiselect_submission'){
+                                if(field.name in filterdatavalue){
+                                    filterdatavalue[field.name] = filterdatavalue[field.name]+','+field.value;
+                                }else{  
+                                    filterdatavalue[field.name] = field.value;
+                                }
+                            }
+                        }
+
+                    }
+                });
+                {{! var filtervalue = {search_query: $(this).val()}; }}
+                if(searchval){
+                    filterdatavalue[fieldname] = searchval;
+                }
+               
+                filterdatavalue['status'] = thisstatus;
+              
+                filterdataparsondata = $.extend({}, filterdatavalue);
+                {{! console.log(JSON.stringify(filterdata)); }}
+                {{! if(JSON.stringify(filterdata) != '[]')
+                    var filterdataoptions = $.extend(filterdata, filtervalue);
+                else
+                    var filterdataoptions = filtervalue; }}
+                cardPaginate.reload(options, dataoptions, filterdataparsondata);
+            }, search_interval);
+                
+        });
+        $(document).on('keydown', '#global_filter', function(){
+            clearTimeout(timer);
+        });
+        if(searchvalue != ''){
+            console.log(searchvalue);
+            $('#global_filter').keyup();
+        }
+    });
+{{/js}}

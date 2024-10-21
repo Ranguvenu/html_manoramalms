@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="local/questions/db" VERSION="2018092500" COMMENT="XMLDB for question"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd">
+  <TABLES>
+    <TABLE NAME="local_questions" COMMENT="Question bank management">
+        <FIELDS>
+            <FIELD NAME="id" TYPE="int" LENGTH="12" NOTNULL="true" SEQUENCE="true"/>
+            <FIELD NAME="questionid" TYPE="int" LENGTH="12" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" />
+            <FIELD NAME="question_type" TYPE="int" LENGTH="12" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" />
+	        <FIELD NAME="difficulty_level" TYPE="int" LENGTH="12" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" />
+	        <FIELD NAME="cognitive_level" TYPE="int" LENGTH="12" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" />
+	        <FIELD NAME="learning_objective" TYPE="char" LENGTH="255" NOTNULL="true" UNSIGNED="true" SEQUENCE="false" />
+            <FIELD NAME="marks" TYPE="int" LENGTH="12" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" />
+            <FIELD NAME="weightage" TYPE="int" LENGTH="12" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" />
+            <FIELD NAME="source" TYPE="int" LENGTH="12" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" />
+            <FIELD NAME="class" TYPE="int" LENGTH="12" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" />
+            <FIELD NAME="subject" TYPE="int" LENGTH="12" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" />
+            <FIELD NAME="topic" TYPE="int" LENGTH="12" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" />
+            <FIELD NAME="solution" TYPE="text" NOTNULL="false"  SEQUENCE="false"/>
+            <FIELD NAME="hint" TYPE="text" NOTNULL="false"  SEQUENCE="false"/>
+            <FIELD NAME="timecreated" TYPE="int" LENGTH="12" NOTNULL="false" DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="usercreated" TYPE="int" LENGTH="12" NOTNULL="false" DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="timemodified" TYPE="int" LENGTH="12" NOTNULL="false" DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="usermodified" TYPE="int" LENGTH="12" NOTNULL="false" DEFAULT="0" SEQUENCE="false"/>
+        </FIELDS>
+        <KEYS>
+            <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        </KEYS>
+    </TABLE>
+     
+      <TABLE NAME="local_questions_courses" COMMENT="Question bank management">
+        <FIELDS>
+            <FIELD NAME="id" TYPE="int" LENGTH="12" NOTNULL="true" SEQUENCE="true"/>
+            <FIELD NAME="questionid" TYPE="int" LENGTH="12" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" />
+            <FIELD NAME="questionbankid" TYPE="int" LENGTH="12" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" />
+            <FIELD NAME="goalid" TYPE="int" LENGTH="12" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" />
+            <FIELD NAME="boardid" TYPE="int" LENGTH="12" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" />
+            <FIELD NAME="classid" TYPE="int" LENGTH="12" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" />
+            <FIELD NAME="courseid" TYPE="int" LENGTH="12" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" />
+            <FIELD NAME="unitid" TYPE="int" LENGTH="12" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" />
+            <FIELD NAME="chapterid" TYPE="int" LENGTH="12" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" />
+            <FIELD NAME="topicid" TYPE="int" LENGTH="12" NOTNULL="true" UNSIGNED="true"  DEFAULT="0" SEQUENCE="false" />
+            <FIELD NAME="conceptid" TYPE="int" LENGTH="12" NOTNULL="true" UNSIGNED="true"  DEFAULT="0" SEQUENCE="false" />
+            <FIELD NAME="difficulty_level" TYPE="int" LENGTH="12" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" />
+            <FIELD NAME="cognitive_level" TYPE="int" LENGTH="12" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" />
+            <FIELD NAME="source" TYPE="int" LENGTH="12" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false" />
+            <FIELD NAME="usercreated" TYPE="int" LENGTH="12" NOTNULL="false" DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="underreviewby" TYPE="int" LENGTH="12" NOTNULL="true" UNSIGNED="true"  DEFAULT="0" SEQUENCE="false" />
+            <FIELD NAME="reviewby" TYPE="int" LENGTH="12" NOTNULL="true" UNSIGNED="true"  DEFAULT="0" SEQUENCE="false" />
+            <FIELD NAME="finalstatusby" TYPE="int" LENGTH="12" NOTNULL="true" UNSIGNED="true"  DEFAULT="0" SEQUENCE="false" />
+            <FIELD NAME="timecreated" TYPE="int" LENGTH="12" NOTNULL="false" DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="timemodified" TYPE="int" LENGTH="12" NOTNULL="false" DEFAULT="0" SEQUENCE="false"/>
+        </FIELDS>
+        <KEYS>
+            <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        </KEYS>
+    </TABLE>
+
+    <TABLE NAME="local_qb_questionreview" COMMENT="Questionbank assigned experts">
+        <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="questionbankid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" />
+        <FIELD NAME="questionid" TYPE="int" LENGTH="10" NOTNULL="true"  SEQUENCE="false" />
+        <FIELD NAME="courseid" TYPE="int" LENGTH="10" NOTNULL="true"  SEQUENCE="false" />
+        <FIELD NAME="reviewdby" TYPE="int"  LENGTH="10" NOTNULL="false"  SEQUENCE="false"/>
+        <FIELD NAME="assignedreviewer" TYPE="int"  LENGTH="10" NOTNULL="false"  SEQUENCE="false"/>
+        <FIELD NAME="reviewdon" TYPE="int"  LENGTH="10" NOTNULL="true" UNSIGNED="true" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="qstatus" TYPE="char"  LENGTH="50"  NOTNULL="false"  SEQUENCE="false"/>
+        </FIELDS>
+        <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        </KEYS>
+    </TABLE>
+
+    <TABLE NAME="local_question_sources" COMMENT="Question Sources">
+        <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="name" TYPE="char"  LENGTH="100"  NOTNULL="true"  SEQUENCE="false"/>
+        <FIELD NAME="code" TYPE="char"  LENGTH="100"  NOTNULL="true"  SEQUENCE="false"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="12" NOTNULL="false" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="12" NOTNULL="false" DEFAULT="0" SEQUENCE="false"/>
+        </FIELDS>
+        <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        </KEYS>
+    </TABLE>
+
+    <TABLE NAME="user_sources" COMMENT="Question Creators mapped sources">
+        <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" />
+        <FIELD NAME="sourceid" TYPE="int" LENGTH="10" NOTNULL="true"  SEQUENCE="false" />
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="12" NOTNULL="false" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="timemodified" TYPE="int" LENGTH="12" NOTNULL="false" DEFAULT="0" SEQUENCE="false"/>
+        </FIELDS>
+        <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        </KEYS>
+        <INDEXES>
+            <INDEX NAME="user" UNIQUE="false" FIELDS="userid"/>          
+        </INDEXES>
+    </TABLE>
+
+    <TABLE NAME="local_questions_import_log" COMMENT="Questions Import Logs">
+        <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="questionid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" />
+        <FIELD NAME="qinfo" TYPE="text" NOTNULL="false"  SEQUENCE="false"/>
+        <FIELD NAME="idnumber" TYPE="text" NOTNULL="false"  SEQUENCE="false" />
+        <FIELD NAME="importstatus" TYPE="int" LENGTH="10" NOTNULL="true"  SEQUENCE="false" />
+        <FIELD NAME="usercreated" TYPE="int" LENGTH="12" NOTNULL="false" DEFAULT="0" SEQUENCE="false"/>
+        <FIELD NAME="timecreated" TYPE="int" LENGTH="12" NOTNULL="false" DEFAULT="0" SEQUENCE="false"/>
+        </FIELDS>
+        <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        </KEYS>
+    </TABLE>
+    <TABLE NAME="local_rejected_questions" COMMENT="Question Sources">
+        <FIELDS>
+            <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+            <FIELD NAME="questionid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+            <FIELD NAME="questionbankentryid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+            <FIELD NAME="reason" TYPE="text" NOTNULL="false" SEQUENCE="false"/>
+            <FIELD NAME="usercreated" TYPE="int" LENGTH="12" NOTNULL="false" DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="timecreated" TYPE="int" LENGTH="12" NOTNULL="false" DEFAULT="0" SEQUENCE="false"/>
+        </FIELDS>
+        <KEYS>
+            <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        </KEYS>
+    </TABLE>
+</TABLES>
+</XMLDB>

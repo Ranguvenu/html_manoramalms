@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50" viewBox="0 0 50 50">
+  <defs>
+    <clipPath id="clip-glossary">
+      <rect width="50" height="50"/>
+    </clipPath>
+  </defs>
+  <g id="glossary" clip-path="url(#clip-glossary)">
+    <path id="glossary-2" data-name="glossary" d="M41.023,38.258V3.719a1.255,1.255,0,0,0-.732-1.127L35.388.113A2,2,0,0,0,34.825,0H7.836A1.25,1.25,0,0,0,6.6,1.24V40.68a1.243,1.243,0,0,0,1.24,1.24H34.825a2,2,0,0,0,.563-.113l4.9-2.479a1.127,1.127,0,0,0,.732-1.071Zm-2.93-1.071-2.479,1.24V32.51l2.479-1.24Zm0-9.24-2.479,1.24V23.27l2.479-1.24Zm0-9.071-2.479,1.24V14.2l2.479-1.24Zm-.62-8.9-4.057,1.69a1.5,1.5,0,0,0-.732,1.127V38.934H9.583v-36h24.51l3.324,1.578.056,5.465Z" transform="translate(1.408 4)" fill="#606060"/>
+  </g>
+</svg>

@@ -1,0 +1,106 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{#response}}
+{{#viewtypeCard}}
+<table id ="manage_courses" class="generaltable">
+    <thead>
+        <tr>
+            <th>{{#str}}onlineexam_name, local_onlineexams{{/str}}</th>
+            <th>{{#str}}onlineexamcode, local_onlineexams{{/str}}</th>
+            <th>{{#str}}course_type, local_onlineexams{{/str}}</th>
+            <th>{{#str}}noofquestion, local_onlineexams{{/str}}</th>
+            <th>{{#str}}marks, local_onlineexams{{/str}}</th>
+            <th>{{#str}}timelimit, local_onlineexams{{/str}}</th>
+            {{#is_siteadmin}}
+            <th>{{#str}}enrolled, local_onlineexams{{/str}}</th>
+            <th>{{#str}}completed, local_onlineexams{{/str}}</th>
+            <th>{{#str}}actions, local_onlineexams{{/str}}</th>
+            {{/is_siteadmin}}
+
+        </tr>
+    </thead>
+    <tbody>
+        {{#records}}
+        {{# hascourses}}
+        <tr>
+            <td>
+                {{^ coursenameCut}}
+                    <a href="{{ courseurl }}" title="{{ coursename }}">{{ coursename }}</a>
+                {{/ coursenameCut}}
+                {{# coursenameCut}}
+                    <a href="{{ courseurl }}" title="{{ coursename }}">{{ coursenameCut }}</a>
+                {{/ coursenameCut}}
+            </td>            
+            <td>{{ shortname }}</td>
+            <td>{{#course_module}}{{course_module}}{{/course_module}}</td>
+            <td>{{ noofquestion }}</td>
+            <td>{{ marks }}</td>
+            <td>{{ timelimit }}</td>
+            {{#is_siteadmin}}
+            <td>
+                {{# enrolled_count }} {{enrolled_count}} {{/ enrolled_count }} 
+                {{^ enrolled_count }} 0 {{/ enrolled_count }}
+            </td>
+            <td>{{# completed_count }} {{completed_count}} {{/ completed_count }} {{^ completed_count }} 0 {{/ completed_count }}</td>
+            <td>
+                {{#update}}{{{ editcourse }}}{{/update}}
+                {{#enrol}}
+                     <a href="{{ enrollusers }}" title= "{{#str}}userenrolments, local_onlineexams{{/str}}" >
+                         <i class="fa fa-user" aria-hidden="true"></i>
+                     </a>
+                       
+                {{/enrol}}
+                {{#update}}
+                    {{#auto_enrol}}                        
+                           <a href="{{ auto_enrol }}" title= "{{#str}}auto_enrol, local_onlineexams{{/str}}">
+                               <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                           </a>
+                       
+                    {{/auto_enrol}}
+                {{/update}}
+                {{#update}}{{{update_status}}}{{/update}}
+                <!-- {{#grade_view}}                 
+                       <a href="{{ grader }}" title= "{{#str}}grader, local_onlineexams{{/str}}">
+                           <i class="fa fa-pie-chart" aria-hidden="true"></i>
+                       </a>
+                   
+                {{/grade_view}} -->
+                {{#request_view}}            
+                     <a href="{{ requestlink }}" title= "{{#str}}request, local_request{{/str}}">
+                         <i class="fa fa-share-square" aria-hidden="true"></i>
+                     </a>             
+                {{/request_view}}     
+               {{#deleteenable}} {{#delete}}  {{{ deleteaction }}}  {{/delete}} {{/deleteenable}}
+                {{{ copyaction }}}
+            </td>
+            {{/is_siteadmin}}
+            {{^is_siteadmin}}
+            <td>
+             <a href= {{courseurl}} > 
+            <button class="btn btn-secondary"> 
+             {{#str}}launch, local_onlineexams{{/str}}
+            </button> 
+             </a> 
+            {{/is_siteadmin}}
+            </td>
+        </tr>
+        {{/ hascourses}}
+        {{/records}}
+    </tbody>
+</table>
+{{/viewtypeCard}}
+{{/response}}

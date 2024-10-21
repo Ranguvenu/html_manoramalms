@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="local/masterdata/db" VERSION="2018092500" COMMENT="XMLDB for mastercourse data"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd">
+  <TABLES>
+    <TABLE NAME="local_masterdata_log" COMMENT="log info">
+        <FIELDS>
+            <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+            <FIELD NAME="itemid" TYPE="int" LENGTH="10" NOTNULL="true"  DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="courseid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
+            <FIELD NAME="status" TYPE="int" LENGTH="2" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="status_message" TYPE="char" NOTNULL="false" SEQUENCE="false"/>
+            <FIELD NAME="activitiescount" TYPE="int" LENGTH="10" DEFAULT="0" NOTNULL="true" SEQUENCE="false"/>
+            <FIELD NAME="oldcourseid" TYPE="int" LENGTH="10" DEFAULT="0" NOTNULL="true" SEQUENCE="false"/>
+            <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true"   DEFAULT="0"  SEQUENCE="false"/>
+            <FIELD NAME="usercreated" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0"   SEQUENCE="false"/>
+        </FIELDS>
+        <KEYS>
+            <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        </KEYS>
+    </TABLE>
+
+    <TABLE NAME="local_question_attempts" COMMENT="Local Question Attempts">
+        <FIELDS>
+            <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+            <FIELD NAME="examid" TYPE="int" LENGTH="10" NOTNULL="true"  DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="cmid" TYPE="int" LENGTH="10" NOTNULL="true"  DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="quizid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="attemptid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="studentid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="attemptsinfo" TYPE="char" NOTNULL="false" SEQUENCE="false"/>
+            <FIELD NAME="attempt_start_date" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false"/>
+            <FIELD NAME="timetaken" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false"/>
+            <FIELD NAME="last_try_date" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false"/>
+            <FIELD NAME="difficulty_level" TYPE="char" NOTNULL="false" SEQUENCE="false"/>
+            <FIELD NAME="mark" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="viewed_questions" TYPE="char" NOTNULL="false" SEQUENCE="false"/>
+            <FIELD NAME="questions_under_review" TYPE="char" NOTNULL="true" SEQUENCE="false"/>
+            <FIELD NAME="is_exam_finished" TYPE="int" LENGTH="2" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+            <FIELD NAME="exam_mode" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="no_of_qns" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" /> 
+            <FIELD NAME="is_exam_paused" TYPE="int" LENGTH="2" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+            <FIELD NAME="is_module_wise_test" TYPE="int" LENGTH="2" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="total_mark" TYPE="float" NOTNULL="true" DEFAULT="0" SEQUENCE="false" />
+            <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true"   DEFAULT="0"  SEQUENCE="false"/>
+            <FIELD NAME="usercreated" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0"   SEQUENCE="false"/>
+        </FIELDS>
+        <KEYS>
+            <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        </KEYS>
+    </TABLE>
+    <TABLE NAME="local_zoom_notifcation_logs" COMMENT="Local Zoom Notification Logs">
+        <FIELDS>
+            <FIELD NAME="id" TYPE="int" LENGTH="12" NOTNULL="true" SEQUENCE="true"/>
+            <FIELD NAME="zoomid" TYPE="int" LENGTH="12" NOTNULL="true"  DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="courseid" TYPE="int" LENGTH="12" NOTNULL="true"  DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="cmid" TYPE="int" LENGTH="12" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="userid" TYPE="int" LENGTH="12" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="notification_log" TYPE="char" NOTNULL="false" SEQUENCE="false"/>
+            <FIELD NAME="type" TYPE="char" LENGTH="255" NOTNULL="false" SEQUENCE="false"/>
+            <FIELD NAME="status" TYPE="int" LENGTH="2" NOTNULL="true"   DEFAULT="0"  SEQUENCE="false"/>
+            <FIELD NAME="timecreated" TYPE="int" LENGTH="12" NOTNULL="true"   DEFAULT="0"  SEQUENCE="false"/>
+            <FIELD NAME="usercreated" TYPE="int" LENGTH="12" NOTNULL="true" DEFAULT="0"   SEQUENCE="false"/>
+        </FIELDS>
+        <KEYS>
+            <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        </KEYS>
+    </TABLE>
+        <TABLE NAME="local_notifcation_logs" COMMENT="Local Notification Logs">
+        <FIELDS>
+            <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+            <FIELD NAME="notification_type" TYPE="text" NOTNULL="true"  DEFAULT="0"  SEQUENCE="false"/>
+            <FIELD NAME="from_userid" TYPE="int" LENGTH="12" NOTNULL="true"  DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="to_userid" TYPE="int" LENGTH="12" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="cc_userid" TYPE="int" LENGTH="12" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="courseid" TYPE="int" LENGTH="12" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="cmid" TYPE="int" LENGTH="12" NOTNULL="true" DEFAULT="0" SEQUENCE="false"/>
+            <FIELD NAME="status" TYPE="int" LENGTH="2" NOTNULL="true"   DEFAULT="0"  SEQUENCE="false"/>
+            <FIELD NAME="timecreated" TYPE="int" LENGTH="12" NOTNULL="true"   DEFAULT="0"  SEQUENCE="false"/>       
+        </FIELDS>
+        <KEYS>
+            <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+        </KEYS>
+    </TABLE>
+</TABLES>
+</XMLDB>

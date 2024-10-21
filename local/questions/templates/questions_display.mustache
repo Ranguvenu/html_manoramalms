@@ -1,0 +1,126 @@
+{{#displayquestions}}
+<div class="q_wrapper">
+    <div class="q_container">
+        <div class="questions d-flex flex-row">             
+            <!-- <div class="d-flex flex-column mr-5 justify-content-center align-items-center q_info">
+                <div class="rounded-circle d-flex align-items-center justify-content-center q_number"><span>Q{{{questionid}}}</span></div>
+                <div class="q_vertline"></div>
+            </div> -->
+            <div class="q_content mb-5">
+                <div class="q_body px-4 pt-3 pb-1">
+                    <div class="d-flex align-items-center justify-content-end q_actions">
+                        <div>
+                            <form action="#" id="changestatus">
+                                 
+                                <h6>
+                                    {{#str}}status,local_questions{{/str}} : 
+                                    <span id="status_span{{questionid}}" class="theme_text_color">{{status}}</span></h6>
+                                {{# statuschange}}
+                                <span id="status_change{{questionid}}">
+                                    <div class="action_btns"> 
+                                    {{#qcreaterstatuschange}}
+                                        <a href="#" id="raedystatus{{questionid}}" title="{{#str}}readytoreview,local_questions{{/str}}" data-action='changestatus' data-adminstatus="{{adminstatus}}" data-canreviewselfstatus = "{{canreviewselfstatus}}"  data-id={{questionid}} data-wid={{qbid}} data-status='assign' data-value="readytoreview" data-statusText="{{#str}}readytoreview,local_questions{{/str}}"><span class="bg-primary text-white"><i class="fa fa-adjust" aria-hidden="true"></i></span></a>
+                                    {{/qcreaterstatuschange}}
+                                {{#canreviewself}}
+                                    {{#qreviewerstatuschange}}
+                                        <a href="#" id="understatus{{questionid}}" title="{{#str}}underreview,local_questions{{/str}}" data-action='changestatus' data-adminstatus="{{adminstatus}}" data-canreviewselfstatus = "{{canreviewselfstatus}}"  data-id={{questionid}} data-wid={{qbid}} data-status='assign' data-value="underreview" data-statusText="{{#str}}underreview,local_questions{{/str}}"><span class="bg-warning text-white"><i class="fa fa-ban" aria-hidden="true"></i></span></a>
+                                        <a href="#" style="display: none;" id="rejectstatus{{questionid}}" title="{{#str}}reject,local_questions{{/str}}" data-action='statustoreject' data-headstring = "{{#str}}rejectstatusconf, local_questions{{/str}}" data-qbankeid= {{questionbankentryid}} data-adminstatus="{{adminstatus}}" data-canreviewselfstatus = "{{canreviewselfstatus}}"  data-id={{questionid}} data-wid={{qbid}} data-status='assign' data-value="reject" data-statusText="{{#str}}reject,local_questions{{/str}}"><span class="bg-danger text-white"><i class="fa fa-close" aria-hidden="true"></i></span></a>
+                                        <a href="#" style="display: none;" id="publishstatus{{questionid}}" title="{{#str}}publish,local_questions{{/str}}" data-action='changestatus' data-adminstatus="{{adminstatus}}" data-canreviewselfstatus = "{{canreviewselfstatus}}"  data-id={{questionid}} data-wid={{qbid}} data-status='assign' data-value="publish" data-statusText="{{#str}}publish,local_questions{{/str}}"><span class="bg-success text-white"><i class="fa fa-check" aria-hidden="true"></i></span></a>
+                                    {{/qreviewerstatuschange}}
+                                    {{#qreviewerstatusdraft}}
+                                        <a href="#" id="rejectstatus{{questionid}}" title="{{#str}}reject,local_questions{{/str}}" data-action='statustoreject' data-adminstatus="{{adminstatus}}"   data-id={{questionid}} data-headstring = "{{#str}}rejectstatusconf, local_questions{{/str}}" data-qbankeid= {{questionbankentryid}} data-wid={{qbid}} data-status='assign' data-value="reject" data-statusText="{{#str}}reject,local_questions{{/str}}"><span class="bg-danger text-white"><i class="fa fa-close" aria-hidden="true"></i></span></a>
+
+                                        <a href="#" id="publishstatus{{questionid}}" title="{{#str}}publish,local_questions{{/str}}" data-action='changestatus' data-adminstatus="{{adminstatus}}"   data-id={{questionid}} data-wid={{qbid}} data-status='assign' data-value="publish" data-statusText="{{#str}}publish,local_questions{{/str}}"><span class="bg-success text-white"><i class="fa fa-check" aria-hidden="true"></i></span></a>
+                                    {{/qreviewerstatusdraft}}
+                                {{/canreviewself}}
+                                        {{#changetodraftstatus}}  
+                                         <a href="#" id="draft{{questionid}}" title="{{#str}}draft,local_questions{{/str}}" data-action='changestatus' data-adminstatus="{{adminstatus}}"   data-id={{questionid}} data-wid={{qbid}} data-status='assign' data-value="draft" data-statusText="{{#str}}draft,local_questions{{/str}}"><span class="bg-info text-white"><i class="fa fa-adjust" aria-hidden="true"></i></span></a>
+                                        {{/changetodraftstatus}} 
+
+                                        <a href="#" style="display: none;" id="understatus{{questionid}}" data-canreviewselfstatus = "{{canreviewselfstatus}}""  title="{{#str}}underreview,local_questions{{/str}}" data-action='changestatus' data-adminstatus="{{adminstatus}}"   data-id={{questionid}} data-wid={{qbid}} data-status='assign' data-value="underreview" data-statusText="{{#str}}underreview,local_questions{{/str}}"><span class="bg-warning text-white"><i class="fa fa-ban" aria-hidden="true"></i></span></a>
+
+                                        <a href="#" style="display: none;" id="rejectstatus{{questionid}}" title="{{#str}}reject,local_questions{{/str}}" data-action='statustoreject' data-adminstatus="{{adminstatus}}"   data-id={{questionid}} data-headstring = "{{#str}}rejectstatusconf, local_questions{{/str}}" data-qbankeid= {{questionbankentryid}} data-wid={{qbid}} data-status='assign' data-value="reject" data-statusText="{{#str}}reject,local_questions{{/str}}"><span class="bg-danger text-white"><i class="fa fa-close" aria-hidden="true"></i></span></a>
+                                        <a href="#" style="display: none;" id="publishstatus{{questionid}}" title="{{#str}}publish,local_questions{{/str}}" data-action='changestatus' data-adminstatus="{{adminstatus}}"   data-id={{questionid}} data-wid={{qbid}} data-status='assign' data-value="publish" data-statusText="{{#str}}publish,local_questions{{/str}}"><span class="bg-success text-white"><i class="fa fa-check" aria-hidden="true"></i></span></a>
+
+                                        <a href="#" style="display: none;" id="raedystatus{{questionid}}" title="{{#str}}readytoreview,local_questions{{/str}}" data-action='changestatus' data-adminstatus="{{adminstatus}}"   data-id={{questionid}} data-wid={{qbid}} data-status='assign' data-value="readytoreview" data-statusText="{{#str}}readytoreview,local_questions{{/str}}"><span class="bg-primary text-white"><i class="fa fa-adjust" aria-hidden="true"></i></span></a>
+
+                                        <a href="#" style="display: none;"  id="draftstatus{{questionid}}" title="{{#str}}draft,local_questions{{/str}}" data-action='changestatus' data-adminstatus="{{adminstatus}}"   data-id={{questionid}} data-wid={{qbid}} data-status='assign' data-value="draft" data-statusText="{{#str}}draft,local_questions{{/str}}"><span class="bg-info text-white"><i class="fa fa-adjust" aria-hidden="true"></i></span></a>
+
+                                     </div>
+                                </span>
+                              {{/statuschange}}
+                          </form> 
+                        </div>
+                        {{# action_icons}}
+                         <div class="dropdown actions_wrap ml-3" id="hideeditdelete{{questionid}}">
+                            <a class="dropdown-toggle action_icon fs-xl" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                            </a>
+                            <div class="dropdown-menu actions_list p-0" aria-labelledby="dropdownMenuLink">
+                                <span class="dropdown-menu-arrow"></span>
+                             <a class="dropdown-item actions_item" href="{{{questionpreview}}}">{{#str}}preview{{/str}}</a>
+                        {{#editdeleteenable}}
+                       {{#rejectreasonexist}}
+                                 <a class="dropdown-item actions_item" href="javascript:void(0)" id="dataofrejected" data-questionid={{questionid}} data-qbentryid={{questionbankentryid}}>{{#str}}rejectedreview, local_questions{{/str}}</a>
+                                 {{/rejectreasonexist}}
+                                 <!-- {{#qcreaterstatuschange}}
+                                 {{/qcreaterstatuschange}} -->
+                                {{#edit}}
+                                <a class="dropdown-item actions_item" href="{{{edit}}}">{{#str}}edit{{/str}}</a>
+                                {{/edit}}
+                               {{#delete}}
+                                <a class="dropdown-item actions_item" href="{{{delete}}}">{{#str}}delete{{/str}}</a>
+                               {{/delete}}
+                                {{#canduplicate}}
+                                    <a href="{{{duplicate}}}" title="Duplicate question" ><span class="bg-primary text-white"><i class="fa fa-copy" aria-hidden="true"></i></span></a>
+                                {{/canduplicate}}
+                        {{/editdeleteenable}}
+                         </div>
+                        </div>
+                        {{/ action_icons}}
+                    </div>
+                    <!--<div class="d-flex action_btns justify-content-center"> 
+                        {{# action_icons}}-->
+                        {{! Adding Checkboxess }}
+                        <!--<div class="form-inline form-group mr-2">
+                            <input type="checkbox" name="question" class="form-control" value="{{questionid}}">
+                        </div>-->
+                        <!--<a href="{{{edit}}}"><span class="bg-info text-white"><i class="fa fa-pencil fa-fw"></i></span></a>
+                        <a href="{{{delete}}}"><span class="bg-danger text-white"><i class="fa fa-trash-o" aria-hidden="true"></i></span></a>
+                        {{/ action_icons}}
+                        {{#canduplicate}}
+                        <a href="{{{duplicate}}}" title="Duplicate question" ><span class="bg-primary text-white"><i class="fa fa-copy" aria-hidden="true"></i></span></a>
+                        {{/canduplicate}}
+                    </div>-->
+                    {{{question}}}
+                </div>    
+                <div class="q_footer border-top mx-3">
+                    <div class="d-flex flex-wrap align-items-center p-3">
+                      {{# questionbankentryid}}
+                      <div class="mr-2 q_footer_tag px-3 py-1"><span class="text-dark-gray mr-1">{{#str}}questionbankentryid,local_questions{{/str}} : </span><span class="difficulty_value {{questionbankentryid}}">{{questionbankentryid}}</span></div>
+                      {{/ questionbankentryid}}
+                      {{# difficultylevel}}
+                      <div class="mr-2 q_footer_tag px-3 py-1"><span class="text-dark-gray mr-1">{{#str}}difficultylevel,local_questions{{/str}} : </span><span class="difficulty_value {{difficultylevel}}">{{difficultylevel}}</span></div>
+                      {{/ difficultylevel}}
+                      {{# marks}}
+                      <div class="mr-2 q_footer_tag px-3 py-1"><span class="text-dark-gray mr-1">{{#str}}marks,local_questions{{/str}} : </span><span class="text-primary">{{marks}}</span></div>
+                      {{/ marks}}
+                      {{# qtype}}
+                      <div class="mr-2 q_footer_tag px-3 py-1"><span class="text-dark-gray mr-1">{{#str}}questiontype,local_questions{{/str}} : </span><span class="text-primary">{{qtype}}</span></div>
+                      {{/ qtype}}
+                      {{# topicname}}
+                      <div class="mr-2 q_footer_tag px-3 py-1"><span class="text-dark-gray mr-1">{{#str}}units,local_questions{{/str}} : </span><span class="text-primary">{{topicname}}</span></div>
+                      {{/ topicname}}
+                      {{# qnumber}}
+                      <div class="mr-2 q_footer_tag px-3 py-1"><span class="text-dark-gray mr-1">{{#str}}qnumber,local_questions{{/str}} : </span><span class="text-primary">{{qnumber}}</span></div>
+                      {{/ qnumber}}
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+{{/displayquestions}}
+{{^displayquestions}}
+  <div class="w-100 pull-center alert alert-info" style="text-align: center;">{{#str}}noquestions,local_questions{{/str}}</div>
+{{/displayquestions}}

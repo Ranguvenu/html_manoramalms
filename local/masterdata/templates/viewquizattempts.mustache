@@ -1,0 +1,72 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template local_masterdata/viewquizattempts
+
+    TODO describe template viewquizattempts
+
+    Example context (json):
+    {
+    }
+}}
+{{#response}}
+    {{#records}}
+    <div class="table-responsive">
+          <table class="table">
+            <thead class="thead-light">
+                <tr>    
+                    <th scope="col"><b>{{#str}}userfullname, local_masterdata{{/str}}</b></th>
+                    <th scope="col"><b>{{#str}}useremail, local_masterdata{{/str}}</b></th>
+                    <th scope="col"><b>{{#str}}userphone_no, local_masterdata{{/str}}</b></th>
+                    <th scope="col"><b>{{#str}}attemptstartdate, local_masterdata{{/str}}</b></th>
+                    <th scope="col"><b>{{#str}}duration, local_masterdata{{/str}}</b></th>                   
+                    <th scope="col" class="text-center"><b>{{#str}}action, local_masterdata{{/str}}<b></th>  
+                        
+
+                </tr>
+            </thead>
+            <tbody>
+                {{# hascourses}}     
+                    <tr>
+                        <td>{{fullname}}</td>
+                        <td>{{email}}</td>
+                        <td>{{phone}}</td>
+                        <td>{{attemptstartdate}}</td>
+                        <td>{{timetaken}}</td>
+                        <td class="text-center">
+                            <div class="d-flex action_btns justify-content-center"> 
+                                <a href="{{{viewattempturl}}}" data-toggle="tooltip" title="{{#str}} view_attempt, local_masterdata {{/str}}"><span class="bg-primary text-white"><i class="fa fa-arrow-right"></i></span></a>       
+                            </div>
+                        </td>
+                       
+                    </tr>
+                {{/ hascourses}} 
+                {{^ hascourses}}
+               <tr>
+                <td colspan="11">
+                   <div class="text-center alert alert-info mt-1" data-region="empty-message">
+                        {{#str}} no_data_available, theme_horizon {{/str}}
+                  </div>
+                </td>
+              </tr>
+           {{/ hascourses}}
+            </tbody>
+        </table>
+    </div>
+    {{/ records}}
+{{/ response}}
+
